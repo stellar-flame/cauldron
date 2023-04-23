@@ -1,0 +1,62 @@
+[gd_scene load_steps=11 format=3 uid="uid://bsh552vncs865"]
+
+[ext_resource type="Texture2D" uid="uid://cp5xkuu2euyul" path="res://assets/witch/idle/idle_000.png" id="1_48qwm"]
+[ext_resource type="Texture2D" uid="uid://cgvnu0rcpv58v" path="res://assets/witch/idle/idle_001.png" id="2_nw1ni"]
+[ext_resource type="Texture2D" uid="uid://b6gbh2m25klp3" path="res://assets/witch/idle/idle_002.png" id="3_sxa0d"]
+[ext_resource type="Texture2D" uid="uid://rmbueqabdgjg" path="res://assets/witch/run/run_000.png" id="4_tf1xe"]
+[ext_resource type="Texture2D" uid="uid://b7ujf2w76y65l" path="res://assets/witch/run/run_001.png" id="5_otknh"]
+[ext_resource type="Texture2D" uid="uid://j0f8lmk7a778" path="res://assets/witch/run/run_002.png" id="6_alrr6"]
+[ext_resource type="Texture2D" uid="uid://0v7c4dqdh8bp" path="res://assets/witch/run/run_003.png" id="7_1p4iq"]
+[ext_resource type="Texture2D" uid="uid://ba72btu5moipx" path="res://assets/witch/run/run_004.png" id="8_idrv8"]
+[ext_resource type="Texture2D" uid="uid://cl7e0d1ybarps" path="res://assets/witch/run/run_005.png" id="9_3dbel"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8kcrw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_48qwm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_nw1ni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sxa0d")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_tf1xe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_otknh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_alrr6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1p4iq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_idrv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_3dbel")
+}],
+"loop": true,
+"name": &"run-right",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(800, 1048)
+scale = Vector2(0.15, 0.15)
+sprite_frames = SubResource("SpriteFrames_8kcrw")
+animation = &"run-right"
+frame_progress = 0.872658
