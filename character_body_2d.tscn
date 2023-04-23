@@ -1,15 +1,18 @@
-[gd_scene load_steps=13 format=3 uid="uid://bsh552vncs865"]
+[gd_scene load_steps=16 format=3 uid="uid://bsh552vncs865"]
 
 [ext_resource type="Texture2D" uid="uid://cp5xkuu2euyul" path="res://assets/witch/idle/idle_000.png" id="1_48qwm"]
 [ext_resource type="Script" path="res://character_body_2d.gd" id="1_lujcc"]
 [ext_resource type="Texture2D" uid="uid://cgvnu0rcpv58v" path="res://assets/witch/idle/idle_001.png" id="2_nw1ni"]
 [ext_resource type="Texture2D" uid="uid://b6gbh2m25klp3" path="res://assets/witch/idle/idle_002.png" id="3_sxa0d"]
 [ext_resource type="Texture2D" uid="uid://rmbueqabdgjg" path="res://assets/witch/run/run_000.png" id="4_tf1xe"]
+[ext_resource type="Texture2D" uid="uid://y0sf4xml810f" path="res://assets/witch/jump/jump_000.png" id="5_ae1yy"]
 [ext_resource type="Texture2D" uid="uid://b7ujf2w76y65l" path="res://assets/witch/run/run_001.png" id="5_otknh"]
 [ext_resource type="Texture2D" uid="uid://j0f8lmk7a778" path="res://assets/witch/run/run_002.png" id="6_alrr6"]
+[ext_resource type="Texture2D" uid="uid://cd6ffswb3matm" path="res://assets/witch/jump/jump_001.png" id="6_nnetw"]
 [ext_resource type="Texture2D" uid="uid://0v7c4dqdh8bp" path="res://assets/witch/run/run_003.png" id="7_1p4iq"]
 [ext_resource type="Texture2D" uid="uid://ba72btu5moipx" path="res://assets/witch/run/run_004.png" id="8_idrv8"]
 [ext_resource type="Texture2D" uid="uid://cl7e0d1ybarps" path="res://assets/witch/run/run_005.png" id="9_3dbel"]
+[ext_resource type="Texture2D" uid="uid://ck1dj5pc2ni23" path="res://assets/witch/jump/jump_005.png" id="10_04xeb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aikpy"]
 radius = 63.0
@@ -30,6 +33,20 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ae1yy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nnetw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_04xeb")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -66,4 +83,5 @@ shape = SubResource("CapsuleShape2D_aikpy")
 position = Vector2(818, 1078)
 scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_8kcrw")
-animation = &"idle"
+animation = &"jump"
+frame_progress = 0.652718
