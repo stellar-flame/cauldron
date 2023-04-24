@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://7ojxgwxr2pfk"]
+
+[ext_resource type="Script" path="res://flying_luna.gd" id="1_7wkur"]
+[ext_resource type="Texture2D" uid="uid://cp5xkuu2euyul" path="res://assets/witch/idle/idle_000.png" id="2_g6s1j"]
+[ext_resource type="Texture2D" uid="uid://b3rf47x60evk8" path="res://assets/witch/fly_right/fly_002.png" id="2_uvbqb"]
+[ext_resource type="Texture2D" uid="uid://bskgtpd0sf0fl" path="res://assets/witch/fly_right/fly_003.png" id="3_d2x0t"]
+[ext_resource type="Texture2D" uid="uid://cgvnu0rcpv58v" path="res://assets/witch/idle/idle_001.png" id="3_suqsy"]
+[ext_resource type="Texture2D" uid="uid://b6gbh2m25klp3" path="res://assets/witch/idle/idle_002.png" id="4_rhc28"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jwgqm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ve207"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"fly_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uvbqb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_d2x0t")
+}],
+"loop": true,
+"name": &"fly_right",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_g6s1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_suqsy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rhc28")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[node name="FlyingLuna" type="CharacterBody2D"]
+script = ExtResource("1_7wkur")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_jwgqm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.12, 0.12)
+sprite_frames = SubResource("SpriteFrames_ve207")
+animation = &"fly_right"
+autoplay = "fly_right"
+frame_progress = 0.170728
