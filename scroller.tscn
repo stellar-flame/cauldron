@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cc4ol6j2e3qwh"]
 
-[ext_resource type="PackedScene" uid="uid://7ojxgwxr2pfk" path="res://flying_luna.tscn" id="1_mkx1x"]
+[ext_resource type="PackedScene" path="res://flying_luna.tscn" id="1_mkx1x"]
 
 [node name="Scroller" type="Node2D"]
 
