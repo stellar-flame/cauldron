@@ -56,6 +56,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("1_48qwm")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("8_tl4ti")
 }, {
 "duration": 1.0,
@@ -112,4 +120,4 @@ shape = SubResource("CapsuleShape2D_aikpy")
 position = Vector2(818, 1078)
 scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_8kcrw")
-animation = &"idle_left"
+animation = &"run_right"

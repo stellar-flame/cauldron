@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 500.0
-const JUMP_VELOCITY = -500.0
+const JUMP_VELOCITY = -650.0
 var state = "idle_right"
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -19,14 +19,18 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("ui_left"):
 		if (state != "run_left"):
 			state = "run_left"
-	elif state != "idle_right" and state != "idle_left":
+	elif Input.is_action_just_pressed("ui_accept"):
+		if (state != "jump"):
+			state = "jump"
+	elif (state != "idle_right") and (state != "idle_left"):
 		if (state == "run_left"):
 			state = "idle_left"
-		else:
+		elif (state == "run_right"):
 			state = "idle_right"
+	
+	print(state)
 	$AnimatedSprite2D.animation = state
 	
-		
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -46,5 +50,3 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-
-	
