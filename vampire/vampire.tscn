@@ -1,0 +1,162 @@
+[gd_scene load_steps=29 format=3 uid="uid://dr2f503mljc6r"]
+
+[ext_resource type="Script" path="res://vampire/vampire.gd" id="1_8cw16"]
+[ext_resource type="Texture2D" uid="uid://bhyn13wlcu8xk" path="res://assets/vampire/idle/idle_000.png" id="1_c5hnl"]
+[ext_resource type="Texture2D" uid="uid://cfqj5fr36bara" path="res://assets/vampire/run/run_000.png" id="1_ecqry"]
+[ext_resource type="Texture2D" uid="uid://5dttfkdsry7c" path="res://assets/vampire/idle/idle_002.png" id="2_0u60s"]
+[ext_resource type="Texture2D" uid="uid://c6bedj2lqig33" path="res://assets/vampire/run/run_001.png" id="2_8yt2c"]
+[ext_resource type="Texture2D" uid="uid://b8xry5178gtoj" path="res://assets/vampire/idle/idle_001.png" id="3_5krkp"]
+[ext_resource type="Texture2D" uid="uid://bb6nxlfyk4qyx" path="res://assets/vampire/run/run_002.png" id="3_so0tj"]
+[ext_resource type="Texture2D" uid="uid://d0o8n3yj4fqg5" path="res://assets/vampire/run/run_003.png" id="4_3h58m"]
+[ext_resource type="Texture2D" uid="uid://cnntayll8j88m" path="res://assets/vampire/run/run_004.png" id="5_n0h21"]
+[ext_resource type="Texture2D" uid="uid://bdndr3r6867jv" path="res://assets/vampire/run/run_005.png" id="6_nhvm2"]
+[ext_resource type="PackedScene" uid="uid://cd7b6xrgjs5h2" path="res://vampire/floor.tscn" id="11_konca"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h5bhc"]
+radius = 30.0
+height = 108.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_tsoid"]
+frames = 3
+frame_0/texture = ExtResource("1_c5hnl")
+frame_0/duration = 0.3
+frame_1/texture = ExtResource("3_5krkp")
+frame_1/duration = 0.3
+frame_2/texture = ExtResource("2_0u60s")
+frame_2/duration = 0.3
+
+[sub_resource type="Animation" id="Animation_dun5d"]
+resource_name = "idle_right"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("AnimatedTexture_tsoid")]
+}
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_praee"]
+frames = 6
+frame_0/texture = ExtResource("1_ecqry")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("2_8yt2c")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("3_so0tj")
+frame_2/duration = 0.1
+frame_3/texture = ExtResource("4_3h58m")
+frame_3/duration = 0.1
+frame_4/texture = ExtResource("5_n0h21")
+frame_4/duration = 0.1
+frame_5/texture = ExtResource("6_nhvm2")
+frame_5/duration = 0.1
+
+[sub_resource type="Animation" id="Animation_uto5s"]
+resource_name = "run_right"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("AnimatedTexture_praee")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eym0u"]
+_data = {
+"idle_right": SubResource("Animation_dun5d"),
+"run_right": SubResource("Animation_uto5s")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sn1sc"]
+animation = &"idle_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2gtu4"]
+animation = &"run_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_01sui"]
+animation = &"run_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_31dnf"]
+animation = &"run_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qps7i"]
+animation = &"idle_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ty1oh"]
+animation = &"run_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o3vqd"]
+animation = &"run_right"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_f7a2h"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_sn1sc")
+blend_point_0/pos = 0.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_2gtu4")
+blend_point_1/pos = 1.0
+blend_point_2/node = SubResource("AnimationNodeAnimation_01sui")
+blend_point_2/pos = -1.0
+blend_point_3/node = SubResource("AnimationNodeAnimation_31dnf")
+blend_point_3/pos = 1.0
+blend_point_4/node = SubResource("AnimationNodeAnimation_qps7i")
+blend_point_4/pos = 0.0
+blend_point_5/node = SubResource("AnimationNodeAnimation_ty1oh")
+blend_point_5/pos = -1.0
+blend_point_6/node = SubResource("AnimationNodeAnimation_o3vqd")
+blend_point_6/pos = 1.0
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4si2v"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_5ee5e"]
+states/Move/node = SubResource("AnimationNodeBlendSpace1D_f7a2h")
+states/Move/position = Vector2(522.826, 101.414)
+states/Start/position = Vector2(200, 100.077)
+transitions = ["Start", "Move", SubResource("AnimationNodeStateMachineTransition_4si2v")]
+graph_offset = Vector2(145.345, 11.3925)
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_3nvvs"]
+
+[node name="Node" type="Node"]
+
+[node name="Vampire" type="CharacterBody2D" parent="."]
+position = Vector2(514, 295)
+script = ExtResource("1_8cw16")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vampire"]
+position = Vector2(305, 167)
+shape = SubResource("CapsuleShape2D_h5bhc")
+
+[node name="Sprite2D" type="Sprite2D" parent="Vampire"]
+position = Vector2(299, 153)
+scale = Vector2(0.1, 0.1)
+texture = SubResource("AnimatedTexture_tsoid")
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Vampire"]
+root_node = NodePath("../Sprite2D")
+playback_process_mode = 0
+libraries = {
+"": SubResource("AnimationLibrary_eym0u")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="Vampire"]
+tree_root = SubResource("AnimationNodeStateMachine_5ee5e")
+anim_player = NodePath("../AnimationPlayer")
+advance_expression_base_node = NodePath("..")
+process_callback = 0
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_3nvvs")
+parameters/Move/blend_position = 0
+
+[node name="Floor" parent="." instance=ExtResource("11_konca")]

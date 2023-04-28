@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd7b6xrgjs5h2"]
+
+[ext_resource type="Texture2D" uid="uid://dri6tjkm83wkm" path="res://assets/Tiles/Bricks1.png" id="1_77pt3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ymh1f"]
+size = Vector2(2912.25, 401)
+
+[node name="Floor" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1457.88, 1243)
+shape = SubResource("RectangleShape2D_ymh1f")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Sprite2D"]
+offset_left = 4.0
+offset_top = 1043.0
+offset_right = 2565.0
+offset_bottom = 1299.0
+texture = ExtResource("1_77pt3")
+stretch_mode = 1

@@ -1,0 +1,131 @@
+[gd_scene load_steps=22 format=3 uid="uid://bs6qkuc0lhb8n"]
+
+[ext_resource type="Script" path="res://luna.gd" id="1_r2yaw"]
+[ext_resource type="Texture2D" uid="uid://c32owd6laeypo" path="res://assets/witch/idle_left/idle_000_left.png" id="2_yo3qr"]
+[ext_resource type="Texture2D" uid="uid://dmtdhpr3upv1r" path="res://assets/witch/idle_left/idle_001_left.png" id="3_8vf71"]
+[ext_resource type="Texture2D" uid="uid://bkgjhmcaup2hg" path="res://assets/witch/idle_left/idle_002_left.png" id="4_nbv1q"]
+[ext_resource type="Texture2D" uid="uid://cp5xkuu2euyul" path="res://assets/witch/idle_right/idle_000.png" id="5_f6bs2"]
+[ext_resource type="Texture2D" uid="uid://cgvnu0rcpv58v" path="res://assets/witch/idle_right/idle_001.png" id="6_6cnj4"]
+[ext_resource type="Texture2D" uid="uid://b6gbh2m25klp3" path="res://assets/witch/idle_right/idle_002.png" id="7_mav6y"]
+[ext_resource type="Texture2D" uid="uid://b37c0m0phpgv6" path="res://assets/witch/run_left/run_000_left.png" id="8_aqke6"]
+[ext_resource type="Texture2D" uid="uid://bwj4s2htohpjo" path="res://assets/witch/run_left/run_001_left.png" id="9_qbnma"]
+[ext_resource type="Texture2D" uid="uid://d1sawos62t4m6" path="res://assets/witch/run_left/run_002_left.png" id="10_q6880"]
+[ext_resource type="Texture2D" uid="uid://bvmkp8o74snen" path="res://assets/witch/run_left/run_003_left.png" id="11_dnfu5"]
+[ext_resource type="Texture2D" uid="uid://2hmq1jlxqylx" path="res://assets/witch/run_left/run_004_left.png" id="12_oukda"]
+[ext_resource type="Texture2D" uid="uid://cr56rsmp0ennn" path="res://assets/witch/run_left/run_005_left.png" id="13_0w5nf"]
+[ext_resource type="Texture2D" uid="uid://rmbueqabdgjg" path="res://assets/witch/run_right/run_000.png" id="14_3uc7h"]
+[ext_resource type="Texture2D" uid="uid://b7ujf2w76y65l" path="res://assets/witch/run_right/run_001.png" id="15_7wqfn"]
+[ext_resource type="Texture2D" uid="uid://j0f8lmk7a778" path="res://assets/witch/run_right/run_002.png" id="16_37kcn"]
+[ext_resource type="Texture2D" uid="uid://0v7c4dqdh8bp" path="res://assets/witch/run_right/run_003.png" id="17_lvfnd"]
+[ext_resource type="Texture2D" uid="uid://ba72btu5moipx" path="res://assets/witch/run_right/run_004.png" id="18_pe3tp"]
+[ext_resource type="Texture2D" uid="uid://cl7e0d1ybarps" path="res://assets/witch/run_right/run_005.png" id="19_gob0x"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aikpy"]
+radius = 63.0
+height = 252.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8kcrw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yo3qr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8vf71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nbv1q")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_f6bs2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6cnj4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mav6y")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yo3qr")
+}],
+"loop": true,
+"name": &"jump_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_f6bs2")
+}],
+"loop": true,
+"name": &"jump_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_aqke6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qbnma")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_q6880")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_dnfu5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_oukda")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_0w5nf")
+}],
+"loop": true,
+"name": &"run_left",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_3uc7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_7wqfn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_37kcn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_lvfnd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_pe3tp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_gob0x")
+}],
+"loop": true,
+"name": &"run_right",
+"speed": 15.0
+}]
+
+[node name="Luna" type="CharacterBody2D"]
+script = ExtResource("1_r2yaw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(819, 1075)
+shape = SubResource("CapsuleShape2D_aikpy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(818, 1078)
+scale = Vector2(0.15, 0.15)
+sprite_frames = SubResource("SpriteFrames_8kcrw")
+animation = &"jump_right"
