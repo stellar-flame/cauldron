@@ -1,18 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://bs6qkuc0lhb8n"]
+[gd_scene load_steps=13 format=3 uid="uid://bs6qkuc0lhb8n"]
 
 [ext_resource type="Script" path="res://luna.gd" id="1_r2yaw"]
-[ext_resource type="Texture2D" uid="uid://c32owd6laeypo" path="res://assets/witch/idle_left/idle_000_left.png" id="2_yo3qr"]
-[ext_resource type="Texture2D" uid="uid://dmtdhpr3upv1r" path="res://assets/witch/idle_left/idle_001_left.png" id="3_8vf71"]
-[ext_resource type="Texture2D" uid="uid://bkgjhmcaup2hg" path="res://assets/witch/idle_left/idle_002_left.png" id="4_nbv1q"]
 [ext_resource type="Texture2D" uid="uid://cp5xkuu2euyul" path="res://assets/witch/idle_right/idle_000.png" id="5_f6bs2"]
 [ext_resource type="Texture2D" uid="uid://cgvnu0rcpv58v" path="res://assets/witch/idle_right/idle_001.png" id="6_6cnj4"]
 [ext_resource type="Texture2D" uid="uid://b6gbh2m25klp3" path="res://assets/witch/idle_right/idle_002.png" id="7_mav6y"]
-[ext_resource type="Texture2D" uid="uid://b37c0m0phpgv6" path="res://assets/witch/run_left/run_000_left.png" id="8_aqke6"]
-[ext_resource type="Texture2D" uid="uid://bwj4s2htohpjo" path="res://assets/witch/run_left/run_001_left.png" id="9_qbnma"]
-[ext_resource type="Texture2D" uid="uid://d1sawos62t4m6" path="res://assets/witch/run_left/run_002_left.png" id="10_q6880"]
-[ext_resource type="Texture2D" uid="uid://bvmkp8o74snen" path="res://assets/witch/run_left/run_003_left.png" id="11_dnfu5"]
-[ext_resource type="Texture2D" uid="uid://2hmq1jlxqylx" path="res://assets/witch/run_left/run_004_left.png" id="12_oukda"]
-[ext_resource type="Texture2D" uid="uid://cr56rsmp0ennn" path="res://assets/witch/run_left/run_005_left.png" id="13_0w5nf"]
 [ext_resource type="Texture2D" uid="uid://rmbueqabdgjg" path="res://assets/witch/run_right/run_000.png" id="14_3uc7h"]
 [ext_resource type="Texture2D" uid="uid://b7ujf2w76y65l" path="res://assets/witch/run_right/run_001.png" id="15_7wqfn"]
 [ext_resource type="Texture2D" uid="uid://j0f8lmk7a778" path="res://assets/witch/run_right/run_002.png" id="16_37kcn"]
@@ -28,20 +19,6 @@ height = 252.0
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_yo3qr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_8vf71")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_nbv1q")
-}],
-"loop": true,
-"name": &"idle_left",
-"speed": 3.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": ExtResource("5_f6bs2")
 }, {
 "duration": 1.0,
@@ -51,47 +28,16 @@ animations = [{
 "texture": ExtResource("7_mav6y")
 }],
 "loop": true,
-"name": &"idle_right",
+"name": &"idle",
 "speed": 3.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_yo3qr")
-}],
-"loop": true,
-"name": &"jump_left",
-"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("5_f6bs2")
 }],
 "loop": true,
-"name": &"jump_right",
+"name": &"jump",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_aqke6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_qbnma")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_q6880")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_dnfu5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_oukda")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_0w5nf")
-}],
-"loop": true,
-"name": &"run_left",
-"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -113,7 +59,7 @@ animations = [{
 "texture": ExtResource("19_gob0x")
 }],
 "loop": true,
-"name": &"run_right",
+"name": &"run",
 "speed": 15.0
 }]
 
@@ -128,4 +74,4 @@ shape = SubResource("CapsuleShape2D_aikpy")
 position = Vector2(818, 1078)
 scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_8kcrw")
-animation = &"jump_right"
+animation = &"run"
