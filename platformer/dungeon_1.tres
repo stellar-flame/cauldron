@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=37 format=3 uid="uid://bwjlf3sdnqquy"]
+[gd_resource type="TileSet" load_steps=39 format=3 uid="uid://bwjlf3sdnqquy"]
 
 [ext_resource type="Texture2D" uid="uid://b7b3mwajh1qai" path="res://assets/Tiles/Floor1.png" id="1_qfms5"]
 [ext_resource type="Texture2D" uid="uid://hpgwgckjv0wr" path="res://assets/Tiles/Floor2.png" id="2_bw60e"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://lt4hb668owm1" path="res://assets/Non-Tiles/Column-SHORT3.png" id="7_saoer"]
 [ext_resource type="Texture2D" uid="uid://qqhhodqqg4ja" path="res://assets/Tiles/Bricks4BG.png" id="8_2htlx"]
 [ext_resource type="Texture2D" uid="uid://clujsjkeie48a" path="res://assets/Non-Tiles/Column-SHORT4.png" id="8_snkv5"]
+[ext_resource type="Texture2D" uid="uid://bbiykfxs0ty45" path="res://assets/Homemade/Top_layer_bricks.png" id="9_3twfo"]
 [ext_resource type="Texture2D" uid="uid://me1tsx41e5yn" path="res://assets/Homemade/Brick1_in sync_with_floor1.png" id="10_j78h8"]
 [ext_resource type="Texture2D" uid="uid://dri6tjkm83wkm" path="res://assets/Tiles/Bricks1.png" id="15_8s5d7"]
 [ext_resource type="Texture2D" uid="uid://cxrb61xd2rvgg" path="res://assets/Tiles/Bricks1BG.png" id="16_yw1od"]
@@ -103,6 +104,19 @@ texture_region_size = Vector2i(64, 64)
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b7awx"]
 texture = ExtResource("8_2htlx")
 texture_region_size = Vector2i(64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gablg"]
+texture = ExtResource("9_3twfo")
+margins = Vector2i(0, 14)
+texture_region_size = Vector2i(64, 64)
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c45du"]
 texture = ExtResource("10_j78h8")
@@ -253,5 +267,6 @@ sources/13 = SubResource("TileSetAtlasSource_eke63")
 sources/14 = SubResource("TileSetAtlasSource_hw41v")
 sources/15 = SubResource("TileSetAtlasSource_b7awx")
 sources/19 = SubResource("TileSetAtlasSource_c45du")
+sources/16 = SubResource("TileSetAtlasSource_gablg")
 pattern_0 = SubResource("TileMapPattern_kw44d")
 pattern_1 = SubResource("TileMapPattern_73gxp")

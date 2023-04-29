@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dpj6co5uqrtu1"]
+[gd_scene load_steps=30 format=3 uid="uid://dpj6co5uqrtu1"]
 
 [ext_resource type="Script" path="res://luna.gd" id="1_r2yaw"]
 [ext_resource type="Texture2D" uid="uid://dkm8lgiwx8w00" path="res://assets/witch/attack/attack_000.png" id="2_sxjge"]
@@ -8,12 +8,19 @@
 [ext_resource type="Texture2D" uid="uid://cwwt7h2s0divj" path="res://assets/witch/attack/attack_003.png" id="5_m7vic"]
 [ext_resource type="Texture2D" uid="uid://cd6ffswb3matm" path="res://assets/witch/jump/jump_001.png" id="6_bbg43"]
 [ext_resource type="Texture2D" uid="uid://boyqk2f122278" path="res://assets/witch/attack/attack_004.png" id="6_lpdpo"]
+[ext_resource type="Texture2D" uid="uid://dju53dw3b01al" path="res://assets/witch/hurt/hurt_000.png" id="7_0qe6h"]
 [ext_resource type="Texture2D" uid="uid://cp5xkuu2euyul" path="res://assets/witch/idle/idle_000.png" id="7_4hbqw"]
 [ext_resource type="Texture2D" uid="uid://coepcvpjkdjyo" path="res://assets/witch/jump/jump_002.png" id="7_fgomr"]
+[ext_resource type="Texture2D" uid="uid://byfj77256v3fl" path="res://assets/witch/hurt/hurt_001.png" id="8_71uj3"]
 [ext_resource type="Texture2D" uid="uid://cgvnu0rcpv58v" path="res://assets/witch/idle/idle_001.png" id="8_ryspi"]
 [ext_resource type="Texture2D" uid="uid://cgictbadtstye" path="res://assets/witch/jump/jump_003.png" id="8_xh684"]
+[ext_resource type="Texture2D" uid="uid://cf6qhhg8t03f3" path="res://assets/witch/hurt/hurt_002.png" id="9_b7wt6"]
 [ext_resource type="Texture2D" uid="uid://s6n87ns8rk0x" path="res://assets/witch/jump/jump_004.png" id="9_dstc5"]
 [ext_resource type="Texture2D" uid="uid://b6gbh2m25klp3" path="res://assets/witch/idle/idle_002.png" id="9_uem4u"]
+[ext_resource type="Texture2D" uid="uid://cov866weyy7bf" path="res://assets/witch/hurt/hurt_003.png" id="10_a5i6b"]
+[ext_resource type="Texture2D" uid="uid://dcax75eu0h3fs" path="res://assets/witch/hurt/hurt_004.png" id="11_1heo7"]
+[ext_resource type="Texture2D" uid="uid://b03glpatffa58" path="res://assets/witch/hurt/hurt_005.png" id="12_g2kvd"]
+[ext_resource type="Texture2D" uid="uid://dkrauw40a2idb" path="res://assets/witch/hurt/hurt_006.png" id="13_k276o"]
 [ext_resource type="Texture2D" uid="uid://rmbueqabdgjg" path="res://assets/witch/run/run_000.png" id="15_t2xmf"]
 [ext_resource type="Texture2D" uid="uid://b7ujf2w76y65l" path="res://assets/witch/run/run_001.png" id="16_wld3q"]
 [ext_resource type="Texture2D" uid="uid://j0f8lmk7a778" path="res://assets/witch/run/run_002.png" id="17_5uhwe"]
@@ -45,6 +52,32 @@ animations = [{
 }],
 "loop": true,
 "name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_0qe6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_71uj3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_b7wt6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_a5i6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_1heo7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_g2kvd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_k276o")
+}],
+"loop": true,
+"name": &"hurt",
 "speed": 5.0
 }, {
 "frames": [{
@@ -117,6 +150,6 @@ position = Vector2(818, 1078)
 scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_8kcrw")
 animation = &"attack"
-frame_progress = 0.505185
+frame_progress = 0.240752
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
