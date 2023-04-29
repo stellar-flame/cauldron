@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb2dvojxoxhol"]
+
+[ext_resource type="Texture2D" uid="uid://b7b3mwajh1qai" path="res://assets/Tiles/Floor1.png" id="1_wcfm3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0mljy"]
+size = Vector2(2555, 178)
+
+[node name="Ceiling" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1281.5, 79)
+shape = SubResource("RectangleShape2D_0mljy")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -418.0
+offset_top = -104.0
+offset_right = 2833.0
+offset_bottom = 176.0
+texture = ExtResource("1_wcfm3")
+stretch_mode = 1
+flip_v = true

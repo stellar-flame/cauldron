@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxsu6pyxdgs0o"]
+
+[ext_resource type="Texture2D" uid="uid://dri6tjkm83wkm" path="res://assets/Tiles/Bricks1.png" id="1_irc3a"]
+[ext_resource type="Texture2D" uid="uid://bbiykfxs0ty45" path="res://assets/Homemade/Top_layer_bricks.png" id="2_s5kjf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_77820"]
+size = Vector2(246, 1019)
+
+[node name="Wall" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(125, 509.5)
+shape = SubResource("RectangleShape2D_77820")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_top = 1.0
+offset_right = 256.0
+offset_bottom = 999.0
+texture = ExtResource("1_irc3a")
+stretch_mode = 1
+flip_v = true
+
+[node name="TopLayerBricks" type="Sprite2D" parent="."]
+position = Vector2(131, 1009)
+texture = ExtResource("2_s5kjf")
+flip_v = true
