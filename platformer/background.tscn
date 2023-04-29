@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bv3nwqw7dlit1"]
+
+[ext_resource type="Texture2D" uid="uid://cxrb61xd2rvgg" path="res://assets/Tiles/Bricks1BG.png" id="1_l48jw"]
+
+[node name="background" type="Sprite2D"]
+z_index = -10
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 2560.0
+offset_bottom = 1440.0
+texture = ExtResource("1_l48jw")
+stretch_mode = 1

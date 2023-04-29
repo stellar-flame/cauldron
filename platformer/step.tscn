@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://birlwvcrdcuaa"]
+
+[ext_resource type="Texture2D" uid="uid://dnnc1y3htam4p" path="res://assets/Non-Tiles/Platform1.png" id="1_y6bxt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pni4p"]
+size = Vector2(262, 70)
+
+[node name="Step" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(556, 1004)
+shape = SubResource("RectangleShape2D_pni4p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(557, 1005)
+texture = ExtResource("1_y6bxt")
