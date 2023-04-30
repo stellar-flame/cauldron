@@ -29,8 +29,8 @@
 [ext_resource type="Texture2D" uid="uid://cl7e0d1ybarps" path="res://assets/witch/run/run_005.png" id="20_qhtqd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aikpy"]
-radius = 63.0
-height = 252.0
+radius = 60.0
+height = 234.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8kcrw"]
 animations = [{
@@ -139,14 +139,15 @@ animations = [{
 }]
 
 [node name="Luna" type="CharacterBody2D"]
+position = Vector2(-21, -2)
 script = ExtResource("1_r2yaw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(819, 1075)
+position = Vector2(69, 113)
 shape = SubResource("CapsuleShape2D_aikpy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(818, 1078)
+position = Vector2(76, 109)
 scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_8kcrw")
 animation = &"attack"

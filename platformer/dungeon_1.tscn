@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://byl156xfbf60g"]
+[gd_scene load_steps=9 format=3 uid="uid://byl156xfbf60g"]
 
 [ext_resource type="Script" path="res://platformer/dungeon_1.gd" id="1_yudbj"]
 [ext_resource type="PackedScene" uid="uid://dpj6co5uqrtu1" path="res://luna.tscn" id="3_kylyy"]
@@ -7,15 +7,21 @@
 [ext_resource type="PackedScene" uid="uid://cb2dvojxoxhol" path="res://ceiling.tscn" id="5_eujxi"]
 [ext_resource type="PackedScene" uid="uid://63giocnsvrqi" path="res://platformer/floor.tscn" id="5_yqfxm"]
 [ext_resource type="PackedScene" uid="uid://dxsu6pyxdgs0o" path="res://platformer/wall.tscn" id="6_devin"]
+[ext_resource type="PackedScene" uid="uid://gko726oa6itn" path="res://platformer/ghost.tscn" id="8_n3wse"]
 
 [node name="Dungeon_1" type="Node2D"]
+position = Vector2(1, 0)
 script = ExtResource("1_yudbj")
 
 [node name="Luna" parent="." instance=ExtResource("3_kylyy")]
-position = Vector2(-731, 153)
+z_index = 100
+position = Vector2(113, 1123)
+
+[node name="Step2" parent="." instance=ExtResource("4_23g34")]
+position = Vector2(-334, -145)
 
 [node name="Step" parent="." instance=ExtResource("4_23g34")]
-position = Vector2(102, -1)
+position = Vector2(113, 30)
 
 [node name="Background" parent="." instance=ExtResource("4_kxh1h")]
 position = Vector2(1, 0)
@@ -30,3 +36,6 @@ position = Vector2(-172, -2)
 
 [node name="Right_wall" parent="." instance=ExtResource("6_devin")]
 position = Vector2(2446, -2)
+
+[node name="ghost" parent="." instance=ExtResource("8_n3wse")]
+position = Vector2(1571, 478)
