@@ -61,7 +61,7 @@ rotation = -0.000945179
 rotates = false
 script = ExtResource("10_wso22")
 
-[node name="ghost" parent="Path2D/PathFollow2D" instance=ExtResource("8_n3wse")]
+[node name="Ghost" parent="Path2D/PathFollow2D" instance=ExtResource("8_n3wse")]
 position = Vector2(-12.8959, -110.012)
 rotation = 0.000945179
 
