@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnsqaojmoboii"
-path="res://.godot/imported/ghost_sprite_sheet_2.png-fd05425626709c043fa594d14a5ba622.ctex"
+uid="uid://bujydn7rwnxc1"
+path="res://.godot/imported/Floor_top_half.png-3ed31596f6a0bfb0eb4e3c756c3de9b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ghost_sprite_sheet_2.png"
-dest_files=["res://.godot/imported/ghost_sprite_sheet_2.png-fd05425626709c043fa594d14a5ba622.ctex"]
+source_file="res://assets/Tiles/Floor_top_half.png"
+dest_files=["res://.godot/imported/Floor_top_half.png-3ed31596f6a0bfb0eb4e3c756c3de9b4.ctex"]
 
 [params]
 

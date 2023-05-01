@@ -1,18 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://63giocnsvrqi"]
+[gd_scene load_steps=3 format=3 uid="uid://63giocnsvrqi"]
 
 [ext_resource type="Texture2D" uid="uid://b7b3mwajh1qai" path="res://assets/Tiles/Floor1.png" id="1_egrel"]
+[ext_resource type="Texture2D" uid="uid://bujydn7rwnxc1" path="res://assets/Tiles/Floor_top_half.png" id="1_mxjnq"]
 
 [node name="Floor" type="StaticBody2D"]
+metadata/_edit_group_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-7, 1362)
-polygon = PackedVector2Array(3, -1, 3, 89, 2562, 89, 2562, 1, 1433, 6, 1432, -176, 1181, -175, 1181, 1)
+position = Vector2(-7, 1318.91)
+scale = Vector2(1, 0.831368)
+polygon = PackedVector2Array(8, 39, 8, 165, 2561, 165, 2561, 39, 1433, 39, 1433, -163, 1182, -163, 1182, 39)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_top = 1350.0
 offset_right = 2557.0
-offset_bottom = 1630.0
-texture = ExtResource("1_egrel")
+offset_bottom = 1458.0
+texture = ExtResource("1_mxjnq")
 stretch_mode = 1
 
 [node name="Floor1" type="Sprite2D" parent="."]

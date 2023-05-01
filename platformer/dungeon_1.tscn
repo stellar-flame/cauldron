@@ -1,41 +1,70 @@
-[gd_scene load_steps=9 format=3 uid="uid://byl156xfbf60g"]
+[gd_scene load_steps=13 format=3 uid="uid://cdb58xjrepox5"]
 
 [ext_resource type="Script" path="res://platformer/dungeon_1.gd" id="1_yudbj"]
 [ext_resource type="PackedScene" uid="uid://dpj6co5uqrtu1" path="res://luna.tscn" id="3_kylyy"]
 [ext_resource type="PackedScene" uid="uid://birlwvcrdcuaa" path="res://platformer/step.tscn" id="4_23g34"]
 [ext_resource type="PackedScene" uid="uid://bv3nwqw7dlit1" path="res://platformer/background.tscn" id="4_kxh1h"]
-[ext_resource type="PackedScene" uid="uid://cb2dvojxoxhol" path="res://ceiling.tscn" id="5_eujxi"]
 [ext_resource type="PackedScene" uid="uid://63giocnsvrqi" path="res://platformer/floor.tscn" id="5_yqfxm"]
 [ext_resource type="PackedScene" uid="uid://dxsu6pyxdgs0o" path="res://platformer/wall.tscn" id="6_devin"]
 [ext_resource type="PackedScene" uid="uid://gko726oa6itn" path="res://platformer/ghost.tscn" id="8_n3wse"]
+[ext_resource type="PackedScene" uid="uid://dqwml3cb5ij8i" path="res://platformer/floating_platform.tscn" id="9_yvaot"]
+[ext_resource type="Texture2D" uid="uid://c6uc6xl086vqq" path="res://assets/Props/Web2.png" id="10_d4xui"]
+[ext_resource type="Script" path="res://platformer/PathFollow2D.gd" id="10_wso22"]
+[ext_resource type="PackedScene" uid="uid://cb2dvojxoxhol" path="res://platformer/ceiling.tscn" id="11_8swfx"]
+
+[sub_resource type="Curve2D" id="Curve2D_ppkf3"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 755, 510, 0, 0, 0, 0, 1813, 509)
+}
+point_count = 2
 
 [node name="Dungeon_1" type="Node2D"]
-position = Vector2(1, 0)
+position = Vector2(-14, 0)
 script = ExtResource("1_yudbj")
+
+[node name="Floating_platform" parent="." instance=ExtResource("9_yvaot")]
+position = Vector2(748, 624)
 
 [node name="Luna" parent="." instance=ExtResource("3_kylyy")]
 z_index = 100
-position = Vector2(113, 1123)
+position = Vector2(113, 1122)
 
 [node name="Step2" parent="." instance=ExtResource("4_23g34")]
 position = Vector2(-334, -145)
 
-[node name="Step" parent="." instance=ExtResource("4_23g34")]
+[node name="Step1" parent="." instance=ExtResource("4_23g34")]
 position = Vector2(113, 30)
-
-[node name="Background" parent="." instance=ExtResource("4_kxh1h")]
-position = Vector2(1, 0)
 
 [node name="Floor" parent="." instance=ExtResource("5_yqfxm")]
 
-[node name="Ceiling" parent="." instance=ExtResource("5_eujxi")]
-position = Vector2(-183, -66)
-
 [node name="Left_wall" parent="." instance=ExtResource("6_devin")]
-position = Vector2(-172, -2)
+position = Vector2(-172, 0)
 
 [node name="Right_wall" parent="." instance=ExtResource("6_devin")]
 position = Vector2(2446, -2)
 
-[node name="ghost" parent="." instance=ExtResource("8_n3wse")]
-position = Vector2(1571, 478)
+[node name="Background" parent="." instance=ExtResource("4_kxh1h")]
+position = Vector2(17, -2)
+metadata/_edit_group_ = true
+
+[node name="Web2" type="Sprite2D" parent="."]
+position = Vector2(158, 164)
+texture = ExtResource("10_d4xui")
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(23, 30)
+curve = SubResource("Curve2D_ppkf3")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(755, 510)
+rotation = -0.000945179
+rotates = false
+script = ExtResource("10_wso22")
+
+[node name="ghost" parent="Path2D/PathFollow2D" instance=ExtResource("8_n3wse")]
+position = Vector2(-12.8959, -110.012)
+rotation = 0.000945179
+
+[node name="Ceiling" parent="." instance=ExtResource("11_8swfx")]
+z_index = -10
+position = Vector2(84, -2)

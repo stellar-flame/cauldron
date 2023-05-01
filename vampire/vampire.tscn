@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dr2f503mljc6r"]
+[gd_scene load_steps=28 format=3 uid="uid://dr2f503mljc6r"]
 
 [ext_resource type="Script" path="res://vampire/vampire.gd" id="1_8cw16"]
 [ext_resource type="Texture2D" uid="uid://bhyn13wlcu8xk" path="res://assets/vampire/idle/idle_000.png" id="1_c5hnl"]
@@ -10,11 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://d0o8n3yj4fqg5" path="res://assets/vampire/run/run_003.png" id="4_3h58m"]
 [ext_resource type="Texture2D" uid="uid://cnntayll8j88m" path="res://assets/vampire/run/run_004.png" id="5_n0h21"]
 [ext_resource type="Texture2D" uid="uid://bdndr3r6867jv" path="res://assets/vampire/run/run_005.png" id="6_nhvm2"]
-[ext_resource type="PackedScene" uid="uid://cd7b6xrgjs5h2" path="res://vampire/floor.tscn" id="11_konca"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h5bhc"]
 radius = 30.0
-height = 108.0
+height = 204.0
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_tsoid"]
 frames = 3
@@ -128,35 +127,30 @@ graph_offset = Vector2(145.345, 11.3925)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_3nvvs"]
 
-[node name="Node" type="Node"]
-
-[node name="Vampire" type="CharacterBody2D" parent="."]
+[node name="Vampire" type="CharacterBody2D"]
 position = Vector2(514, 295)
 script = ExtResource("1_8cw16")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Vampire"]
-position = Vector2(305, 167)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-380, -163)
 shape = SubResource("CapsuleShape2D_h5bhc")
 
-[node name="Sprite2D" type="Sprite2D" parent="Vampire"]
-position = Vector2(299, 153)
-scale = Vector2(0.1, 0.1)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-384, -166)
+scale = Vector2(0.15, 0.15)
 texture = SubResource("AnimatedTexture_tsoid")
-metadata/_edit_lock_ = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Vampire"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite2D")
 playback_process_mode = 0
 libraries = {
 "": SubResource("AnimationLibrary_eym0u")
 }
 
-[node name="AnimationTree" type="AnimationTree" parent="Vampire"]
+[node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_5ee5e")
 anim_player = NodePath("../AnimationPlayer")
 advance_expression_base_node = NodePath("..")
 process_callback = 0
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_3nvvs")
 parameters/Move/blend_position = 0
-
-[node name="Floor" parent="." instance=ExtResource("11_konca")]

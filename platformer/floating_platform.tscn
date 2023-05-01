@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqwml3cb5ij8i"]
+
+[ext_resource type="Texture2D" uid="uid://bujydn7rwnxc1" path="res://assets/Tiles/Floor_top_half.png" id="1_ohm88"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vp823"]
+size = Vector2(1121.5, 93)
+
+[node name="Floating_platform" type="StaticBody2D"]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(575.25, 58)
+shape = SubResource("RectangleShape2D_vp823")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 3.0
+offset_top = 9.0
+offset_right = 1141.0
+offset_bottom = 117.0
+texture = ExtResource("1_ohm88")
+stretch_mode = 1
