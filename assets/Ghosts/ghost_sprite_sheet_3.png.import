@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkwk2y2skvseu"
-path="res://.godot/imported/g9.png-6b1cda9e9d9d745e12a7c52dd67b65e6.ctex"
+uid="uid://cx876ytbtikkc"
+path="res://.godot/imported/ghost_sprite_sheet_3.png-59def89e1d28910bf6c0b0617162d9bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Ghosts/g9.png"
-dest_files=["res://.godot/imported/g9.png-6b1cda9e9d9d745e12a7c52dd67b65e6.ctex"]
+source_file="res://assets/Ghosts/ghost_sprite_sheet_3.png"
+dest_files=["res://.godot/imported/ghost_sprite_sheet_3.png-59def89e1d28910bf6c0b0617162d9bd.ctex"]
 
 [params]
 

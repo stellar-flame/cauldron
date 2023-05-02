@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bv3nwqw7dlit1"]
 
-[ext_resource type="Texture2D" uid="uid://cxrb61xd2rvgg" path="res://assets/Tiles/Bricks1BG.png" id="1_l48jw"]
+[ext_resource type="Texture2D" uid="uid://c1sbv24t6prgs" path="res://assets/Homemade/Bricks1BG.png" id="1_rw32h"]
 
 [node name="background" type="Sprite2D"]
 z_index = -10
@@ -8,5 +8,5 @@ z_index = -10
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 2560.0
 offset_bottom = 1440.0
-texture = ExtResource("1_l48jw")
+texture = ExtResource("1_rw32h")
 stretch_mode = 1

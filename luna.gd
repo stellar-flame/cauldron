@@ -11,6 +11,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
 	sprite.play("idle")
+	
 		
 func _physics_process(delta):
 	# Add the gravity.
@@ -39,6 +40,9 @@ func update_animation():
 			sprite.play("run") 
 		elif Input.is_action_just_pressed("ui_accept"):
 			sprite.play("jump")
+			block_animation = true
+		elif Input.is_action_just_pressed("attack"):
+			sprite.play("attack")			
 			block_animation = true
 		else:
 			sprite.play("idle")

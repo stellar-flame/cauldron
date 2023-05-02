@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://platformer/dungeon_1.gd" id="1_yudbj"]
 [ext_resource type="PackedScene" uid="uid://dpj6co5uqrtu1" path="res://luna.tscn" id="3_kylyy"]
-[ext_resource type="PackedScene" uid="uid://birlwvcrdcuaa" path="res://platformer/step.tscn" id="4_23g34"]
+[ext_resource type="PackedScene" uid="uid://dm5244vs8gaeu" path="res://platformer/step.tscn" id="4_23g34"]
 [ext_resource type="PackedScene" uid="uid://bv3nwqw7dlit1" path="res://platformer/background.tscn" id="4_kxh1h"]
 [ext_resource type="PackedScene" uid="uid://63giocnsvrqi" path="res://platformer/floor.tscn" id="5_yqfxm"]
 [ext_resource type="PackedScene" uid="uid://dxsu6pyxdgs0o" path="res://platformer/wall.tscn" id="6_devin"]
-[ext_resource type="PackedScene" uid="uid://gko726oa6itn" path="res://platformer/ghost.tscn" id="8_n3wse"]
+[ext_resource type="PackedScene" path="res://platformer/ghost.tscn" id="8_n3wse"]
 [ext_resource type="PackedScene" uid="uid://dqwml3cb5ij8i" path="res://platformer/floating_platform.tscn" id="9_yvaot"]
 [ext_resource type="Texture2D" uid="uid://c6uc6xl086vqq" path="res://assets/Props/Web2.png" id="10_d4xui"]
 [ext_resource type="Script" path="res://platformer/PathFollow2D.gd" id="10_wso22"]
@@ -35,7 +35,11 @@ position = Vector2(-334, -145)
 [node name="Step1" parent="." instance=ExtResource("4_23g34")]
 position = Vector2(113, 30)
 
+[node name="Step3" parent="." instance=ExtResource("4_23g34")]
+position = Vector2(733, 219)
+
 [node name="Floor" parent="." instance=ExtResource("5_yqfxm")]
+position = Vector2(746, -2)
 
 [node name="Left_wall" parent="." instance=ExtResource("6_devin")]
 position = Vector2(-172, 0)
@@ -43,9 +47,8 @@ position = Vector2(-172, 0)
 [node name="Right_wall" parent="." instance=ExtResource("6_devin")]
 position = Vector2(2446, -2)
 
-[node name="Background" parent="." instance=ExtResource("4_kxh1h")]
+[node name="background" parent="." instance=ExtResource("4_kxh1h")]
 position = Vector2(17, -2)
-metadata/_edit_group_ = true
 
 [node name="Web2" type="Sprite2D" parent="."]
 position = Vector2(158, 164)
@@ -67,4 +70,6 @@ rotation = 0.000945179
 
 [node name="Ceiling" parent="." instance=ExtResource("11_8swfx")]
 z_index = -10
-position = Vector2(84, -2)
+position = Vector2(84, -18)
+
+[connection signal="area_entered" from="Path2D/PathFollow2D/Ghost" to="Path2D/PathFollow2D/Ghost" method="_on_area_entered"]

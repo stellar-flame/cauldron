@@ -1,21 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqwml3cb5ij8i"]
+[gd_scene load_steps=4 format=3 uid="uid://dqwml3cb5ij8i"]
 
-[ext_resource type="Texture2D" uid="uid://bujydn7rwnxc1" path="res://assets/Tiles/Floor_top_half.png" id="1_ohm88"]
+[ext_resource type="Texture2D" uid="uid://ctm2tihn0ov52" path="res://assets/Homemade/Platform1-internals.png" id="1_s12n4"]
+[ext_resource type="Texture2D" uid="uid://ca1kcqkitj013" path="res://assets/Homemade/Platform1-edge.png" id="2_pfbn3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vp823"]
-size = Vector2(1121.5, 93)
+size = Vector2(1121.5, 70.5)
 
 [node name="Floating_platform" type="StaticBody2D"]
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(575.25, 58)
+position = Vector2(575.25, 46.75)
 shape = SubResource("RectangleShape2D_vp823")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = 3.0
 offset_top = 9.0
-offset_right = 1141.0
-offset_bottom = 117.0
-texture = ExtResource("1_ohm88")
+offset_right = 1139.0
+offset_bottom = 89.0
+texture = ExtResource("1_s12n4")
 stretch_mode = 1
+
+[node name="Platform1-edge" type="Sprite2D" parent="."]
+position = Vector2(3, 49)
+texture = ExtResource("2_pfbn3")
+
+[node name="Platform1-edge2" type="Sprite2D" parent="."]
+position = Vector2(1139, 49)
+texture = ExtResource("2_pfbn3")
+flip_h = true

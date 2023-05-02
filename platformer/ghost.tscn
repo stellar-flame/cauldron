@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://gko726oa6itn"]
+[gd_scene load_steps=9 format=3]
 
 [ext_resource type="Script" path="res://platformer/ghost.gd" id="1_nxcnl"]
-[ext_resource type="Texture2D" uid="uid://cx876ytbtikkc" path="res://assets/ghost_sprite_sheet_3.png" id="12_gvyiv"]
+[ext_resource type="Texture2D" uid="uid://cx876ytbtikkc" path="res://assets/Ghosts/ghost_sprite_sheet_3.png" id="12_gvyiv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yi3by"]
 radius = 78.0
@@ -43,7 +43,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="ghost" type="Area2D"]
+[node name="Ghost" type="Area2D"]
 position = Vector2(8, 0)
 script = ExtResource("1_nxcnl")
 
@@ -57,3 +57,5 @@ scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_nukmj")
 animation = &"float"
 autoplay = "float"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dxsu6pyxdgs0o"]
 
-[ext_resource type="Texture2D" uid="uid://dri6tjkm83wkm" path="res://assets/Tiles/Bricks1.png" id="1_irc3a"]
+[ext_resource type="Texture2D" uid="uid://ca7fqbbwvgjp1" path="res://assets/Homemade/Column1.png" id="1_sta2x"]
 [ext_resource type="Texture2D" uid="uid://bbiykfxs0ty45" path="res://assets/Homemade/Top_layer_bricks.png" id="2_s5kjf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_77820"]
@@ -16,7 +16,7 @@ shape = SubResource("RectangleShape2D_77820")
 offset_top = 1.0
 offset_right = 256.0
 offset_bottom = 999.0
-texture = ExtResource("1_irc3a")
+texture = ExtResource("1_sta2x")
 stretch_mode = 1
 flip_v = true
 

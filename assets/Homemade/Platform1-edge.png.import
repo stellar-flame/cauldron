@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cx876ytbtikkc"
-path="res://.godot/imported/ghost_sprite_sheet_3.png-bf6866d7a974097deb7cde51f56e9af2.ctex"
+uid="uid://ca1kcqkitj013"
+path="res://.godot/imported/Platform1-edge.png-4f7a068a6a6b05bfe57a3c3e9c74f51a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ghost_sprite_sheet_3.png"
-dest_files=["res://.godot/imported/ghost_sprite_sheet_3.png-bf6866d7a974097deb7cde51f56e9af2.ctex"]
+source_file="res://assets/Homemade/Platform1-edge.png"
+dest_files=["res://.godot/imported/Platform1-edge.png-4f7a068a6a6b05bfe57a3c3e9c74f51a.ctex"]
 
 [params]
 
