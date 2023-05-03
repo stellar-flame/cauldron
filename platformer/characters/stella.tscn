@@ -1,0 +1,217 @@
+[gd_scene load_steps=50 format=3 uid="uid://bs2bb45xo65nu"]
+
+[ext_resource type="Script" path="res://platformer/characters/stella.gd" id="1_6xj5q"]
+[ext_resource type="Texture2D" uid="uid://b87vmahbwnsks" path="res://assets/stella/01_idle/skeleton-01_idle_00.png" id="1_pb1sj"]
+[ext_resource type="Texture2D" uid="uid://bvhjsr6xdyo0i" path="res://assets/stella/01_idle/skeleton-01_idle_02.png" id="4_d03uy"]
+[ext_resource type="Texture2D" uid="uid://c03tkmfu8wior" path="res://assets/stella/01_idle/skeleton-01_idle_10.png" id="4_j4i2l"]
+[ext_resource type="Texture2D" uid="uid://b4g3e14oxctwe" path="res://assets/stella/01_idle/skeleton-01_idle_03.png" id="5_c7nny"]
+[ext_resource type="Texture2D" uid="uid://b4nv8yivqhpg3" path="res://assets/stella/01_idle/skeleton-01_idle_11.png" id="5_lyd16"]
+[ext_resource type="Texture2D" uid="uid://7j4nhb7p8xdo" path="res://assets/stella/01_idle/skeleton-01_idle_12.png" id="6_1dwxm"]
+[ext_resource type="Texture2D" uid="uid://cj55fpfttelc5" path="res://assets/stella/01_idle/skeleton-01_idle_04.png" id="6_ig1js"]
+[ext_resource type="Texture2D" uid="uid://ccfcer55y03qu" path="res://assets/stella/01_idle/skeleton-01_idle_13.png" id="7_age43"]
+[ext_resource type="Texture2D" uid="uid://c0sci1rl6x8te" path="res://assets/stella/01_idle/skeleton-01_idle_05.png" id="7_anss3"]
+[ext_resource type="Texture2D" uid="uid://cmg85t45saged" path="res://assets/stella/01_idle/skeleton-01_idle_06.png" id="8_1kd50"]
+[ext_resource type="Texture2D" uid="uid://brb41enb6l3a8" path="res://assets/stella/01_idle/skeleton-01_idle_14.png" id="8_mjuu7"]
+[ext_resource type="Texture2D" uid="uid://dm4omn6lotrwd" path="res://assets/stella/01_idle/skeleton-01_idle_15.png" id="9_0h112"]
+[ext_resource type="Texture2D" uid="uid://b6hma0jhocje0" path="res://assets/stella/01_idle/skeleton-01_idle_16.png" id="10_5yyp7"]
+[ext_resource type="Texture2D" uid="uid://01kvrmekelmu" path="res://assets/stella/01_idle/skeleton-01_idle_17.png" id="11_1b8s1"]
+[ext_resource type="Texture2D" uid="uid://bpclvmjxiyxf0" path="res://assets/stella/01_idle/skeleton-01_idle_18.png" id="12_8etsv"]
+[ext_resource type="Texture2D" uid="uid://dh8t6dcovns5v" path="res://assets/stella/01_idle/skeleton-01_idle_07.png" id="12_dj7j5"]
+[ext_resource type="Texture2D" uid="uid://citpyqni1bw37" path="res://assets/stella/01_idle/skeleton-01_idle_19.png" id="13_1oypj"]
+[ext_resource type="Texture2D" uid="uid://da3utwoqita86" path="res://assets/stella/01_idle/skeleton-01_idle_08.png" id="13_42xi5"]
+[ext_resource type="Texture2D" uid="uid://8ka0tgphqkon" path="res://assets/stella/01_idle/skeleton-01_idle_09.png" id="14_a0cd4"]
+[ext_resource type="Texture2D" uid="uid://ikkrcglpw0eb" path="res://assets/stella/04_running/skeleton-04_running_00.png" id="21_ecva5"]
+[ext_resource type="Texture2D" uid="uid://cnmyqs5buacd0" path="res://assets/stella/04_running/skeleton-04_running_01.png" id="22_kxexr"]
+[ext_resource type="Texture2D" uid="uid://c1t2jbtmmmtj1" path="res://assets/stella/04_running/skeleton-04_running_02.png" id="23_jv0nh"]
+[ext_resource type="Texture2D" uid="uid://bsc8k6idmcrl1" path="res://assets/stella/04_running/skeleton-04_running_10.png" id="23_m2xtv"]
+[ext_resource type="Texture2D" uid="uid://p8b1o7rvkwjh" path="res://assets/stella/04_running/skeleton-04_running_03.png" id="24_3e1oy"]
+[ext_resource type="Texture2D" uid="uid://cvr1ewm4h5lsu" path="res://assets/stella/04_running/skeleton-04_running_11.png" id="24_pb6tc"]
+[ext_resource type="Texture2D" uid="uid://bdcmgcupc34l3" path="res://assets/stella/04_running/skeleton-04_running_04.png" id="27_onefv"]
+[ext_resource type="Texture2D" uid="uid://dcdgbc7730iq" path="res://assets/stella/04_running/skeleton-04_running_05.png" id="28_f4vm7"]
+[ext_resource type="Texture2D" uid="uid://ctmosk3uimjp2" path="res://assets/stella/04_running/skeleton-04_running_06.png" id="29_bjw5m"]
+[ext_resource type="Texture2D" uid="uid://b8c3628vb4v6r" path="res://assets/stella/04_running/skeleton-04_running_07.png" id="30_di710"]
+[ext_resource type="Texture2D" uid="uid://b5uy4q425ewpf" path="res://assets/stella/04_running/skeleton-04_running_08.png" id="31_fdxrj"]
+[ext_resource type="Texture2D" uid="uid://bfbhlxp8wsbqq" path="res://assets/stella/04_running/skeleton-04_running_09.png" id="32_xn21a"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dn1wo"]
+radius = 45.0
+height = 166.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_4lhhf"]
+frames = 12
+speed_scale = 4.0
+frame_0/texture = ExtResource("21_ecva5")
+frame_0/duration = 0.08
+frame_1/texture = ExtResource("22_kxexr")
+frame_1/duration = 0.08
+frame_2/texture = ExtResource("23_jv0nh")
+frame_2/duration = 0.08
+frame_3/texture = ExtResource("24_3e1oy")
+frame_3/duration = 0.08
+frame_4/texture = ExtResource("27_onefv")
+frame_4/duration = 0.08
+frame_5/texture = ExtResource("28_f4vm7")
+frame_5/duration = 0.08
+frame_6/texture = ExtResource("29_bjw5m")
+frame_6/duration = 0.08
+frame_7/texture = ExtResource("30_di710")
+frame_7/duration = 0.08
+frame_8/texture = ExtResource("31_fdxrj")
+frame_8/duration = 0.08
+frame_9/texture = ExtResource("32_xn21a")
+frame_9/duration = 0.08
+frame_10/texture = ExtResource("23_m2xtv")
+frame_10/duration = 0.08
+frame_11/texture = ExtResource("24_pb6tc")
+frame_11/duration = 0.08
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_gc7iv"]
+frames = 20
+frame_0/texture = ExtResource("1_pb1sj")
+frame_0/duration = 0.05
+frame_1/texture = ExtResource("4_d03uy")
+frame_1/duration = 0.05
+frame_2/texture = ExtResource("4_d03uy")
+frame_2/duration = 0.05
+frame_3/texture = ExtResource("5_c7nny")
+frame_3/duration = 0.05
+frame_4/texture = ExtResource("6_ig1js")
+frame_4/duration = 0.05
+frame_5/texture = ExtResource("7_anss3")
+frame_5/duration = 0.05
+frame_6/texture = ExtResource("8_1kd50")
+frame_6/duration = 0.05
+frame_7/texture = ExtResource("12_dj7j5")
+frame_7/duration = 0.05
+frame_8/texture = ExtResource("13_42xi5")
+frame_8/duration = 0.05
+frame_9/texture = ExtResource("14_a0cd4")
+frame_9/duration = 0.05
+frame_10/texture = ExtResource("4_j4i2l")
+frame_10/duration = 0.05
+frame_11/texture = ExtResource("5_lyd16")
+frame_11/duration = 0.05
+frame_12/texture = ExtResource("6_1dwxm")
+frame_12/duration = 0.05
+frame_13/texture = ExtResource("7_age43")
+frame_13/duration = 0.05
+frame_14/texture = ExtResource("8_mjuu7")
+frame_14/duration = 0.05
+frame_15/texture = ExtResource("9_0h112")
+frame_15/duration = 0.05
+frame_16/texture = ExtResource("10_5yyp7")
+frame_16/duration = 0.05
+frame_17/texture = ExtResource("11_1b8s1")
+frame_17/duration = 0.05
+frame_18/texture = ExtResource("12_8etsv")
+frame_18/duration = 0.05
+frame_19/texture = ExtResource("13_1oypj")
+frame_19/duration = 0.05
+
+[sub_resource type="Animation" id="Animation_a80wp"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("AnimatedTexture_gc7iv")]
+}
+
+[sub_resource type="Animation" id="Animation_k5wcu"]
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("AnimatedTexture_4lhhf")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0upn6"]
+_data = {
+"idle": SubResource("Animation_a80wp"),
+"run": SubResource("Animation_k5wcu")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cp8uc"]
+animation = &"run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qs060"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1mfeu"]
+animation = &"run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8t0ve"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cnt02"]
+animation = &"run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kejwd"]
+animation = &"run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gcl2e"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_gjheg"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_cp8uc")
+blend_point_0/pos = -1.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_qs060")
+blend_point_1/pos = 0.0
+blend_point_2/node = SubResource("AnimationNodeAnimation_1mfeu")
+blend_point_2/pos = 1.0
+blend_point_3/node = SubResource("AnimationNodeAnimation_8t0ve")
+blend_point_3/pos = 0.0
+blend_point_4/node = SubResource("AnimationNodeAnimation_cnt02")
+blend_point_4/pos = 1.0
+blend_point_5/node = SubResource("AnimationNodeAnimation_kejwd")
+blend_point_5/pos = -1.0
+blend_point_6/node = SubResource("AnimationNodeAnimation_gcl2e")
+blend_point_6/pos = 0.0
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bc3c2"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_cmpwo"]
+states/Move/node = SubResource("AnimationNodeBlendSpace1D_gjheg")
+states/Move/position = Vector2(494.607, 100.577)
+transitions = ["Start", "Move", SubResource("AnimationNodeStateMachineTransition_bc3c2")]
+graph_offset = Vector2(123.75, -2.09622e-05)
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_02m1x"]
+
+[node name="Stella" type="CharacterBody2D"]
+script = ExtResource("1_6xj5q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-10, -3)
+shape = SubResource("CapsuleShape2D_dn1wo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.16, 0.16)
+texture = SubResource("AnimatedTexture_4lhhf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0upn6")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_cmpwo")
+anim_player = NodePath("../AnimationPlayer")
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_02m1x")
+parameters/Move/blend_position = 0.0

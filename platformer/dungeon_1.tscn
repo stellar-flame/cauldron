@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://cdb58xjrepox5"]
+[gd_scene load_steps=14 format=3 uid="uid://cdb58xjrepox5"]
 
 [ext_resource type="Script" path="res://platformer/dungeon_1.gd" id="1_yudbj"]
-[ext_resource type="PackedScene" uid="uid://dpj6co5uqrtu1" path="res://luna.tscn" id="3_kylyy"]
+[ext_resource type="PackedScene" uid="uid://b4i0asvn1f6v4" path="res://platformer/characters/luna.tscn" id="3_3kw6e"]
+[ext_resource type="PackedScene" uid="uid://bs2bb45xo65nu" path="res://platformer/characters/stella.tscn" id="4_8jr37"]
 [ext_resource type="PackedScene" uid="uid://dm5244vs8gaeu" path="res://platformer/step.tscn" id="4_23g34"]
 [ext_resource type="PackedScene" uid="uid://bv3nwqw7dlit1" path="res://platformer/background.tscn" id="4_kxh1h"]
 [ext_resource type="PackedScene" uid="uid://63giocnsvrqi" path="res://platformer/floor.tscn" id="5_yqfxm"]
@@ -19,15 +20,18 @@ _data = {
 point_count = 2
 
 [node name="Dungeon_1" type="Node2D"]
-position = Vector2(-14, 0)
+position = Vector2(-13, 0)
 script = ExtResource("1_yudbj")
+
+[node name="Background" parent="." instance=ExtResource("4_kxh1h")]
+position = Vector2(17, -2)
 
 [node name="Floating_platform" parent="." instance=ExtResource("9_yvaot")]
 position = Vector2(748, 624)
 
-[node name="Luna" parent="." instance=ExtResource("3_kylyy")]
-z_index = 100
-position = Vector2(113, 1122)
+[node name="Ceiling" parent="." instance=ExtResource("11_8swfx")]
+z_index = -10
+position = Vector2(16, -17)
 
 [node name="Step2" parent="." instance=ExtResource("4_23g34")]
 position = Vector2(-334, -145)
@@ -36,22 +40,28 @@ position = Vector2(-334, -145)
 position = Vector2(113, 30)
 
 [node name="Step3" parent="." instance=ExtResource("4_23g34")]
-position = Vector2(733, 219)
+position = Vector2(732, 22)
 
 [node name="Floor" parent="." instance=ExtResource("5_yqfxm")]
-position = Vector2(746, -2)
+position = Vector2(758, 0)
 
 [node name="Left_wall" parent="." instance=ExtResource("6_devin")]
-position = Vector2(-172, 0)
+position = Vector2(-175, 72)
 
 [node name="Right_wall" parent="." instance=ExtResource("6_devin")]
-position = Vector2(2446, -2)
+position = Vector2(2502, 72)
 
-[node name="background" parent="." instance=ExtResource("4_kxh1h")]
-position = Vector2(17, -2)
+[node name="Luna" parent="." instance=ExtResource("3_3kw6e")]
+position = Vector2(180, 1116)
+collision_layer = 2
+
+[node name="Stella" parent="." instance=ExtResource("4_8jr37")]
+position = Vector2(342, 1273)
+collision_layer = 4
 
 [node name="Web2" type="Sprite2D" parent="."]
-position = Vector2(158, 164)
+position = Vector2(193, 203)
+scale = Vector2(2, 2)
 texture = ExtResource("10_d4xui")
 
 [node name="Path2D" type="Path2D" parent="."]
@@ -67,9 +77,5 @@ script = ExtResource("10_wso22")
 [node name="Ghost" parent="Path2D/PathFollow2D" instance=ExtResource("8_n3wse")]
 position = Vector2(-12.8959, -110.012)
 rotation = 0.000945179
-
-[node name="Ceiling" parent="." instance=ExtResource("11_8swfx")]
-z_index = -10
-position = Vector2(84, -18)
 
 [connection signal="area_entered" from="Path2D/PathFollow2D/Ghost" to="Path2D/PathFollow2D/Ghost" method="_on_area_entered"]

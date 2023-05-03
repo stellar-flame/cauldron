@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://bbiykfxs0ty45" path="res://assets/Homemade/Top_layer_bricks.png" id="2_s5kjf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_77820"]
-size = Vector2(246, 1019)
+size = Vector2(246, 1011)
 
 [node name="Wall" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(125, 509.5)
+position = Vector2(125, 513.5)
 shape = SubResource("RectangleShape2D_77820")
 
 [node name="TextureRect" type="TextureRect" parent="."]

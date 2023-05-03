@@ -12,9 +12,9 @@ position = Vector2(1281.5, 50.5)
 shape = SubResource("RectangleShape2D_0mljy")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 1.0
+offset_left = -16.0
 offset_top = 2.0
-offset_right = 2563.0
+offset_right = 2567.0
 offset_bottom = 112.0
 texture = ExtResource("1_o0hxj")
 stretch_mode = 1
