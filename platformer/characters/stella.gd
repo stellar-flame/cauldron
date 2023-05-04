@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 500.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -900.0
 @onready var direction = 0
 @onready var sprite = $Sprite2D
 @onready var animation_tree = $AnimationTree
@@ -36,10 +36,19 @@ func _physics_process(delta):
 	update_facing_direction()
 
 func update_animation_parameters():
-	animation_tree.set("parameters/Move/blend_position", direction)
-	
+	if (is_on_floor()):
+		if direction != 0:
+			state_machine.travel("run")
+		else:
+			state_machine.travel("idle")
+	else:
+		state_machine.travel("jump")
+		
+		
 func update_facing_direction():
 	if direction > 0:
 		sprite.flip_h = false
 	elif direction < 0:
 		sprite.flip_h = true
+
+
