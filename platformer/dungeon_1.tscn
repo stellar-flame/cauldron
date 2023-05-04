@@ -1,6 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://cdb58xjrepox5"]
+[gd_scene load_steps=16 format=3 uid="uid://cdb58xjrepox5"]
 
 [ext_resource type="Script" path="res://platformer/dungeon_1.gd" id="1_yudbj"]
+[ext_resource type="PackedScene" uid="uid://baf3rh1jcv2j8" path="res://platformer/candle_stick.tscn" id="2_50i4v"]
+[ext_resource type="PackedScene" uid="uid://cg2f4vrv8m8ru" path="res://platformer/lantern.tscn" id="2_utov8"]
 [ext_resource type="PackedScene" uid="uid://b4i0asvn1f6v4" path="res://platformer/characters/luna.tscn" id="3_3kw6e"]
 [ext_resource type="PackedScene" uid="uid://bs2bb45xo65nu" path="res://platformer/characters/stella.tscn" id="4_8jr37"]
 [ext_resource type="PackedScene" uid="uid://dm5244vs8gaeu" path="res://platformer/step.tscn" id="4_23g34"]
@@ -15,13 +17,22 @@
 
 [sub_resource type="Curve2D" id="Curve2D_ppkf3"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 755, 510, 0, 0, 0, 0, 1813, 509)
+"points": PackedVector2Array(0, 0, 0, 0, 755, 510, 0, 0, 0, 0, 992, 444, 0, 0, 0, 0, 1284.24, 511.062, 0, 0, 0, 0, 1569, 446, 0, 0, 0, 0, 1813, 509)
 }
-point_count = 2
+point_count = 5
 
 [node name="Dungeon_1" type="Node2D"]
 position = Vector2(-13, 0)
 script = ExtResource("1_yudbj")
+
+[node name="CandleStick" parent="." instance=ExtResource("2_50i4v")]
+position = Vector2(344, 456)
+
+[node name="CandleStick2" parent="." instance=ExtResource("2_50i4v")]
+position = Vector2(2122, 472)
+
+[node name="Lantern" parent="." instance=ExtResource("2_utov8")]
+position = Vector2(1308, 176)
 
 [node name="Background" parent="." instance=ExtResource("4_kxh1h")]
 position = Vector2(17, -2)

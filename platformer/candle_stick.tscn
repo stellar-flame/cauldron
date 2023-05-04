@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://baf3rh1jcv2j8"]
+
+[ext_resource type="Texture2D" uid="uid://dqbq1b5bmq4tx" path="res://assets/Props/Candlestick.png" id="1_6efhs"]
+[ext_resource type="PackedScene" uid="uid://bsl06gkbe6btl" path="res://platformer/flame.tscn" id="2_f3ejy"]
+
+[node name="CandleStick" type="Sprite2D"]
+position = Vector2(483, 301)
+texture = ExtResource("1_6efhs")
+
+[node name="CPUParticles2D3" parent="." instance=ExtResource("2_f3ejy")]
+position = Vector2(-37, -36)
+
+[node name="CPUParticles2D2" parent="." instance=ExtResource("2_f3ejy")]
+position = Vector2(-1, -25)
+
+[node name="CPUParticles2D" parent="." instance=ExtResource("2_f3ejy")]
+position = Vector2(32, -38)
