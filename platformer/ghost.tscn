@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=9 format=3 uid="uid://qmduat6d7ufp"]
 
 [ext_resource type="Script" path="res://platformer/ghost.gd" id="1_nxcnl"]
 [ext_resource type="Texture2D" uid="uid://cx876ytbtikkc" path="res://assets/Ghosts/ghost_sprite_sheet_3.png" id="12_gvyiv"]

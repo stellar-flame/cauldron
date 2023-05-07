@@ -3,13 +3,13 @@
 [ext_resource type="Script" path="res://platformer/dungeon_1.gd" id="1_yudbj"]
 [ext_resource type="PackedScene" uid="uid://baf3rh1jcv2j8" path="res://platformer/candle_stick.tscn" id="2_50i4v"]
 [ext_resource type="PackedScene" uid="uid://cg2f4vrv8m8ru" path="res://platformer/lantern.tscn" id="2_utov8"]
-[ext_resource type="PackedScene" uid="uid://b4i0asvn1f6v4" path="res://platformer/characters/luna.tscn" id="3_3kw6e"]
+[ext_resource type="PackedScene" uid="uid://cpd0lerp2tee1" path="res://platformer/characters/luna.tscn" id="3_3kw6e"]
 [ext_resource type="PackedScene" uid="uid://bs2bb45xo65nu" path="res://platformer/characters/stella.tscn" id="4_8jr37"]
 [ext_resource type="PackedScene" uid="uid://dm5244vs8gaeu" path="res://platformer/step.tscn" id="4_23g34"]
 [ext_resource type="PackedScene" uid="uid://bv3nwqw7dlit1" path="res://platformer/background.tscn" id="4_kxh1h"]
 [ext_resource type="PackedScene" uid="uid://63giocnsvrqi" path="res://platformer/floor.tscn" id="5_yqfxm"]
 [ext_resource type="PackedScene" uid="uid://dxsu6pyxdgs0o" path="res://platformer/wall.tscn" id="6_devin"]
-[ext_resource type="PackedScene" path="res://platformer/ghost.tscn" id="8_n3wse"]
+[ext_resource type="PackedScene" uid="uid://qmduat6d7ufp" path="res://platformer/ghost.tscn" id="8_n3wse"]
 [ext_resource type="PackedScene" uid="uid://dqwml3cb5ij8i" path="res://platformer/floating_platform.tscn" id="9_yvaot"]
 [ext_resource type="Texture2D" uid="uid://c6uc6xl086vqq" path="res://assets/Props/Web2.png" id="10_d4xui"]
 [ext_resource type="Script" path="res://platformer/PathFollow2D.gd" id="10_wso22"]
@@ -22,7 +22,7 @@ _data = {
 point_count = 5
 
 [node name="Dungeon_1" type="Node2D"]
-position = Vector2(-13, 0)
+position = Vector2(-11, 22)
 script = ExtResource("1_yudbj")
 
 [node name="CandleStick" parent="." instance=ExtResource("2_50i4v")]
@@ -35,7 +35,7 @@ position = Vector2(2122, 472)
 position = Vector2(1308, 176)
 
 [node name="Background" parent="." instance=ExtResource("4_kxh1h")]
-position = Vector2(17, -2)
+position = Vector2(18, -2)
 
 [node name="Floating_platform" parent="." instance=ExtResource("9_yvaot")]
 position = Vector2(748, 624)
@@ -63,7 +63,7 @@ position = Vector2(-175, 72)
 position = Vector2(2502, 72)
 
 [node name="Luna" parent="." instance=ExtResource("3_3kw6e")]
-position = Vector2(180, 1116)
+position = Vector2(181, 1225)
 collision_layer = 2
 
 [node name="Stella" parent="." instance=ExtResource("4_8jr37")]

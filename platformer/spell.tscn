@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://bmphi4v4pr3l0"]
+
+[ext_resource type="Script" path="res://platformer/spell.gd" id="1_ue443"]
+[ext_resource type="Texture2D" uid="uid://bbqr2etkxyiq0" path="res://assets/spells/pngegg.png" id="2_68opm"]
+[ext_resource type="Texture2D" uid="uid://biljjdeh6iv0b" path="res://assets/particles/effect_4_1.png" id="3_gdko2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ie5vk"]
+radius = 29.1204
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kml2a"]
+atlas = ExtResource("2_68opm")
+region = Rect2(0, 0, 126, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lj1c"]
+atlas = ExtResource("2_68opm")
+region = Rect2(126, 0, 126, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_co7vo"]
+atlas = ExtResource("2_68opm")
+region = Rect2(252, 0, 126, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gavc"]
+atlas = ExtResource("2_68opm")
+region = Rect2(378, 0, 126, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tvp74"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kml2a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lj1c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_co7vo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gavc")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 5.0
+}]
+
+[sub_resource type="Curve" id="Curve_fh5x0"]
+_data = [Vector2(0.00829748, 1), 0.0, 0.0, 0, 0, Vector2(0.487707, 0.911765), 0.0, 0.0, 0, 0, Vector2(0.989244, 0.331373), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_pnq0p"]
+colors = PackedColorArray(0.41106, 0.41106, 0.41106, 1, 1, 1, 1, 1)
+
+[node name="Spell" type="Area2D"]
+position = Vector2(83, -36)
+script = ExtResource("1_ue443")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(20, -9)
+shape = SubResource("CircleShape2D_ie5vk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -3)
+sprite_frames = SubResource("SpriteFrames_tvp74")
+animation = &"shoot"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(19, -7)
+amount = 100
+texture = ExtResource("3_gdko2")
+spread = 30.0
+gravity = Vector2(0, 0)
+angular_velocity_min = -100.0
+angle_min = 360.0
+angle_max = 360.0
+scale_amount_curve = SubResource("Curve_fh5x0")
+color = Color(0.843137, 0.156863, 0.741176, 1)
+color_ramp = SubResource("Gradient_pnq0p")

@@ -10,7 +10,7 @@ point_count = 3
 offsets = PackedFloat32Array(0, 0.415254, 0.734463, 1)
 colors = PackedColorArray(0, 0, 0, 1, 0.921569, 0.392157, 0.329412, 1, 0.505882, 0.643137, 0.819608, 1, 1, 1, 1, 1)
 
-[node name="CPUParticles2D" type="CPUParticles2D"]
+[node name="Flame" type="CPUParticles2D"]
 position = Vector2(382, 390)
 amount = 150
 lifetime = 0.5

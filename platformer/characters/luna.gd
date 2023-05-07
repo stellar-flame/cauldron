@@ -1,16 +1,23 @@
 extends CharacterBody2D
 
+@export  var spell: PackedScene
+
 const SPEED = 500.0
 const JUMP_VELOCITY = -650.0
-@onready var sprite = $AnimatedSprite2D
 @onready var direction = 0
-@onready var block_animation = false
+@onready var sprite = $Sprite2D
+@onready var animation_tree = $AnimationTree
+@onready var state_machine = animation_tree.get("parameters/playback")
+@onready var animation_blocked = false
+
+
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
-	sprite.play("idle")
+	animation_tree.set_active(true)
 	
 		
 func _physics_process(delta):
@@ -35,17 +42,17 @@ func _physics_process(delta):
 	update_facing_direction()
 
 func update_animation():
-	if (not block_animation):
-		if direction !=0 and is_on_floor():
-			sprite.play("run") 
-		elif Input.is_action_just_pressed("luna_jump"):
-			sprite.play("jump")
-			block_animation = true
-		elif Input.is_action_just_pressed("attack"):
-			sprite.play("attack")			
-			block_animation = true
+	if (not animation_blocked):
+		if (is_on_floor()):
+			if Input.is_action_just_pressed("attack"):
+				state_machine.travel("attack")
+				animation_blocked = true
+			elif direction != 0:
+				state_machine.travel("run")
+			else:
+				state_machine.travel("idle")
 		else:
-			sprite.play("idle")
+			state_machine.travel("jump")
 		
 func update_facing_direction():
 	if direction > 0:
@@ -54,5 +61,16 @@ func update_facing_direction():
 		sprite.flip_h = true
 
 
-func _on_animated_sprite_2d_animation_finished():
-	block_animation = false
+func cast_spell():
+	var s = spell.instantiate()
+	var spawn_offset = Vector2(-80, -50) if sprite.flip_h else Vector2(60, -50) 
+	var spawn_position = self.position + spawn_offset
+
+	s.position = spawn_position
+	s.direction = Vector2(-1, 0) if sprite.flip_h else Vector2(1, 0)
+	
+	#s.velocity =  shot_direction * 600
+	get_parent().add_child(s)	
+	
+func _on_animation_tree_animation_finished(anim_name):
+	animation_blocked = false
