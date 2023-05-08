@@ -48,7 +48,7 @@ position = Vector2(16, -17)
 position = Vector2(-334, -145)
 
 [node name="Step1" parent="." instance=ExtResource("4_23g34")]
-position = Vector2(113, 30)
+position = Vector2(219, 25)
 
 [node name="Step3" parent="." instance=ExtResource("4_23g34")]
 position = Vector2(743, 152)

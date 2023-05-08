@@ -3,12 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://0rff55077erq" path="res://assets/Non-Tiles/Platform1.png" id="1_y6bxt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pni4p"]
-size = Vector2(244, 65)
+size = Vector2(244, 72)
 
 [node name="Step" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(559, 1006.5)
+position = Vector2(559, 1003)
 shape = SubResource("RectangleShape2D_pni4p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

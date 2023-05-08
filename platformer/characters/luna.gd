@@ -3,20 +3,14 @@ extends CharacterBody2D
 @export  var spell: PackedScene
 
 const SPEED = 500.0
-const JUMP_VELOCITY = -650.0
+const JUMP_VELOCITY = -680.0
 @onready var direction = 0
-@onready var sprite = $Sprite2D
-@onready var animation_tree = $AnimationTree
-@onready var state_machine = animation_tree.get("parameters/playback")
+@onready var sprite = $AnimatedSprite2D
 @onready var animation_blocked = false
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
-func _ready():
-	animation_tree.set_active(true)
-	
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")	
 		
 func _physics_process(delta):
 	# Add the gravity.
@@ -42,15 +36,15 @@ func _physics_process(delta):
 func update_animation():
 	if (not animation_blocked):
 		if (is_on_floor()):
-			if Input.is_action_just_pressed("attack"):
-				state_machine.travel("attack")
+			if Input.is_action_just_pressed("luna_attack"):
+				sprite.play("attack")
 				animation_blocked = true
 			elif direction != 0:
-				state_machine.travel("run")
+				sprite.play("run")
 			else:
-				state_machine.travel("idle")
+				sprite.play("idle")
 		else:
-			state_machine.travel("jump")
+			sprite.play("jump")
 		
 func update_facing_direction():
 	if direction > 0:
@@ -70,5 +64,11 @@ func cast_spell():
 	#s.velocity =  shot_direction * 600
 	get_parent().add_child(s)	
 	
-func _on_animation_tree_animation_finished(anim_name):
+
+func _on_animated_sprite_2d_animation_finished():
 	animation_blocked = false
+
+
+func _on_animated_sprite_2d_frame_changed():
+	if (sprite.animation == "attack" and sprite.frame == 3):
+		cast_spell()

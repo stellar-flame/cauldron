@@ -6,6 +6,7 @@ extends Area2D
 
 func _ready():
 	sprite.flip_h = false
+	sprite.play("float")
 
 
 func flip_sprite():
