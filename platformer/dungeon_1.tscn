@@ -51,7 +51,7 @@ position = Vector2(-334, -145)
 position = Vector2(113, 30)
 
 [node name="Step3" parent="." instance=ExtResource("4_23g34")]
-position = Vector2(732, 22)
+position = Vector2(743, 152)
 
 [node name="Floor" parent="." instance=ExtResource("5_yqfxm")]
 position = Vector2(758, 0)

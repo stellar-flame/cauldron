@@ -93,6 +93,7 @@ frame_19/duration = 0.05
 [sub_resource type="Animation" id="Animation_a80wp"]
 resource_name = "idle"
 loop_mode = 1
+step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

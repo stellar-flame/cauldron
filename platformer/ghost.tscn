@@ -58,4 +58,7 @@ sprite_frames = SubResource("SpriteFrames_nukmj")
 animation = &"float"
 autoplay = "float"
 
+[node name="FlickerTimer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="FlickerTimer" to="." method="_on_flicker_timer_timeout"]

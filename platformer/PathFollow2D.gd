@@ -19,7 +19,7 @@ func _process(delta):
 	if new_offset < 0 or new_offset > get_parent().get_curve().get_baked_length():
 		# Reverse direction
 		direction *= -1
-		ghost.flip_sprite()
+		if (ghost != null): ghost.flip_sprite()
 	else:
 		# Update the offset
 		set_progress(new_offset)
