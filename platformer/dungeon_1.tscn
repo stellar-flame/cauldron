@@ -1,19 +1,19 @@
-[gd_scene load_steps=16 format=3 uid="uid://cdb58xjrepox5"]
+[gd_scene load_steps=16 format=3 uid="uid://us4a42kevd77"]
 
 [ext_resource type="Script" path="res://platformer/dungeon_1.gd" id="1_yudbj"]
-[ext_resource type="PackedScene" uid="uid://baf3rh1jcv2j8" path="res://platformer/candle_stick.tscn" id="2_50i4v"]
-[ext_resource type="PackedScene" uid="uid://cg2f4vrv8m8ru" path="res://platformer/lantern.tscn" id="2_utov8"]
+[ext_resource type="PackedScene" uid="uid://1g0b2fu403at" path="res://platformer/setting/candle_stick.tscn" id="2_50i4v"]
+[ext_resource type="PackedScene" uid="uid://bf4f8yqso7grf" path="res://platformer/setting/lantern.tscn" id="2_utov8"]
 [ext_resource type="PackedScene" uid="uid://cpd0lerp2tee1" path="res://platformer/characters/luna.tscn" id="3_3kw6e"]
 [ext_resource type="PackedScene" uid="uid://bs2bb45xo65nu" path="res://platformer/characters/stella.tscn" id="4_8jr37"]
 [ext_resource type="PackedScene" uid="uid://dm5244vs8gaeu" path="res://platformer/step.tscn" id="4_23g34"]
-[ext_resource type="PackedScene" uid="uid://bv3nwqw7dlit1" path="res://platformer/background.tscn" id="4_kxh1h"]
-[ext_resource type="PackedScene" uid="uid://63giocnsvrqi" path="res://platformer/floor.tscn" id="5_yqfxm"]
-[ext_resource type="PackedScene" uid="uid://dxsu6pyxdgs0o" path="res://platformer/wall.tscn" id="6_devin"]
+[ext_resource type="PackedScene" uid="uid://bv3nwqw7dlit1" path="res://platformer/setting/background.tscn" id="4_kxh1h"]
+[ext_resource type="PackedScene" uid="uid://63giocnsvrqi" path="res://platformer/setting/floor.tscn" id="5_yqfxm"]
 [ext_resource type="PackedScene" uid="uid://qmduat6d7ufp" path="res://platformer/ghost.tscn" id="8_n3wse"]
-[ext_resource type="PackedScene" uid="uid://dqwml3cb5ij8i" path="res://platformer/floating_platform.tscn" id="9_yvaot"]
+[ext_resource type="PackedScene" uid="uid://dqwml3cb5ij8i" path="res://platformer/setting/floating_platform.tscn" id="9_yvaot"]
 [ext_resource type="Texture2D" uid="uid://c6uc6xl086vqq" path="res://assets/Props/Web2.png" id="10_d4xui"]
 [ext_resource type="Script" path="res://platformer/PathFollow2D.gd" id="10_wso22"]
-[ext_resource type="PackedScene" uid="uid://cb2dvojxoxhol" path="res://platformer/ceiling.tscn" id="11_8swfx"]
+[ext_resource type="PackedScene" uid="uid://cb2dvojxoxhol" path="res://platformer/setting/ceiling.tscn" id="11_8swfx"]
+[ext_resource type="PackedScene" uid="uid://dxsu6pyxdgs0o" path="res://platformer/setting/wall.tscn" id="12_6h6ar"]
 
 [sub_resource type="Curve2D" id="Curve2D_ppkf3"]
 _data = {
@@ -35,14 +35,14 @@ position = Vector2(2122, 472)
 position = Vector2(1308, 176)
 
 [node name="Background" parent="." instance=ExtResource("4_kxh1h")]
-position = Vector2(18, -2)
+position = Vector2(9, -2)
 
 [node name="Floating_platform" parent="." instance=ExtResource("9_yvaot")]
 position = Vector2(748, 624)
 
 [node name="Ceiling" parent="." instance=ExtResource("11_8swfx")]
 z_index = -10
-position = Vector2(4, -19)
+position = Vector2(17, -31)
 
 [node name="Step2" parent="." instance=ExtResource("4_23g34")]
 position = Vector2(-334, -145)
@@ -55,12 +55,6 @@ position = Vector2(743, 152)
 
 [node name="Floor" parent="." instance=ExtResource("5_yqfxm")]
 position = Vector2(758, 0)
-
-[node name="Left_wall" parent="." instance=ExtResource("6_devin")]
-position = Vector2(-165, 69)
-
-[node name="Right_wall" parent="." instance=ExtResource("6_devin")]
-position = Vector2(2468, 72)
 
 [node name="Luna" parent="." instance=ExtResource("3_3kw6e")]
 position = Vector2(181, 1225)
@@ -75,6 +69,9 @@ position = Vector2(193, 203)
 scale = Vector2(2, 2)
 texture = ExtResource("10_d4xui")
 
+[node name="Right_Wall2" parent="." instance=ExtResource("12_6h6ar")]
+position = Vector2(2485, 52)
+
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(23, 30)
 curve = SubResource("Curve2D_ppkf3")
@@ -85,3 +82,6 @@ rotation = -0.000945179
 rotates = false
 script = ExtResource("10_wso22")
 ghost_scene = ExtResource("8_n3wse")
+
+[node name="Left_Wall" parent="." instance=ExtResource("12_6h6ar")]
+position = Vector2(-175, 48)

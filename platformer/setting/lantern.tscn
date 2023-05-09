@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cg2f4vrv8m8ru"]
+[gd_scene load_steps=3 format=3 uid="uid://bf4f8yqso7grf"]
 
 [ext_resource type="Texture2D" uid="uid://c36p0og28xmti" path="res://assets/Props/Lantern.png" id="1_vsbgl"]
-[ext_resource type="PackedScene" uid="uid://bsl06gkbe6btl" path="res://platformer/flame.tscn" id="3_cv570"]
+[ext_resource type="PackedScene" uid="uid://bsl06gkbe6btl" path="res://platformer/setting/flame.tscn" id="3_cv570"]
 
 [node name="Lantern" type="Sprite2D"]
 position = Vector2(361, 254)
