@@ -21,3 +21,6 @@ func take_damage():
 	sprite.modulate.a = 0.3
 
 
+func _on_body_entered(body):
+	if body.is_in_group("character"):
+		body.take_damage()

@@ -72,3 +72,7 @@ func _on_animated_sprite_2d_animation_finished():
 func _on_animated_sprite_2d_frame_changed():
 	if (sprite.animation == "attack" and sprite.frame == 3):
 		cast_spell()
+
+func take_damage():
+	sprite.play("hurt")
+	animation_blocked = true

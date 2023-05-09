@@ -72,3 +72,6 @@ func _on_animated_sprite_2d_animation_changed():
 		else:
 			hit_area_right.set_hit_area_disabled(false)
 
+func take_damage():
+	sprite.play("get_hit")
+	animation_blocked = true

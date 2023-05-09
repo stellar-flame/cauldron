@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://dqwml3cb5ij8i" path="res://platformer/door_1/scene/floating_platform.tscn" id="7_3ar46"]
 [ext_resource type="Texture2D" uid="uid://c6uc6xl086vqq" path="res://assets/Props/Web2.png" id="8_kmsgf"]
 [ext_resource type="PackedScene" uid="uid://dm5244vs8gaeu" path="res://platformer/door_1/scene/step.tscn" id="9_72vm1"]
-[ext_resource type="PackedScene" uid="uid://cpd0lerp2tee1" path="res://platformer/characters/luna.tscn" id="11_nfa2q"]
-[ext_resource type="PackedScene" uid="uid://bs2bb45xo65nu" path="res://platformer/characters/stella.tscn" id="12_5qmss"]
+[ext_resource type="PackedScene" uid="uid://cog4daxrcqklr" path="res://platformer/characters/stella/stella.tscn" id="11_mfstc"]
+[ext_resource type="PackedScene" uid="uid://bypqb3klvu4i8" path="res://platformer/characters/luna/luna.tscn" id="11_nfa2q"]
 [ext_resource type="Script" path="res://platformer/PathFollow2D.gd" id="13_ta3yh"]
 [ext_resource type="PackedScene" uid="uid://qmduat6d7ufp" path="res://platformer/ghost.tscn" id="14_xuf4j"]
 
@@ -80,12 +80,10 @@ texture = ExtResource("8_kmsgf")
 
 [node name="Luna" parent="." instance=ExtResource("11_nfa2q")]
 position = Vector2(191, 1211)
-collision_layer = 2
 metadata/_edit_group_ = true
 
-[node name="Stella" parent="." instance=ExtResource("12_5qmss")]
-position = Vector2(356, 1259)
-collision_layer = 4
+[node name="Stella" parent="." instance=ExtResource("11_mfstc")]
+position = Vector2(325, 1262)
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(23, 30)
