@@ -11,16 +11,13 @@ func _ready():
 
 func flip_sprite():
 	sprite.flip_h = !sprite.flip_h
-		
-func _on_body_entered(body):
-	print("Hit")
-
-func _on_area_entered(area):		
-	if (area.is_in_group("spells")):
-		flicker.start(1)
-		sprite.modulate.a = 0.3
-		area.queue_free()
-
+			
 
 func _on_flicker_timer_timeout():
 	queue_free()
+
+func take_damage():
+	flicker.start(1)
+	sprite.modulate.a = 0.3
+
+

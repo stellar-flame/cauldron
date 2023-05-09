@@ -1,5 +1,7 @@
 extends PathFollow2D
 
+@export var ghost_scene : PackedScene
+
 # Customize the speed of the movement
 @onready var speed = 100.0
 
@@ -8,10 +10,12 @@ extends PathFollow2D
 @onready var ghost = $Ghost
 
 func  _ready():
-	set_progress(get_parent().get_curve().get_baked_length()/2)
-
+	spawn_ghost()
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):	
+	if (!ghost):
+		spawn_ghost()
 	# Calculate the new offset based on speed, direction, and delta time
 	var new_offset = get_progress() + (speed * direction * delta)
 
@@ -23,4 +27,10 @@ func _process(delta):
 	else:
 		# Update the offset
 		set_progress(new_offset)
+
+func spawn_ghost():
+	ghost = ghost_scene.instantiate()
+	add_child(ghost)
+	set_progress(get_parent().get_curve().get_baked_length()/2)
+
 	

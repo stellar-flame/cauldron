@@ -1,15 +1,20 @@
 extends CharacterBody2D
 
+var hit_area
 
 const SPEED = 500.0
 const JUMP_VELOCITY = -900.0
 @onready var direction = 0
 @onready var sprite = $AnimatedSprite2D
 @onready var animation_blocked = false
+@onready var hit_area_right = $Hit_Area_Right
+@onready var hit_area_left = $Hit_Area_Left
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+
+	
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -55,3 +60,15 @@ func update_facing_direction():
 
 func _on_animated_sprite_2d_animation_finished():
 	animation_blocked = false
+	hit_area_left.set_hit_area_disabled(true)
+	hit_area_right.set_hit_area_disabled(true)
+	
+	
+
+func _on_animated_sprite_2d_animation_changed():
+	if (sprite.animation == "paw_attack"):
+		if sprite.flip_h:
+			hit_area_left.set_hit_area_disabled(false)
+		else:
+			hit_area_right.set_hit_area_disabled(false)
+

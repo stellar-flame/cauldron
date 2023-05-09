@@ -1,8 +1,9 @@
-[gd_scene load_steps=61 format=3 uid="uid://bs2bb45xo65nu"]
+[gd_scene load_steps=62 format=3 uid="uid://bs2bb45xo65nu"]
 
 [ext_resource type="Script" path="res://platformer/characters/stella.gd" id="1_6xj5q"]
 [ext_resource type="Texture2D" uid="uid://b87vmahbwnsks" path="res://assets/stella/01_idle/skeleton-01_idle_00.png" id="1_pb1sj"]
 [ext_resource type="Texture2D" uid="uid://cguhe2hme5jk2" path="res://assets/stella/02_jump/skeleton-02_jump_00.png" id="2_2g7u5"]
+[ext_resource type="PackedScene" uid="uid://waqd4p5lgbvc" path="res://platformer/hit_area.tscn" id="2_t6r1u"]
 [ext_resource type="Texture2D" uid="uid://bkcqixg6gp5t3" path="res://assets/stella/02_jump/skeleton-02_jump_01.png" id="3_f3oh7"]
 [ext_resource type="Texture2D" uid="uid://b0pey6huj3igr" path="res://assets/stella/01_idle/skeleton-01_idle_01.png" id="3_q4r56"]
 [ext_resource type="Texture2D" uid="uid://bvhjsr6xdyo0i" path="res://assets/stella/01_idle/skeleton-01_idle_02.png" id="4_d03uy"]
@@ -60,8 +61,8 @@
 [ext_resource type="Texture2D" uid="uid://btrpttco8c7s4" path="res://assets/stella/06_paw_atk/skeleton-06_paw_atk_09.png" id="57_bujtn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dn1wo"]
-radius = 45.0
-height = 156.0
+radius = 36.0
+height = 140.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i32wk"]
 animations = [{
@@ -259,14 +260,22 @@ animations = [{
 
 [node name="Stella" type="CharacterBody2D"]
 script = ExtResource("1_6xj5q")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-10, -3)
 shape = SubResource("CapsuleShape2D_dn1wo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -3)
 scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_i32wk")
 animation = &"idle"
 
+[node name="Hit_Area_Right" parent="." instance=ExtResource("2_t6r1u")]
+position = Vector2(70, 22)
+
+[node name="Hit_Area_Left" parent="." instance=ExtResource("2_t6r1u")]
+position = Vector2(-70, 22)
+
+[connection signal="animation_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_changed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

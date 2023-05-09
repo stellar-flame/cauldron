@@ -42,7 +42,7 @@ position = Vector2(748, 624)
 
 [node name="Ceiling" parent="." instance=ExtResource("11_8swfx")]
 z_index = -10
-position = Vector2(16, -17)
+position = Vector2(4, -19)
 
 [node name="Step2" parent="." instance=ExtResource("4_23g34")]
 position = Vector2(-334, -145)
@@ -57,10 +57,10 @@ position = Vector2(743, 152)
 position = Vector2(758, 0)
 
 [node name="Left_wall" parent="." instance=ExtResource("6_devin")]
-position = Vector2(-175, 72)
+position = Vector2(-165, 69)
 
 [node name="Right_wall" parent="." instance=ExtResource("6_devin")]
-position = Vector2(2502, 72)
+position = Vector2(2468, 72)
 
 [node name="Luna" parent="." instance=ExtResource("3_3kw6e")]
 position = Vector2(181, 1225)
@@ -84,9 +84,4 @@ position = Vector2(755, 510)
 rotation = -0.000945179
 rotates = false
 script = ExtResource("10_wso22")
-
-[node name="Ghost" parent="Path2D/PathFollow2D" instance=ExtResource("8_n3wse")]
-position = Vector2(-12.8959, -110.012)
-rotation = 0.000945179
-
-[connection signal="area_entered" from="Path2D/PathFollow2D/Ghost" to="Path2D/PathFollow2D/Ghost" method="_on_area_entered"]
+ghost_scene = ExtResource("8_n3wse")

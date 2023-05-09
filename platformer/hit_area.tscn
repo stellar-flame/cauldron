@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://waqd4p5lgbvc"]
+
+[ext_resource type="Script" path="res://platformer/hit_area.gd" id="1_06o6v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0kwuq"]
+size = Vector2(65, 80)
+
+[node name="Hit_Area" type="Area2D"]
+script = ExtResource("1_06o6v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0kwuq")
+debug_color = Color(0.356863, 0.0431373, 0.443137, 0.839216)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

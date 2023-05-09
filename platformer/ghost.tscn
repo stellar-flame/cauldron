@@ -43,16 +43,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Ghost" type="Area2D"]
-position = Vector2(8, 0)
+[node name="Ghost" type="Area2D" groups=["enemy"]]
 script = ExtResource("1_nxcnl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(83, 106)
 shape = SubResource("CapsuleShape2D_yi3by")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(101, 106)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_nukmj")
 animation = &"float"
@@ -60,5 +57,5 @@ autoplay = "float"
 
 [node name="FlickerTimer" type="Timer" parent="."]
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="timeout" from="FlickerTimer" to="." method="_on_flicker_timer_timeout"]

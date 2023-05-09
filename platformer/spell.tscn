@@ -77,5 +77,5 @@ scale_amount_curve = SubResource("Curve_fh5x0")
 color = Color(0.843137, 0.156863, 0.741176, 1)
 color_ramp = SubResource("Gradient_pnq0p")
 
-[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
