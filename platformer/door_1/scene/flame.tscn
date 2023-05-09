@@ -11,7 +11,7 @@ offsets = PackedFloat32Array(0, 0.415254, 0.734463, 1)
 colors = PackedColorArray(0, 0, 0, 1, 0.921569, 0.392157, 0.329412, 1, 0.505882, 0.643137, 0.819608, 1, 1, 1, 1, 1)
 
 [node name="Flame" type="CPUParticles2D"]
-position = Vector2(382, 390)
+position = Vector2(-2, 3)
 amount = 150
 lifetime = 0.5
 speed_scale = 0.7
@@ -27,6 +27,7 @@ scale_amount_curve = SubResource("Curve_ecy1u")
 color_ramp = SubResource("Gradient_1nfnd")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(1, 5)
 color = Color(0.909804, 0.866667, 0.533333, 1)
 texture = ExtResource("1_66oev")
 texture_scale = 2.0

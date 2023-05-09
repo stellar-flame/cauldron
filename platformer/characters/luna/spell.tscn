@@ -1,26 +1,26 @@
-[gd_scene load_steps=12 format=3 uid="uid://bmphi4v4pr3l0"]
+[gd_scene load_steps=12 format=3 uid="uid://cgifm304yr1kx"]
 
-[ext_resource type="Script" path="res://platformer/spell.gd" id="1_ue443"]
-[ext_resource type="Texture2D" uid="uid://bbqr2etkxyiq0" path="res://assets/spells/pngegg.png" id="2_68opm"]
-[ext_resource type="Texture2D" uid="uid://biljjdeh6iv0b" path="res://assets/particles/effect_4_1.png" id="3_gdko2"]
+[ext_resource type="Script" path="res://platformer/characters/luna/spell.gd" id="1_6jcrq"]
+[ext_resource type="Texture2D" uid="uid://bbqr2etkxyiq0" path="res://assets/spells/pngegg.png" id="2_jv5m3"]
+[ext_resource type="Texture2D" uid="uid://biljjdeh6iv0b" path="res://assets/particles/effect_4_1.png" id="3_fvbau"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ie5vk"]
 radius = 29.1204
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kml2a"]
-atlas = ExtResource("2_68opm")
+atlas = ExtResource("2_jv5m3")
 region = Rect2(0, 0, 126, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6lj1c"]
-atlas = ExtResource("2_68opm")
+atlas = ExtResource("2_jv5m3")
 region = Rect2(126, 0, 126, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_co7vo"]
-atlas = ExtResource("2_68opm")
+atlas = ExtResource("2_jv5m3")
 region = Rect2(252, 0, 126, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0gavc"]
-atlas = ExtResource("2_68opm")
+atlas = ExtResource("2_jv5m3")
 region = Rect2(378, 0, 126, 80)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tvp74"]
@@ -52,7 +52,7 @@ colors = PackedColorArray(0.41106, 0.41106, 0.41106, 1, 1, 1, 1, 1)
 
 [node name="Spell" type="Area2D" groups=["spells"]]
 position = Vector2(83, -36)
-script = ExtResource("1_ue443")
+script = ExtResource("1_6jcrq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(20, -9)
@@ -67,7 +67,7 @@ animation = &"shoot"
 visible = false
 position = Vector2(19, -7)
 amount = 100
-texture = ExtResource("3_gdko2")
+texture = ExtResource("3_fvbau")
 spread = 30.0
 gravity = Vector2(0, 0)
 angular_velocity_min = -100.0
