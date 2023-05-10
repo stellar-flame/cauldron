@@ -8,9 +8,7 @@ size = Vector2(244, 72)
 [node name="Step" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(559, 1003)
 shape = SubResource("RectangleShape2D_pni4p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(557, 1005)
 texture = ExtResource("1_y6bxt")
