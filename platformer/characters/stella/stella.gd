@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends CharacterBody2D 
 
 var hit_area
 
@@ -75,3 +75,4 @@ func _on_animated_sprite_2d_animation_changed():
 func take_damage():
 	sprite.play("get_hit")
 	animation_blocked = true
+

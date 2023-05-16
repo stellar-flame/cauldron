@@ -3,20 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://bujydn7rwnxc1" path="res://assets/Tiles/Floor_top_half.png" id="1_mxjnq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jdoxp"]
-size = Vector2(2576, 101)
+size = Vector2(2576, 103.5)
 
 [node name="Floor" type="StaticBody2D"]
-position = Vector2(743, 42)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(539, 1402.5)
+position = Vector2(1296, 56.75)
 shape = SubResource("RectangleShape2D_jdoxp")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -748.0
-offset_top = 1350.0
-offset_right = 1833.0
-offset_bottom = 1458.0
+offset_right = 2581.0
+offset_bottom = 108.0
 texture = ExtResource("1_mxjnq")
 stretch_mode = 1

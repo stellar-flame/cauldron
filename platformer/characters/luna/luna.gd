@@ -1,9 +1,9 @@
-extends CharacterBody2D
+extends CharacterBody2D 
 
 @export  var spell: PackedScene
 
 const SPEED = 500.0
-const JUMP_VELOCITY = -680.0
+const JUMP_VELOCITY = -650.0
 @onready var direction = 0
 @onready var sprite = $AnimatedSprite2D
 @onready var animation_blocked = false
@@ -76,3 +76,5 @@ func _on_animated_sprite_2d_frame_changed():
 func take_damage():
 	sprite.play("hurt")
 	animation_blocked = true
+
+
