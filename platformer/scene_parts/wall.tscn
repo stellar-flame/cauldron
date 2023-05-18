@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dxsu6pyxdgs0o"]
 
-[ext_resource type="Texture2D" uid="uid://cghrmqx4hn0qu" path="res://assets/Non-Tiles/Column-SHORT2.png" id="1_hic7i"]
 [ext_resource type="Script" path="res://platformer/scene_parts/wall.gd" id="1_rfhw4"]
+[ext_resource type="Texture2D" uid="uid://bnechvmq1mujj" path="res://assets/Non-Tiles/Column-SHORT1.png" id="2_5kkk6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3bh2"]
 
@@ -14,6 +14,6 @@ shape = SubResource("RectangleShape2D_c3bh2")
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 128.0
 offset_bottom = 1436.0
-texture = ExtResource("1_hic7i")
+texture = ExtResource("2_5kkk6")
 stretch_mode = 1
 flip_v = true

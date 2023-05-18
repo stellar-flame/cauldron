@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm5cwh0yun126"]
+
+[ext_resource type="Texture2D" uid="uid://bbiykfxs0ty45" path="res://assets/Homemade/Top_layer_bricks.png" id="1_q7nks"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_626xb"]
+size = Vector2(62, 9)
+
+[node name="SimplePlatform" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 0.5)
+shape = SubResource("RectangleShape2D_626xb")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.5)
+texture = ExtResource("1_q7nks")

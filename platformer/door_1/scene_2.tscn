@@ -15,13 +15,21 @@
 [node name="Scene_2" type="Node2D"]
 script = ExtResource("1_ovps5")
 
+[node name="Exit_Control_Top" parent="." instance=ExtResource("6_ucdn0")]
+position = Vector2(0, 292)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="Exit_Control_Bottom" parent="." instance=ExtResource("6_ucdn0")]
+position = Vector2(2188, 1250)
+
 [node name="Scene" type="Node2D" parent="."]
 position = Vector2(1, 0)
 
 [node name="background" parent="Scene" instance=ExtResource("1_ulk6y")]
 
 [node name="Wall2" parent="Scene" instance=ExtResource("5_ofr30")]
-position = Vector2(2165, 937)
+position = Vector2(2165, 950)
 
 [node name="TextureRect" parent="Scene/Wall2" index="1"]
 offset_left = -65.0
@@ -39,7 +47,7 @@ offset_right = 1850.0
 offset_bottom = 11.0
 
 [node name="Floating_platform2" parent="Scene" instance=ExtResource("3_tgml4")]
-position = Vector2(1526, 873)
+position = Vector2(1526, 883)
 
 [node name="CollisionShape2D" parent="Scene/Floating_platform2" index="0"]
 position = Vector2(536.375, 36)
@@ -81,14 +89,6 @@ position = Vector2(2462, 20)
 
 [node name="LeftWall" parent="Scene" instance=ExtResource("5_ofr30")]
 position = Vector2(-56, 504)
-
-[node name="Exit_Control_Bottom" parent="." instance=ExtResource("6_ucdn0")]
-position = Vector2(2188, 1250)
-
-[node name="Exit_Control_Top" parent="." instance=ExtResource("6_ucdn0")]
-position = Vector2(0, 292)
-rotation = 3.14159
-scale = Vector2(1, -1)
 
 [node name="Stella" parent="." instance=ExtResource("7_qan5n")]
 position = Vector2(245, 366)

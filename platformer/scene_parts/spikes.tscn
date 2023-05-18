@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsvmd2f11wfgl"]
+
+[ext_resource type="Texture2D" uid="uid://b5jtlg3lu2i1w" path="res://assets/Props/Spike.png" id="1_ywljx"]
+[ext_resource type="Script" path="res://platformer/scene_parts/spikes.gd" id="2_oyf0t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xoj4b"]
+size = Vector2(271, 26)
+
+[node name="Spikes" type="Area2D"]
+collision_mask = 6
+script = ExtResource("2_oyf0t")
+
+[node name="SpikeTexture" type="TextureRect" parent="."]
+offset_left = 11.0
+offset_top = 3.0
+offset_right = 285.0
+offset_bottom = 43.0
+texture = ExtResource("1_ywljx")
+stretch_mode = 1
+
+[node name="Timer" type="Timer" parent="SpikeTexture"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(143.5, 26)
+shape = SubResource("RectangleShape2D_xoj4b")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="SpikeTexture/Timer" to="." method="_on_timer_timeout"]

@@ -7,8 +7,8 @@ extends Node2D
 
 func _ready():
 	exit_control_top.scene_id = scene_id
-	exit_control_bottom.next_scene = "res://platformer/door_1/scene_1.tscn"
+	exit_control_top.next_scene = "res://platformer/door_1/scene_1.tscn"
 	
-	exit_control_top.scene_id = scene_id
+	exit_control_bottom.scene_id = scene_id
 	exit_control_bottom.next_scene = "res://platformer/door_1/scene_1.tscn"
 	

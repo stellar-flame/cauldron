@@ -27,6 +27,7 @@ position = Vector2(0, 1)
 script = ExtResource("1_qp6yr")
 
 [node name="Scene" type="Node2D" parent="."]
+position = Vector2(-7, -25)
 metadata/_edit_group_ = true
 
 [node name="background" parent="Scene" instance=ExtResource("1_hi3qy")]
@@ -61,25 +62,25 @@ scale = Vector2(2, 2)
 texture = ExtResource("8_gtbhf")
 
 [node name="Left_Wall" parent="Scene" instance=ExtResource("7_tupc1")]
-position = Vector2(-33, 95)
+position = Vector2(-50, 131)
 metadata/_edit_group_ = true
 
 [node name="TextureRect" parent="Scene/Left_Wall" index="1"]
-offset_left = 10.0
-offset_top = -17.0
-offset_right = 138.0
-offset_bottom = 1007.0
+offset_left = 14.0
+offset_top = -52.0
+offset_right = 142.0
+offset_bottom = 958.0
 flip_h = true
 
 [node name="Right_Wall" parent="Scene" instance=ExtResource("7_tupc1")]
-position = Vector2(2480, 88)
+position = Vector2(2487, 84)
 metadata/_edit_group_ = true
 
 [node name="TextureRect" parent="Scene/Right_Wall" index="1"]
-offset_left = 10.0
-offset_top = -17.0
-offset_right = 138.0
-offset_bottom = 1007.0
+offset_left = 9.0
+offset_top = -4.0
+offset_right = 137.0
+offset_bottom = 1011.0
 flip_h = true
 
 [node name="Step3" parent="Scene" instance=ExtResource("9_fsnsg")]
