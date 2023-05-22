@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://cc4ol6j2e3qwh"]
+[gd_scene load_steps=3 format=3 uid="uid://cc4ol6j2e3qwh"]
 
-[ext_resource type="PackedScene" path="res://flying_luna.tscn" id="1_mkx1x"]
+[ext_resource type="PackedScene" uid="uid://cwt0id34s5g2a" path="res://flying_luna.tscn" id="1_mkx1x"]
+[ext_resource type="PackedScene" uid="uid://b115ayauc4h4c" path="res://scroller/flying_stella.tscn" id="2_u4lxt"]
 
 [node name="Scroller" type="Node2D"]
+position = Vector2(0, 1)
 
 [node name="FlyingLuna" parent="." instance=ExtResource("1_mkx1x")]
 position = Vector2(184, 1126)
+
+[node name="FlyingStella" parent="." instance=ExtResource("2_u4lxt")]
+position = Vector2(1189, 955)
