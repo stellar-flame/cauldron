@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://k7mppkp2sc8m"]
+
+[ext_resource type="Texture2D" uid="uid://1emd2wvef7lm" path="res://assets/spiders/spider_midjourney.png" id="1_hrrmf"]
+[ext_resource type="Script" path="res://platformer/enemies/spider.gd" id="1_jllja"]
+[ext_resource type="Script" path="res://platformer/enemies/spider_with_web.gd" id="1_le1ed"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2x8fc"]
+radius = 21.0
+height = 72.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqu63"]
+atlas = ExtResource("1_hrrmf")
+region = Rect2(1, 9, 218, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2b1io"]
+atlas = ExtResource("1_hrrmf")
+region = Rect2(1, 217, 218, 208)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3lsvn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqu63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2b1io")
+}],
+"loop": true,
+"name": &"moving",
+"speed": 3.0
+}]
+
+[node name="SpiderWithWeb" type="Node2D"]
+position = Vector2(414, 275)
+script = ExtResource("1_le1ed")
+
+[node name="Web" type="Line2D" parent="."]
+width = 1.0
+default_color = Color(0.713726, 0.713726, 0.713726, 1)
+
+[node name="Spider" type="RigidBody2D" parent="."]
+script = ExtResource("1_jllja")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spider"]
+shape = SubResource("CapsuleShape2D_2x8fc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Spider"]
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_3lsvn")
+animation = &"moving"
+frame_progress = 0.283978
