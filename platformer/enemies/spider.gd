@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends CharacterBody2D
 
 var amplitude = 100  # The range of the movement
 var frequency = 2  # The speed of the movement

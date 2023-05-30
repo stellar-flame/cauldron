@@ -78,5 +78,5 @@ stella_paw_attack={
 
 [layer_names]
 
-2d_physics/layer_2="stella"
-2d_physics/layer_3="luna"
+2d_physics/layer_1="environment"
+2d_physics/layer_2="characters"

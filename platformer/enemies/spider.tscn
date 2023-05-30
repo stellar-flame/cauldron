@@ -38,7 +38,7 @@ script = ExtResource("1_le1ed")
 width = 1.0
 default_color = Color(0.713726, 0.713726, 0.713726, 1)
 
-[node name="Spider" type="RigidBody2D" parent="."]
+[node name="Spider" type="CharacterBody2D" parent="."]
 script = ExtResource("1_jllja")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spider"]
@@ -48,4 +48,4 @@ shape = SubResource("CapsuleShape2D_2x8fc")
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_3lsvn")
 animation = &"moving"
-frame_progress = 0.283978
+frame_progress = 0.133781

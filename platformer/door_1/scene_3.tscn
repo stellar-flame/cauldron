@@ -50,13 +50,16 @@ offset_bottom = 1017.0
 position = Vector2(-45, 452)
 
 [node name="SimplePlatform" parent="Scene" instance=ExtResource("6_f1nya")]
-position = Vector2(179, 733)
+position = Vector2(188, 732)
+scale = Vector2(0.5, 0.5)
 
 [node name="SimplePlatform2" parent="Scene" instance=ExtResource("6_f1nya")]
-position = Vector2(175, 1061)
+position = Vector2(191, 1112)
+scale = Vector2(0.5, 0.5)
 
 [node name="SimplePlatform3" parent="Scene" instance=ExtResource("6_f1nya")]
-position = Vector2(2394, 229)
+position = Vector2(2365, 226)
+scale = Vector2(0.5, 0.5)
 
 [node name="Luna" parent="." instance=ExtResource("7_h8vnn")]
 position = Vector2(2210, 352)

@@ -117,7 +117,7 @@ animations = [{
 
 [node name="Luna" type="CharacterBody2D" groups=["character"]]
 position = Vector2(-21, 8)
-collision_layer = 4
+collision_layer = 2
 script = ExtResource("1_3kl0p")
 spell = ExtResource("2_8vcsm")
 

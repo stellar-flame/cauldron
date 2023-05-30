@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export  var spell: PackedScene
 
 const SPEED = 500.0
-const JUMP_VELOCITY = -650.0
+const JUMP_VELOCITY = -625.0
 @onready var direction = 0
 @onready var sprite = $AnimatedSprite2D
 @onready var animation_blocked = false

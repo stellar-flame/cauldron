@@ -3,7 +3,7 @@ extends CharacterBody2D
 var hit_area
 
 const SPEED = 500.0
-const JUMP_VELOCITY = -900.0
+const JUMP_VELOCITY = -850.0
 @onready var direction = 0
 @onready var sprite = $AnimatedSprite2D
 @onready var animation_blocked = false

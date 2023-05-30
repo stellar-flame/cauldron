@@ -5,7 +5,7 @@ extends Node2D
 
 
 func _ready():
-	web.add_point(Vector2(0, spider.position.y-200))
+	web.add_point(Vector2(0, spider.position.y-180))
 	web.add_point(Vector2(0, 100))
 	
 func _process(delta):
