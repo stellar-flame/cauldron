@@ -1,26 +1,26 @@
-[gd_scene load_steps=9 format=3 uid="uid://qmduat6d7ufp"]
+[gd_scene load_steps=9 format=3 uid="uid://uoms5nc25ji3"]
 
-[ext_resource type="Script" path="res://platformer/ghost.gd" id="1_nxcnl"]
-[ext_resource type="Texture2D" uid="uid://cx876ytbtikkc" path="res://assets/Ghosts/ghost_sprite_sheet_3.png" id="12_gvyiv"]
+[ext_resource type="Script" path="res://platformer/enemies/ghost/ghost.gd" id="1_8jtaj"]
+[ext_resource type="Texture2D" uid="uid://cx876ytbtikkc" path="res://assets/Ghosts/ghost_sprite_sheet_3.png" id="2_04y8p"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yi3by"]
 radius = 43.0
 height = 124.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4f3ok"]
-atlas = ExtResource("12_gvyiv")
+atlas = ExtResource("2_04y8p")
 region = Rect2(27, 27, 249, 249)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ffq18"]
-atlas = ExtResource("12_gvyiv")
+atlas = ExtResource("2_04y8p")
 region = Rect2(27, 276, 249, 249)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qp4oh"]
-atlas = ExtResource("12_gvyiv")
+atlas = ExtResource("2_04y8p")
 region = Rect2(276, 276, 249, 249)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_blrgj"]
-atlas = ExtResource("12_gvyiv")
+atlas = ExtResource("2_04y8p")
 region = Rect2(276, 525, 249, 249)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nukmj"]
@@ -45,7 +45,7 @@ animations = [{
 
 [node name="Ghost" type="Area2D" groups=["enemy"]]
 collision_mask = 3
-script = ExtResource("1_nxcnl")
+script = ExtResource("1_8jtaj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_yi3by")
