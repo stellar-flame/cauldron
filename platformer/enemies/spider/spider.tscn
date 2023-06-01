@@ -38,7 +38,9 @@ script = ExtResource("1_phjpw")
 width = 1.0
 default_color = Color(0.713726, 0.713726, 0.713726, 1)
 
-[node name="Spider" type="CharacterBody2D" parent="."]
+[node name="Spider" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("2_m6bub")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spider"]

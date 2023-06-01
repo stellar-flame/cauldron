@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends Area2D
 
 var amplitude = 100  # The range of the movement
 var frequency = 2  # The speed of the movement
