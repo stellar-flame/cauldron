@@ -21,30 +21,33 @@ func _physics_process(delta):
 	else:
 		jump_count = 0
 
-	# Handle Jump.
-	if Input.is_action_just_pressed("luna_jump") and jump_count < max_jumps:
-		velocity.y = JUMP_VELOCITY
-		jump_count += 1
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	direction = Input.get_axis("luna_left", "luna_right")
-	if direction:
-		velocity.x = direction * SPEED
+	if Input.is_action_just_pressed("luna_attack"):
+		velocity = Vector2()
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		
+		if Input.is_action_just_pressed("luna_jump") and jump_count < max_jumps:
+			velocity.y = JUMP_VELOCITY
+			jump_count += 1
+
+		if (animation_blocked):
+			velocity.x = 0
+		else:
+			direction = Input.get_axis("luna_left", "luna_right")
+			if direction:
+				velocity.x = direction * SPEED
+			else:
+				velocity.x = move_toward(velocity.x, 0, SPEED)
+			
 	move_and_slide()
 	update_animation()
 	update_facing_direction()
 
 func update_animation():
 	if (not animation_blocked):
-		if (is_on_floor()):
-			if Input.is_action_just_pressed("luna_attack"):
+		if Input.is_action_just_pressed("luna_attack"):
 				sprite.play("attack")
 				animation_blocked = true
-			elif direction != 0:
+		elif (is_on_floor()):	
+			if direction != 0:
 				sprite.play("run")
 			else:
 				sprite.play("idle")

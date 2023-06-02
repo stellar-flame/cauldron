@@ -5,8 +5,6 @@ extends Node2D
 @onready var luna = $Luna
 @onready var stella = $Stella
 
-
-
 func _ready():
 	exit_control.scene_id = scene_id
 	exit_control.next_scene = "res://platformer/door_1/scene_2.tscn"

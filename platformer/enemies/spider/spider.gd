@@ -13,4 +13,7 @@ func _physics_process(delta):
 	var y_movement = amplitude * sin(time_passed * frequency)	
 	self.position.y = y_movement
 	
-	
+
+func _on_body_entered(body):
+	if (body.is_in_group("character")):
+		body.take_damage()

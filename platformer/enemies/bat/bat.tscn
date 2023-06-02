@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://creviwvdth15l"]
+[gd_scene load_steps=32 format=3 uid="uid://creviwvdth15l"]
 
 [ext_resource type="Script" path="res://platformer/enemies/bat/bat.gd" id="1_gpsyn"]
 [ext_resource type="Texture2D" uid="uid://b8vxaftgon6pj" path="res://assets/bluebat/skeleton-fly_00.png" id="1_yoy21"]
 [ext_resource type="Texture2D" uid="uid://dvs8pyticfo6m" path="res://assets/bluebat/skeleton-fly_01.png" id="2_1x5rg"]
 [ext_resource type="Texture2D" uid="uid://cx2u3c5gaewwr" path="res://assets/bluebat/skeleton-fly_02.png" id="3_glgjj"]
+[ext_resource type="Texture2D" uid="uid://bv2j3l8wgqkaa" path="res://assets/bluebat/bats-brown-2.png" id="3_golrg"]
 [ext_resource type="Texture2D" uid="uid://djbknmj8nv0jc" path="res://assets/bluebat/skeleton-fly_03.png" id="4_esbbf"]
 [ext_resource type="Texture2D" uid="uid://xfdno0b3u8ur" path="res://assets/bluebat/skeleton-fly_04.png" id="5_cpcf7"]
 [ext_resource type="Texture2D" uid="uid://tu1m4cdw608v" path="res://assets/bluebat/skeleton-fly_05.png" id="6_5n4q8"]
@@ -42,6 +43,22 @@ region = Rect2(0, 401, 512, 400)
 atlas = ExtResource("13_5t6ac")
 region = Rect2(512, 401, 512, 400)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_oey5m"]
+atlas = ExtResource("3_golrg")
+region = Rect2(0, 295, 512, 295)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjsak"]
+atlas = ExtResource("3_golrg")
+region = Rect2(512, 0, 512, 295)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpqo6"]
+atlas = ExtResource("3_golrg")
+region = Rect2(0, 0, 512, 295)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_riyyq"]
+atlas = ExtResource("14_n423c")
+region = Rect2(512, 0, 512, 300)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_hmvbx"]
 atlas = ExtResource("14_n423c")
 region = Rect2(0, 0, 512, 300)
@@ -49,10 +66,6 @@ region = Rect2(0, 0, 512, 300)
 [sub_resource type="AtlasTexture" id="AtlasTexture_4hq1t"]
 atlas = ExtResource("14_n423c")
 region = Rect2(0, 300, 512, 300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_riyyq"]
-atlas = ExtResource("14_n423c")
-region = Rect2(512, 0, 512, 300)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_foj3g"]
 atlas = ExtResource("13_5t6ac")
@@ -90,6 +103,20 @@ animations = [{
 }],
 "loop": true,
 "name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oey5m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjsak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpqo6")
+}],
+"loop": true,
+"name": &"bat",
 "speed": 5.0
 }, {
 "frames": [{
@@ -132,13 +159,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_riyyq")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_hmvbx")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4hq1t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_riyyq")
 }],
 "loop": true,
 "name": &"brown",
@@ -157,7 +184,7 @@ animations = [{
 }]
 
 [node name="Bat" type="CharacterBody2D"]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.6, 0.6)
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_gpsyn")
@@ -170,5 +197,5 @@ shape = SubResource("CircleShape2D_o06tg")
 position = Vector2(16, 0)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_y2sqf")
-animation = &"brown"
-frame_progress = 0.838141
+animation = &"bat"
+frame_progress = 0.0439479
