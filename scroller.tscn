@@ -1,7 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://cc4ol6j2e3qwh"]
 
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://cwt0id34s5g2a" path="res://flying_luna.tscn" id="1_mkx1x"]
 [ext_resource type="PackedScene" uid="uid://b115ayauc4h4c" path="res://scroller/flying_stella.tscn" id="2_u4lxt"]
+=======
+[ext_resource type="PackedScene" path="res://flying_luna.tscn" id="1_mkx1x"]
+>>>>>>> Stashed changes
 
 [node name="Scroller" type="Node2D"]
 position = Vector2(0, 1)

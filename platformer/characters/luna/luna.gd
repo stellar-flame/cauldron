@@ -1,21 +1,23 @@
 extends CharacterBody2D 
 
+var health
+
 @export  var spell: PackedScene
 
 const SPEED = 500.0
 const JUMP_VELOCITY = -625.0
 @onready var direction = 0
 @onready var sprite = $AnimatedSprite2D
-@onready var animation_blocked = false
 
 var max_jumps = 2
 var jump_count = 0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")	
-		
+			
 func _physics_process(delta):
 	# Add the gravity.
+		
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	else:
@@ -28,7 +30,7 @@ func _physics_process(delta):
 			velocity.y = JUMP_VELOCITY
 			jump_count += 1
 
-		if (animation_blocked):
+		if (sprite.animation_blocked):
 			velocity.x = 0
 		else:
 			direction = Input.get_axis("luna_left", "luna_right")
@@ -38,51 +40,29 @@ func _physics_process(delta):
 				velocity.x = move_toward(velocity.x, 0, SPEED)
 			
 	move_and_slide()
-	update_animation()
-	update_facing_direction()
+	sprite.update_animation(direction, is_on_floor())
+	sprite.update_facing_direction(direction)
 
-func update_animation():
-	if (not animation_blocked):
-		if Input.is_action_just_pressed("luna_attack"):
-				sprite.play("attack")
-				animation_blocked = true
-		elif (is_on_floor()):	
-			if direction != 0:
-				sprite.play("run")
-			else:
-				sprite.play("idle")
-		else:
-			sprite.play("jump")
-		
-func update_facing_direction():
-	if direction > 0:
-		sprite.flip_h = false
-	elif direction < 0:
-		sprite.flip_h = true
+func take_damage(damage :int):
+	if (health.current_health > 0):
+		sprite.take_damage()
+		health.reduce_health(damage)
+	
+func die():
+	sprite.die()
 
-
-func cast_spell():
+func _cast_spell():
 	var s = spell.instantiate()
-	var spawn_offset = Vector2(-80, -50) if sprite.flip_h else Vector2(60, -50) 
-	var spawn_position = self.position + spawn_offset
-
-	s.position = spawn_position
-	s.direction = Vector2(-1, 0) if sprite.flip_h else Vector2(1, 0)
-	
-	#s.velocity =  shot_direction * 600
-	get_parent().add_child(s)	
-	
-
-func _on_animated_sprite_2d_animation_finished():
-	animation_blocked = false
+	if (sprite.flip_h):
+		s.position = self.position + Vector2(-80, -50)
+		s.direction = Vector2(-1, 0)
+	else:
+		s.position =  self.position + Vector2(60, -50)
+		s.direction = Vector2(1, 0)
+	get_tree().current_scene.add_child(s)
 
 
-func _on_animated_sprite_2d_frame_changed():
-	if (sprite.animation == "attack" and sprite.frame == 3):
-		cast_spell()
-
-func take_damage():
-	sprite.play("hurt")
-	animation_blocked = true
 
 
+func _on_animated_sprite_2d_died():
+	queue_free()

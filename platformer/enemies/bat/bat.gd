@@ -43,7 +43,7 @@ func _physics_process(delta):
 func attack_player():
 	var collision = get_last_slide_collision();
 	if (collision.get_collider().is_in_group("character")):
-		target.take_damage()
+		target.take_damage(2)
 		attacking = true	
 	
 func flip_sprite(direction_to_player):

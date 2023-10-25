@@ -6,7 +6,7 @@ var direction
 func _ready():
 	$AnimatedSprite2D.play("shoot")
 
-func _process(delta):
+func _process(delta):	
 	if (direction.x == -1):
 		$AnimatedSprite2D.flip_h = true
 	position += direction * delta * speed
