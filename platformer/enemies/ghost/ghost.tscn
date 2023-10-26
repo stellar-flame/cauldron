@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://uoms5nc25ji3"]
+[gd_scene load_steps=9 format=3]
 
-[ext_resource type="Script" path="res://platformer/enemies/ghost/ghost.gd" id="1_8jtaj"]
+[ext_resource type="Script" path="res://platformer/enemies/ghost/Ghost.gd" id="1_8jtaj"]
 [ext_resource type="Texture2D" uid="uid://cx876ytbtikkc" path="res://assets/Ghosts/ghost_sprite_sheet_3.png" id="2_04y8p"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yi3by"]

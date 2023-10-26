@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwwq73l5mc8ot"]
+[gd_scene load_steps=6 format=3]
 
-[ext_resource type="Script" path="res://platformer/health/health.gd" id="1_w1wfl"]
+[ext_resource type="Script" path="res://platformer/health/Health.gd" id="1_w1wfl"]
 [ext_resource type="Texture2D" uid="uid://dt2ikp0u8u0ca" path="res://assets/Health/Border_Style_3.png" id="3_igvd4"]
 [ext_resource type="Texture2D" uid="uid://djf86wo3eb4mn" path="res://assets/Health/LifeBarBG.png" id="18_d7a35"]
 [ext_resource type="Texture2D" uid="uid://bb6cri6464q35" path="res://assets/Health/LifeBarProgress.png" id="20_3bbjr"]
