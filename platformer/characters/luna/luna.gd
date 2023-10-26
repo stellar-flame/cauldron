@@ -62,7 +62,5 @@ func _cast_spell():
 	get_tree().current_scene.add_child(s)
 
 
-
-
 func _on_animated_sprite_2d_died():
 	queue_free()

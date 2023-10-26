@@ -10,7 +10,6 @@ func update_animation(direction = 0, on_floor = true):
 	if (not animation_blocked):
 		if Input.is_action_just_pressed("luna_attack"):
 				play("attack")
-				emit_signal("cast_spell")
 				animation_blocked = true
 		elif (on_floor):	
 			if direction != 0:
@@ -47,3 +46,7 @@ func _on_animation_finished():
 
 		emit_signal("died")
 		
+
+func _on_frame_changed():
+	if (animation == "attack" and frame == 3):
+		emit_signal("cast_spell")
