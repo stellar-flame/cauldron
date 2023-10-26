@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dncx5g6snf1gp"]
+[gd_scene load_steps=6 format=3 uid="uid://b7fx5mrmrtdwq"]
 
-[ext_resource type="Script" path="res://platformer/exit_control.gd" id="1_f1hcb"]
+[ext_resource type="Script" path="res://platformer/ExitControl.gd" id="1_aqu2g"]
 [ext_resource type="Texture2D" uid="uid://bgqner0dul4gj" path="res://assets/Doors/barrier.png" id="2_a7bu0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hggb7"]
@@ -14,7 +14,7 @@ size = Vector2(76, 234)
 
 [node name="Exit_Control" type="Area2D"]
 collision_mask = 6
-script = ExtResource("1_f1hcb")
+script = ExtResource("1_aqu2g")
 
 [node name="ExitCollisionArea" type="CollisionShape2D" parent="."]
 position = Vector2(-221.5, 43.5)
