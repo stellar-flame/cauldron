@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://0v7c4dqdh8bp" path="res://assets/luna/run/run_003.png" id="15_kx2ak"]
 [ext_resource type="Texture2D" uid="uid://ba72btu5moipx" path="res://assets/luna/run/run_004.png" id="16_w4jqo"]
 [ext_resource type="Texture2D" uid="uid://cl7e0d1ybarps" path="res://assets/luna/run/run_005.png" id="17_oqcl7"]
-[ext_resource type="Script" path="res://platformer/characters/luna/luna_animate.gd" id="23_utj63"]
+[ext_resource type="Script" path="res://platformer/characters/luna/LunaAnimate.gd" id="25_5l2ur"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aikpy"]
 radius = 32.0
@@ -151,7 +151,7 @@ position = Vector2(-4.4125, 0)
 scale = Vector2(0.13, 0.13)
 sprite_frames = SubResource("SpriteFrames_cii11")
 animation = &"("
-script = ExtResource("23_utj63")
+script = ExtResource("25_5l2ur")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="AnimatedSprite2D" method="_on_animation_finished"]
 [connection signal="cast_spell" from="AnimatedSprite2D" to="." method="_cast_spell"]
