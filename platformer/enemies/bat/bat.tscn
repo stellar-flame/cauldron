@@ -1,6 +1,6 @@
-[gd_scene load_steps=32 format=3 uid="uid://creviwvdth15l"]
+[gd_scene load_steps=32 format=3]
 
-[ext_resource type="Script" path="res://platformer/enemies/bat/bat.gd" id="1_gpsyn"]
+[ext_resource type="Script" path="res://platformer/enemies/bat/Bat.gd" id="1_gpsyn"]
 [ext_resource type="Texture2D" uid="uid://b8vxaftgon6pj" path="res://assets/bluebat/skeleton-fly_00.png" id="1_yoy21"]
 [ext_resource type="Texture2D" uid="uid://dvs8pyticfo6m" path="res://assets/bluebat/skeleton-fly_01.png" id="2_1x5rg"]
 [ext_resource type="Texture2D" uid="uid://cx2u3c5gaewwr" path="res://assets/bluebat/skeleton-fly_02.png" id="3_glgjj"]
