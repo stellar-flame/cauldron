@@ -1,7 +1,7 @@
 [gd_scene load_steps=28 format=3 uid="uid://bypqb3klvu4i8"]
 
 [ext_resource type="Script" path="res://platformer/characters/luna/Luna.gd" id="1_qh012"]
-[ext_resource type="PackedScene" uid="uid://cgifm304yr1kx" path="res://platformer/characters/luna/spell.tscn" id="2_8vcsm"]
+[ext_resource type="PackedScene" uid="uid://bpr5awoe2ffv" path="res://platformer/characters/luna/spell.tscn" id="2_8vcsm"]
 [ext_resource type="Texture2D" uid="uid://dkm8lgiwx8w00" path="res://assets/luna/attack/attack_000.png" id="3_oug56"]
 [ext_resource type="Texture2D" uid="uid://djlphpgqifihs" path="res://assets/luna/attack/attack_001.png" id="4_l322y"]
 [ext_resource type="Texture2D" uid="uid://chbu8dlhpn0un" path="res://assets/luna/attack/attack_002.png" id="5_nohqe"]

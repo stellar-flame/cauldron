@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://waqd4p5lgbvc"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://platformer/characters/stella/hit_area.gd" id="1_3wlh2"]
+[ext_resource type="Script" path="res://platformer/characters/stella/HitArea.gd" id="1_3wlh2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0kwuq"]
 size = Vector2(65, 80)

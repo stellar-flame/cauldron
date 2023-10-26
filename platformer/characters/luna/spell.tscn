@@ -1,6 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://cgifm304yr1kx"]
+[gd_scene load_steps=12 format=3 uid="uid://bpr5awoe2ffv"]
 
-[ext_resource type="Script" path="res://platformer/characters/luna/spell.gd" id="1_6jcrq"]
+[ext_resource type="Script" path="res://platformer/characters/luna/Spell.gd" id="1_hb0sl"]
 [ext_resource type="Texture2D" uid="uid://bbqr2etkxyiq0" path="res://assets/spells/pngegg.png" id="2_jv5m3"]
 [ext_resource type="Texture2D" uid="uid://biljjdeh6iv0b" path="res://assets/particles/effect_4_1.png" id="3_fvbau"]
 
@@ -52,7 +52,7 @@ colors = PackedColorArray(0.41106, 0.41106, 0.41106, 1, 1, 1, 1, 1)
 
 [node name="Spell" type="Area2D" groups=["spells"]]
 position = Vector2(83, -36)
-script = ExtResource("1_6jcrq")
+script = ExtResource("1_hb0sl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(20, -9)
