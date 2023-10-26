@@ -43,7 +43,7 @@ func _physics_process(delta):
 	sprite.update_animation(direction, is_on_floor())
 	sprite.update_facing_direction(direction)
 
-func take_damage(damage :int):
+func take_damage(damage):
 	if (health.current_health > 0):
 		sprite.take_damage()
 		health.reduce_health(damage)
