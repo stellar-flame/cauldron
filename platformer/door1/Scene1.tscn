@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://rebmcykgmnhk"]
+[gd_scene load_steps=29 format=3 uid="uid://bc0vg5ft8mfoj"]
 
 [ext_resource type="Script" path="res://platformer/door1/Scene1.gd" id="1_jxdwe"]
 [ext_resource type="PackedScene" uid="uid://bv3nwqw7dlit1" path="res://platformer/scene_parts/Background.tscn" id="2_yukka"]
@@ -24,8 +24,8 @@
 [ext_resource type="PackedScene" path="res://platformer/enemies/bat/Bat.tscn" id="22_7vgnf"]
 [ext_resource type="PackedScene" uid="uid://c2ehadlrw56to" path="res://platformer/characters/luna/Luna.tscn" id="23_sbjhe"]
 [ext_resource type="PackedScene" path="res://platformer/characters/stella/Stella.tscn" id="24_fqfpm"]
-[ext_resource type="PackedScene" path="res://platformer/health/Health.tscn" id="25_rtafg"]
 [ext_resource type="PackedScene" uid="uid://eeq7sucf4aq1" path="res://platformer/enemies/spider/Spider.tscn" id="26_7etp7"]
+[ext_resource type="PackedScene" uid="uid://v34pqajgnrm4" path="res://platformer/hud/Hud.tscn" id="26_gvofu"]
 
 [sub_resource type="Curve2D" id="Curve2D_ppkf3"]
 _data = {
@@ -182,17 +182,18 @@ metadata/_edit_group_ = true
 position = Vector2(256, 1279)
 collision_mask = 1
 
-[node name="LunaHealth" parent="." instance=ExtResource("25_rtafg")]
-position = Vector2(92, 9)
-
 [node name="SpiderWithWeb" parent="." instance=ExtResource("26_7etp7")]
 position = Vector2(679, 953)
 
+[node name="HUD" parent="." instance=ExtResource("26_gvofu")]
+position = Vector2(92, 6)
+
 [connection signal="body_entered" from="EnemyZone" to="EnemyZone" method="_on_body_entered"]
 [connection signal="body_exited" from="EnemyZone" to="EnemyZone" method="_on_body_exited"]
-[connection signal="died" from="LunaHealth" to="." method="_on_luna_health_died"]
+[connection signal="health_changed" from="Luna/Health" to="HUD" method="_on_luna_health_changed"]
 
 [editable path="Scene/Floating_platform"]
 [editable path="Scene/Wall"]
 [editable path="Scene/LeftWall"]
 [editable path="Scene/RightWall"]
+[editable path="Luna"]
