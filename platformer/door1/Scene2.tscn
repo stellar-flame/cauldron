@@ -1,0 +1,103 @@
+[gd_scene load_steps=11 format=3 uid="uid://baspm1gd03ofm"]
+
+[ext_resource type="Script" path="res://platformer/door1/Scene2.gd" id="1_xcoiv"]
+[ext_resource type="PackedScene" uid="uid://b7fx5mrmrtdwq" path="res://platformer/ExitControl.tscn" id="2_q6jiv"]
+[ext_resource type="PackedScene" uid="uid://bv3nwqw7dlit1" path="res://platformer/scene_parts/Background.tscn" id="3_fwjt5"]
+[ext_resource type="PackedScene" path="res://platformer/scene_parts/Wall.tscn" id="4_uebxx"]
+[ext_resource type="PackedScene" path="res://platformer/scene_parts/FloatingPlatform.tscn" id="5_1cvgu"]
+[ext_resource type="PackedScene" uid="uid://cb2dvojxoxhol" path="res://platformer/scene_parts/Ceiling.tscn" id="6_c1jup"]
+[ext_resource type="PackedScene" uid="uid://dm5244vs8gaeu" path="res://platformer/scene_parts/Step.tscn" id="7_4my6n"]
+[ext_resource type="PackedScene" path="res://platformer/characters/stella/Stella.tscn" id="8_2jcv3"]
+[ext_resource type="PackedScene" path="res://platformer/characters/luna/Luna.tscn" id="9_ihwy7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08ylh"]
+
+[node name="Scene_2" type="Node2D"]
+script = ExtResource("1_xcoiv")
+
+[node name="Exit_Control_Top" parent="." instance=ExtResource("2_q6jiv")]
+position = Vector2(0, 292)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="Exit_Control_Bottom" parent="." instance=ExtResource("2_q6jiv")]
+position = Vector2(2188, 1250)
+
+[node name="Scene" type="Node2D" parent="."]
+position = Vector2(1, 0)
+
+[node name="background" parent="Scene" instance=ExtResource("3_fwjt5")]
+
+[node name="Wall2" parent="Scene" instance=ExtResource("4_uebxx")]
+position = Vector2(2165, 950)
+
+[node name="TextureRect" parent="Scene/Wall2" index="1"]
+offset_left = -65.0
+offset_top = -67.0
+offset_right = 63.0
+offset_bottom = 187.0
+
+[node name="Floating_platform1" parent="Scene" instance=ExtResource("5_1cvgu")]
+position = Vector2(226, 498)
+
+[node name="TextureRect" parent="Scene/Floating_platform1" index="1"]
+offset_left = -273.0
+offset_top = -69.0
+offset_right = 1850.0
+offset_bottom = 11.0
+
+[node name="Floating_platform2" parent="Scene" instance=ExtResource("5_1cvgu")]
+position = Vector2(1526, 883)
+
+[node name="CollisionShape2D" parent="Scene/Floating_platform2" index="0"]
+position = Vector2(536.375, 36)
+shape = SubResource("RectangleShape2D_08ylh")
+
+[node name="TextureRect" parent="Scene/Floating_platform2" index="1"]
+offset_left = -1033.0
+offset_right = 958.0
+
+[node name="Floating_platform" parent="Scene" instance=ExtResource("5_1cvgu")]
+position = Vector2(106, 1376)
+
+[node name="TextureRect" parent="Scene/Floating_platform" index="1"]
+offset_left = -27.0
+offset_top = 8.0
+offset_right = 2192.0
+offset_bottom = 88.0
+
+[node name="Ceiling" parent="Scene" instance=ExtResource("6_c1jup")]
+position = Vector2(11, -70)
+
+[node name="Step2" parent="Scene" instance=ExtResource("7_4my6n")]
+position = Vector2(2338, 657)
+
+[node name="Step" parent="Scene" instance=ExtResource("7_4my6n")]
+position = Vector2(200, 1159)
+
+[node name="Wall" parent="Scene" instance=ExtResource("4_uebxx")]
+position = Vector2(4, 2)
+
+[node name="TextureRect" parent="Scene/Wall" index="1"]
+offset_left = -65.0
+offset_top = -70.0
+offset_right = 63.0
+offset_bottom = 187.0
+
+[node name="RightWall" parent="Scene" instance=ExtResource("4_uebxx")]
+position = Vector2(2462, 20)
+
+[node name="LeftWall" parent="Scene" instance=ExtResource("4_uebxx")]
+position = Vector2(-56, 504)
+
+[node name="Stella" parent="." instance=ExtResource("8_2jcv3")]
+position = Vector2(245, 366)
+
+[node name="Luna" parent="." instance=ExtResource("9_ihwy7")]
+position = Vector2(167, 328)
+
+[editable path="Scene/Wall2"]
+[editable path="Scene/Floating_platform1"]
+[editable path="Scene/Floating_platform2"]
+[editable path="Scene/Floating_platform"]
+[editable path="Scene/Wall"]

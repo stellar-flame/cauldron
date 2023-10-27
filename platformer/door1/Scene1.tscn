@@ -1,0 +1,198 @@
+[gd_scene load_steps=29 format=3 uid="uid://rebmcykgmnhk"]
+
+[ext_resource type="Script" path="res://platformer/door1/Scene1.gd" id="1_jxdwe"]
+[ext_resource type="PackedScene" uid="uid://bv3nwqw7dlit1" path="res://platformer/scene_parts/Background.tscn" id="2_yukka"]
+[ext_resource type="PackedScene" uid="uid://cb2dvojxoxhol" path="res://platformer/scene_parts/Ceiling.tscn" id="3_j63qa"]
+[ext_resource type="PackedScene" uid="uid://63giocnsvrqi" path="res://platformer/scene_parts/Floor.tscn" id="4_e2gas"]
+[ext_resource type="Texture2D" uid="uid://uyvpbgj44u05" path="res://assets/Props/Web4.png" id="5_ud6fy"]
+[ext_resource type="PackedScene" path="res://platformer/scene_parts/FloatingPlatform.tscn" id="6_pbipe"]
+[ext_resource type="PackedScene" path="res://platformer/scene_parts/Wall.tscn" id="7_7nu1t"]
+[ext_resource type="PackedScene" path="res://platformer/scene_parts/CandleStick.tscn" id="8_wf0db"]
+[ext_resource type="PackedScene" path="res://platformer/scene_parts/Lantern.tscn" id="9_p6imu"]
+[ext_resource type="Texture2D" uid="uid://c6uc6xl086vqq" path="res://assets/Props/Web2.png" id="10_7gsmt"]
+[ext_resource type="PackedScene" uid="uid://cm5cwh0yun126" path="res://platformer/scene_parts/SimplePlatform.tscn" id="11_0mrne"]
+[ext_resource type="Texture2D" uid="uid://gi1ktxidiqn5" path="res://assets/Props/Chair1LEFT.png" id="12_rr2sh"]
+[ext_resource type="Texture2D" uid="uid://cbquk7fxfc0sw" path="res://assets/Props/Chair1RIGHT.png" id="13_t0b4r"]
+[ext_resource type="Texture2D" uid="uid://lob1uxr2ngbe" path="res://assets/Props/Table.png" id="14_g05dr"]
+[ext_resource type="Texture2D" uid="uid://c6piwgry7k7th" path="res://assets/Props/ShelfWithBooks.png" id="15_i8aoe"]
+[ext_resource type="Texture2D" uid="uid://cokgcsdb4kv3n" path="res://assets/Props/Web3.png" id="16_mnwnb"]
+[ext_resource type="Texture2D" uid="uid://csdxv0hmvsm2w" path="res://assets/Props/Web1.png" id="17_g30i3"]
+[ext_resource type="Script" path="res://platformer/PathFollow2D.gd" id="18_18unp"]
+[ext_resource type="PackedScene" uid="uid://cj8kkgmso5b0f" path="res://platformer/enemies/ghost/Ghost.tscn" id="19_0dfln"]
+[ext_resource type="PackedScene" uid="uid://b7fx5mrmrtdwq" path="res://platformer/ExitControl.tscn" id="20_t275g"]
+[ext_resource type="Script" path="res://platformer/door1/EnemyZone.gd" id="21_25qr4"]
+[ext_resource type="PackedScene" path="res://platformer/enemies/bat/Bat.tscn" id="22_7vgnf"]
+[ext_resource type="PackedScene" path="res://platformer/characters/luna/Luna.tscn" id="23_sbjhe"]
+[ext_resource type="PackedScene" path="res://platformer/characters/stella/Stella.tscn" id="24_fqfpm"]
+[ext_resource type="PackedScene" path="res://platformer/health/Health.tscn" id="25_rtafg"]
+[ext_resource type="PackedScene" uid="uid://eeq7sucf4aq1" path="res://platformer/enemies/spider/Spider.tscn" id="26_7etp7"]
+
+[sub_resource type="Curve2D" id="Curve2D_ppkf3"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 755, 510, 0, 0, 0, 0, 992, 444, 0, 0, 0, 0, 1284.24, 511.062, 0, 0, 0, 0, 1569, 446, 0, 0, 0, 0, 1813, 509)
+}
+point_count = 5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_spa2j"]
+radius = 319.006
+
+[node name="Scene_1" type="Node2D"]
+position = Vector2(0, 1)
+script = ExtResource("1_jxdwe")
+
+[node name="Scene" type="Node2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="background" parent="Scene" instance=ExtResource("2_yukka")]
+
+[node name="Ceiling" parent="Scene" instance=ExtResource("3_j63qa")]
+position = Vector2(16, -8)
+
+[node name="Floor" parent="Scene" instance=ExtResource("4_e2gas")]
+position = Vector2(-18, 1341)
+
+[node name="Web5" type="Sprite2D" parent="Scene"]
+position = Vector2(680, 761)
+rotation = 1.5708
+texture = ExtResource("5_ud6fy")
+
+[node name="Floating_platform" parent="Scene" instance=ExtResource("6_pbipe")]
+position = Vector2(723, 639)
+
+[node name="TextureRect" parent="Scene/Floating_platform" index="1"]
+offset_left = -110.0
+
+[node name="Wall" parent="Scene" instance=ExtResource("7_7nu1t")]
+position = Vector2(1175, 699)
+
+[node name="TextureRect" parent="Scene/Wall" index="1"]
+offset_left = -2.0
+offset_top = 17.0
+offset_right = 126.0
+offset_bottom = 663.0
+
+[node name="CandleStick" parent="Scene" instance=ExtResource("8_wf0db")]
+position = Vector2(894, 913)
+metadata/_edit_group_ = true
+
+[node name="CandleStick2" parent="Scene" instance=ExtResource("8_wf0db")]
+position = Vector2(1562, 926)
+metadata/_edit_group_ = true
+
+[node name="Lantern" parent="Scene" instance=ExtResource("9_p6imu")]
+position = Vector2(1317, 186)
+metadata/_edit_group_ = true
+
+[node name="Web2" type="Sprite2D" parent="Scene"]
+position = Vector2(2396, 200)
+scale = Vector2(2, 2)
+texture = ExtResource("10_7gsmt")
+flip_h = true
+
+[node name="Left_Wall" parent="Scene" instance=ExtResource("7_7nu1t")]
+position = Vector2(-50, 131)
+metadata/_edit_group_ = true
+
+[node name="TextureRect" parent="Scene/Left_Wall" index="1"]
+offset_left = 14.0
+offset_top = -52.0
+offset_right = 142.0
+offset_bottom = 958.0
+flip_h = true
+
+[node name="Right_Wall" parent="Scene" instance=ExtResource("7_7nu1t")]
+position = Vector2(2487, 84)
+metadata/_edit_group_ = true
+
+[node name="TextureRect" parent="Scene/Right_Wall" index="1"]
+offset_left = 9.0
+offset_top = -4.0
+offset_right = 137.0
+offset_bottom = 1011.0
+flip_h = true
+
+[node name="SimplePlatform" parent="Scene" instance=ExtResource("11_0mrne")]
+position = Vector2(671, 1123)
+
+[node name="SimplePlatform2" parent="Scene" instance=ExtResource("11_0mrne")]
+position = Vector2(273, 885)
+
+[node name="Chair1left" type="Sprite2D" parent="Scene"]
+position = Vector2(1341.5, 1291.5)
+texture = ExtResource("12_rr2sh")
+
+[node name="Chair1right" type="Sprite2D" parent="Scene"]
+position = Vector2(1534.5, 1285.5)
+texture = ExtResource("13_t0b4r")
+
+[node name="Table" type="Sprite2D" parent="Scene"]
+position = Vector2(1437.5, 1298.5)
+texture = ExtResource("14_g05dr")
+
+[node name="ShelfWithBooks" type="Sprite2D" parent="Scene"]
+position = Vector2(1055, 1189)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("15_i8aoe")
+
+[node name="Web3" type="Sprite2D" parent="Scene"]
+position = Vector2(1112, 1239)
+texture = ExtResource("16_mnwnb")
+
+[node name="Web1" type="Sprite2D" parent="Scene"]
+position = Vector2(146, 1585)
+texture = ExtResource("17_g30i3")
+
+[node name="Web4" type="Sprite2D" parent="Scene"]
+position = Vector2(1103, 763)
+texture = ExtResource("10_7gsmt")
+flip_h = true
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(23, 30)
+curve = SubResource("Curve2D_ppkf3")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(755, 510)
+rotation = -0.000945179
+rotates = false
+script = ExtResource("18_18unp")
+ghost_scene = ExtResource("19_0dfln")
+
+[node name="Exit_Control" parent="." instance=ExtResource("20_t275g")]
+position = Vector2(2572, 1198)
+
+[node name="EnemyZone" type="Area2D" parent="." node_paths=PackedStringArray("enemy")]
+collision_mask = 3
+script = ExtResource("21_25qr4")
+enemy = NodePath("Bat")
+
+[node name="Bat" parent="EnemyZone" instance=ExtResource("22_7vgnf")]
+position = Vector2(391, 433)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyZone"]
+position = Vector2(416, 420)
+shape = SubResource("CircleShape2D_spa2j")
+
+[node name="Luna" parent="." instance=ExtResource("23_sbjhe")]
+position = Vector2(158, 1244)
+collision_mask = 1
+metadata/_edit_group_ = true
+
+[node name="Stella" parent="." instance=ExtResource("24_fqfpm")]
+position = Vector2(256, 1279)
+collision_mask = 1
+
+[node name="LunaHealth" parent="." instance=ExtResource("25_rtafg")]
+position = Vector2(92, 9)
+
+[node name="SpiderWithWeb" parent="." instance=ExtResource("26_7etp7")]
+position = Vector2(679, 953)
+
+[connection signal="body_entered" from="EnemyZone" to="EnemyZone" method="_on_body_entered"]
+[connection signal="body_exited" from="EnemyZone" to="EnemyZone" method="_on_body_exited"]
+[connection signal="died" from="LunaHealth" to="." method="_on_luna_health_died"]
+
+[editable path="Scene/Floating_platform"]
+[editable path="Scene/Wall"]
+[editable path="Scene/Left_Wall"]
+[editable path="Scene/Right_Wall"]

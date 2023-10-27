@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b7b3mwajh1qai" path="res://assets/Tiles/Floor1.png" id="2_efb6c"]
 [ext_resource type="Texture2D" uid="uid://dri6tjkm83wkm" path="res://assets/Tiles/Bricks1.png" id="3_hug6q"]
 [ext_resource type="Texture2D" uid="uid://n52csljdx38" path="res://assets/Non-Tiles/Column-SHORT1_1.png" id="5_l30g0"]
-[ext_resource type="PackedScene" uid="uid://dsvmd2f11wfgl" path="res://platformer/scene_parts/spikes.tscn" id="6_syh4f"]
+[ext_resource type="PackedScene" path="res://platformer/scene_parts/Spikes.tscn" id="6_syh4f"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_s717n"]
 
