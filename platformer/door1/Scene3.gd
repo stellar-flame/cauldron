@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var scene_id = 3
-@onready var exit_control_top = $Exit_Control
+@onready var exit_control_top = $ExitControl
 
 
 # Called when the node enters the scene tree for the first time.

@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var scene_id = 1
-@onready var exit_control = $Exit_Control
+@onready var exit_control = $ExitControl
 @onready var luna = $Luna
 @onready var stella = $Stella
 

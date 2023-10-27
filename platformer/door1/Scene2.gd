@@ -1,8 +1,8 @@
 extends Node2D
 
 @export var scene_id = 2
-@onready var exit_control_top = $Exit_Control_Top
-@onready var exit_control_bottom = $Exit_Control_Bottom
+@onready var exit_control_top = $ExitControlTop
+@onready var exit_control_bottom = $ExitControlBottom
 @onready var luna = $Luna
 @onready var stella = $Stella
 

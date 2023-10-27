@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3]
+[gd_scene load_steps=28 format=3 uid="uid://c2ehadlrw56to"]
 
 [ext_resource type="Script" path="res://platformer/characters/luna/Luna.gd" id="1_qh012"]
 [ext_resource type="PackedScene" uid="uid://bpr5awoe2ffv" path="res://platformer/characters/luna/Spell.tscn" id="2_8vcsm"]

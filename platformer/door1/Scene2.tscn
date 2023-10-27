@@ -8,19 +8,19 @@
 [ext_resource type="PackedScene" uid="uid://cb2dvojxoxhol" path="res://platformer/scene_parts/Ceiling.tscn" id="6_c1jup"]
 [ext_resource type="PackedScene" uid="uid://dm5244vs8gaeu" path="res://platformer/scene_parts/Step.tscn" id="7_4my6n"]
 [ext_resource type="PackedScene" path="res://platformer/characters/stella/Stella.tscn" id="8_2jcv3"]
-[ext_resource type="PackedScene" path="res://platformer/characters/luna/Luna.tscn" id="9_ihwy7"]
+[ext_resource type="PackedScene" uid="uid://c2ehadlrw56to" path="res://platformer/characters/luna/Luna.tscn" id="9_ihwy7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_08ylh"]
 
-[node name="Scene_2" type="Node2D"]
+[node name="Scene2" type="Node2D"]
 script = ExtResource("1_xcoiv")
 
-[node name="Exit_Control_Top" parent="." instance=ExtResource("2_q6jiv")]
+[node name="ExitControlTop" parent="." instance=ExtResource("2_q6jiv")]
 position = Vector2(0, 292)
 rotation = 3.14159
 scale = Vector2(1, -1)
 
-[node name="Exit_Control_Bottom" parent="." instance=ExtResource("2_q6jiv")]
+[node name="ExitControlBottom" parent="." instance=ExtResource("2_q6jiv")]
 position = Vector2(2188, 1250)
 
 [node name="Scene" type="Node2D" parent="."]

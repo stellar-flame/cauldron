@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://b7fx5mrmrtdwq" path="res://platformer/ExitControl.tscn" id="20_t275g"]
 [ext_resource type="Script" path="res://platformer/door1/EnemyZone.gd" id="21_25qr4"]
 [ext_resource type="PackedScene" path="res://platformer/enemies/bat/Bat.tscn" id="22_7vgnf"]
-[ext_resource type="PackedScene" path="res://platformer/characters/luna/Luna.tscn" id="23_sbjhe"]
+[ext_resource type="PackedScene" uid="uid://c2ehadlrw56to" path="res://platformer/characters/luna/Luna.tscn" id="23_sbjhe"]
 [ext_resource type="PackedScene" path="res://platformer/characters/stella/Stella.tscn" id="24_fqfpm"]
 [ext_resource type="PackedScene" path="res://platformer/health/Health.tscn" id="25_rtafg"]
 [ext_resource type="PackedScene" uid="uid://eeq7sucf4aq1" path="res://platformer/enemies/spider/Spider.tscn" id="26_7etp7"]
@@ -36,7 +36,7 @@ point_count = 5
 [sub_resource type="CircleShape2D" id="CircleShape2D_spa2j"]
 radius = 319.006
 
-[node name="Scene_1" type="Node2D"]
+[node name="Scene1" type="Node2D"]
 position = Vector2(0, 1)
 script = ExtResource("1_jxdwe")
 
@@ -89,22 +89,22 @@ scale = Vector2(2, 2)
 texture = ExtResource("10_7gsmt")
 flip_h = true
 
-[node name="Left_Wall" parent="Scene" instance=ExtResource("7_7nu1t")]
+[node name="LeftWall" parent="Scene" instance=ExtResource("7_7nu1t")]
 position = Vector2(-50, 131)
 metadata/_edit_group_ = true
 
-[node name="TextureRect" parent="Scene/Left_Wall" index="1"]
+[node name="TextureRect" parent="Scene/LeftWall" index="1"]
 offset_left = 14.0
 offset_top = -52.0
 offset_right = 142.0
 offset_bottom = 958.0
 flip_h = true
 
-[node name="Right_Wall" parent="Scene" instance=ExtResource("7_7nu1t")]
+[node name="RightWall" parent="Scene" instance=ExtResource("7_7nu1t")]
 position = Vector2(2487, 84)
 metadata/_edit_group_ = true
 
-[node name="TextureRect" parent="Scene/Right_Wall" index="1"]
+[node name="TextureRect" parent="Scene/RightWall" index="1"]
 offset_left = 9.0
 offset_top = -4.0
 offset_right = 137.0
@@ -158,7 +158,7 @@ rotates = false
 script = ExtResource("18_18unp")
 ghost_scene = ExtResource("19_0dfln")
 
-[node name="Exit_Control" parent="." instance=ExtResource("20_t275g")]
+[node name="ExitControl" parent="." instance=ExtResource("20_t275g")]
 position = Vector2(2572, 1198)
 
 [node name="EnemyZone" type="Area2D" parent="." node_paths=PackedStringArray("enemy")]
@@ -194,5 +194,5 @@ position = Vector2(679, 953)
 
 [editable path="Scene/Floating_platform"]
 [editable path="Scene/Wall"]
-[editable path="Scene/Left_Wall"]
-[editable path="Scene/Right_Wall"]
+[editable path="Scene/LeftWall"]
+[editable path="Scene/RightWall"]

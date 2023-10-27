@@ -40,4 +40,4 @@ func _on_timer_timeout():
 
 func _on_body_entered(body):
 	if body.is_in_group("character"):
-a		body.take_damage(5) 
+		body.take_damage(5) 
