@@ -9,6 +9,7 @@ var target
 var start_position 
 var attacking 
 @onready var sprite = $AnimatedSprite2D
+@onready var audio = $AudioStreamPlayer2D
 @onready var player = get_parent().get_node("Luna")
 
 func _ready():
@@ -16,7 +17,7 @@ func _ready():
 	start_position = self.global_position
 	
 	
-func _physics_process(delta):
+func _physics_process(delta):	
 	if (target):
 		var direction_to_player = (target.global_position - self.global_position).normalized()
 		flip_sprite(direction_to_player)
@@ -41,10 +42,12 @@ func _physics_process(delta):
 		move_and_slide()
 		
 func attack_player():
+	audio.play()
 	var collision = get_last_slide_collision();
 	if (collision.get_collider().is_in_group("character")):
 		target.take_damage(2)
 		attacking = true	
+		
 	
 func flip_sprite(direction_to_player):
 	if (direction_to_player.x > 0  ):

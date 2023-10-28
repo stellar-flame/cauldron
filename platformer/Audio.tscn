@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3cc7xd6r4sea"]
+
+[ext_resource type="AudioStream" uid="uid://v2byij30ui2t" path="res://assets/audio/Dungeon Theme.mp3" id="2_sdvmn"]
+
+[node name="Audio" type="Node2D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_sdvmn")
+volume_db = -20.0
+autoplay = true

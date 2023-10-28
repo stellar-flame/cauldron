@@ -2,6 +2,7 @@ extends Area2D
 
 @onready var sprite = $AnimatedSprite2D
 @onready var flicker = $FlickerTimer
+@onready var audio = $AudioStreamPlayer2D
 
 
 func _ready():
@@ -24,3 +25,4 @@ func take_damage():
 func _on_body_entered(body):
 	if body.is_in_group("character"):
 		body.take_damage(3)
+		audio.play()
