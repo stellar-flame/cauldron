@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://ccmb4186hud48"]
+
+[ext_resource type="Texture2D" uid="uid://g68ybct4y5j2" path="res://assets/Health/StellaLifeBarBG.png" id="1_lsehm"]
+[ext_resource type="Texture2D" uid="uid://dt2ikp0u8u0ca" path="res://assets/Health/Border_Style_3.png" id="2_ua3v3"]
+[ext_resource type="Texture2D" uid="uid://bdnj534chx6eh" path="res://assets/Health/StellaLifeBarProgress.png" id="3_bn1ay"]
+[ext_resource type="Script" path="res://platformer/hud/TextureProgressBar.gd" id="4_hwbi4"]
+[ext_resource type="Texture2D" uid="uid://b87vmahbwnsks" path="res://assets/stella/01_idle/skeleton-01_idle_00.png" id="5_x28we"]
+
+[node name="StellaHUD" type="Panel"]
+offset_right = 714.0
+offset_bottom = 123.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 37.0
+offset_right = 645.0
+offset_bottom = 87.0
+texture_under = ExtResource("1_lsehm")
+texture_over = ExtResource("2_ua3v3")
+texture_progress = ExtResource("3_bn1ay")
+tint_over = Color(0.847059, 1, 0.0352941, 0.266667)
+script = ExtResource("4_hwbi4")
+
+[node name="Stella" type="Sprite2D" parent="."]
+position = Vector2(69, 62)
+scale = Vector2(0.1, 0.089)
+texture = ExtResource("5_x28we")

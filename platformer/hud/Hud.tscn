@@ -1,21 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://v34pqajgnrm4"]
+[gd_scene load_steps=4 format=3 uid="uid://dlrqk60l1ev46"]
 
 [ext_resource type="Script" path="res://platformer/hud/Hud.gd" id="1_vwblq"]
-[ext_resource type="Texture2D" uid="uid://djf86wo3eb4mn" path="res://assets/Health/LifeBarBG.png" id="2_u135v"]
-[ext_resource type="Texture2D" uid="uid://dt2ikp0u8u0ca" path="res://assets/Health/Border_Style_3.png" id="3_tbr84"]
-[ext_resource type="Texture2D" uid="uid://bb6cri6464q35" path="res://assets/Health/LifeBarProgress.png" id="4_bnb8w"]
-[ext_resource type="Script" path="res://platformer/hud/TextureProgressBar.gd" id="5_ufbrs"]
+[ext_resource type="PackedScene" uid="uid://ccmb4186hud48" path="res://platformer/hud/StellaHud.tscn" id="3_8y5ex"]
+[ext_resource type="PackedScene" uid="uid://7o8p30wkrjy4" path="res://platformer/hud/LunaHud.tscn" id="6_btm7t"]
 
-[node name="HUD" type="Node2D"]
+[node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_vwblq")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
-offset_left = 2.0
-offset_top = 4.0
-offset_right = 502.0
-offset_bottom = 54.0
-texture_under = ExtResource("2_u135v")
-texture_over = ExtResource("3_tbr84")
-texture_progress = ExtResource("4_bnb8w")
-tint_over = Color(0.847059, 1, 0.0352941, 0.266667)
-script = ExtResource("5_ufbrs")
+[node name="Panel" type="Panel" parent="."]
+offset_left = 50.0
+offset_top = 30.0
+offset_right = 773.0
+offset_bottom = 282.0
+
+[node name="LunaHUD" parent="Panel" instance=ExtResource("6_btm7t")]
+layout_mode = 0
+
+[node name="StellaHud" parent="Panel" instance=ExtResource("3_8y5ex")]
+layout_mode = 0
+offset_top = 124.0
+offset_bottom = 247.0

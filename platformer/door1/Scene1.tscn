@@ -23,9 +23,9 @@
 [ext_resource type="Script" path="res://platformer/door1/EnemyZone.gd" id="21_25qr4"]
 [ext_resource type="PackedScene" uid="uid://c8ug7ksaet368" path="res://platformer/enemies/bat/Bat.tscn" id="22_7vgnf"]
 [ext_resource type="PackedScene" uid="uid://c2ehadlrw56to" path="res://platformer/characters/luna/Luna.tscn" id="23_sbjhe"]
-[ext_resource type="PackedScene" path="res://platformer/characters/stella/Stella.tscn" id="24_fqfpm"]
+[ext_resource type="PackedScene" uid="uid://b747onem8lyg1" path="res://platformer/characters/stella/Stella.tscn" id="24_fqfpm"]
 [ext_resource type="PackedScene" uid="uid://eeq7sucf4aq1" path="res://platformer/enemies/spider/Spider.tscn" id="26_7etp7"]
-[ext_resource type="PackedScene" uid="uid://v34pqajgnrm4" path="res://platformer/hud/Hud.tscn" id="26_gvofu"]
+[ext_resource type="PackedScene" uid="uid://dlrqk60l1ev46" path="res://platformer/hud/Hud.tscn" id="26_gvofu"]
 
 [sub_resource type="Curve2D" id="Curve2D_ppkf3"]
 _data = {
@@ -186,14 +186,15 @@ collision_mask = 1
 position = Vector2(679, 953)
 
 [node name="HUD" parent="." instance=ExtResource("26_gvofu")]
-position = Vector2(92, 6)
 
 [connection signal="body_entered" from="EnemyZone" to="EnemyZone" method="_on_body_entered"]
 [connection signal="body_exited" from="EnemyZone" to="EnemyZone" method="_on_body_exited"]
 [connection signal="health_changed" from="Luna/Health" to="HUD" method="_on_luna_health_changed"]
+[connection signal="health_changed" from="Stella/Health" to="HUD" method="_on_stella_health_changed"]
 
 [editable path="Scene/Floating_platform"]
 [editable path="Scene/Wall"]
 [editable path="Scene/LeftWall"]
 [editable path="Scene/RightWall"]
 [editable path="Luna"]
+[editable path="Stella"]

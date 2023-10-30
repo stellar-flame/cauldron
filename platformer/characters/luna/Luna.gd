@@ -9,6 +9,7 @@ const JUMP_VELOCITY = -625.0
 @onready var sprite = $AnimatedSprite2D
 @onready var health = $Health 
 
+
 var max_jumps = 2
 var jump_count = 0
 

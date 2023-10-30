@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://7o8p30wkrjy4"]
+
+[ext_resource type="Texture2D" uid="uid://djf86wo3eb4mn" path="res://assets/Health/LifeBarBG.png" id="1_hkysv"]
+[ext_resource type="Texture2D" uid="uid://dt2ikp0u8u0ca" path="res://assets/Health/Border_Style_3.png" id="2_ua3v3"]
+[ext_resource type="Texture2D" uid="uid://bb6cri6464q35" path="res://assets/Health/LifeBarProgress.png" id="3_ho8sf"]
+[ext_resource type="Script" path="res://platformer/hud/TextureProgressBar.gd" id="4_hwbi4"]
+[ext_resource type="Texture2D" uid="uid://b2s1m1t012gt3" path="res://assets/HUD/luna-head.png" id="5_s3jem"]
+
+[node name="LunaHUD" type="Panel"]
+offset_right = 714.0
+offset_bottom = 123.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 37.0
+offset_right = 645.0
+offset_bottom = 87.0
+texture_under = ExtResource("1_hkysv")
+texture_over = ExtResource("2_ua3v3")
+texture_progress = ExtResource("3_ho8sf")
+tint_over = Color(0.847059, 1, 0.0352941, 0.266667)
+script = ExtResource("4_hwbi4")
+
+[node name="Luna-head" type="Sprite2D" parent="."]
+position = Vector2(69, 62)
+scale = Vector2(0.254883, 0.226562)
+texture = ExtResource("5_s3jem")

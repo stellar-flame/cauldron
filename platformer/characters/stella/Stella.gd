@@ -9,11 +9,10 @@ const JUMP_VELOCITY = -850.0
 @onready var animation_blocked = false
 @onready var hit_area_right = $Hit_Area_Right
 @onready var hit_area_left = $Hit_Area_Left
+@onready var health = $Health 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
-
 	
 func _physics_process(delta):
 	# Add the gravity.
@@ -33,46 +32,28 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-	update_animation_parameters()
-	update_facing_direction()
-
-func update_animation_parameters():
-	if (not animation_blocked):
-		if (is_on_floor()):
-			if Input.is_action_just_pressed("stella_paw_attack"):
-					sprite.play("paw_attack")
-					animation_blocked = true
-			elif direction != 0:
-				sprite.play("run")
-			else:
-				sprite.play("idle")
-		else:
-			sprite.play("jump")
-		
-		
-func update_facing_direction():
-	if direction > 0:
-		sprite.flip_h = false
-	elif direction < 0:
-		sprite.flip_h = true
-
-
-
-func _on_animated_sprite_2d_animation_finished():
-	animation_blocked = false
-	hit_area_left.set_hit_area_disabled(true)
-	hit_area_right.set_hit_area_disabled(true)
-	
-	
-
-func _on_animated_sprite_2d_animation_changed():
-	if (sprite.animation == "paw_attack"):
-		if sprite.flip_h:
-			hit_area_left.set_hit_area_disabled(false)
-		else:
-			hit_area_right.set_hit_area_disabled(false)
+	sprite.update_animation_parameters(direction, is_on_floor())
+	sprite.update_facing_direction(direction)
 
 func take_damage(damage):
-	sprite.play("get_hit")
-	animation_blocked = true
+	if (health.current_health > 0):
+		sprite.take_damage()
+		health.reduce_health(damage)
+		
 
+func _on_health_died():
+	sprite.die()
+		
+func _on_animated_sprite_2d_paw_attack():
+	if sprite.flip_h:
+		hit_area_left.set_hit_area_disabled(false)
+	else:
+		hit_area_right.set_hit_area_disabled(false)
+
+func _on_animated_sprite_2d_animation_unblocked():
+	hit_area_left.set_hit_area_disabled(true)
+	hit_area_right.set_hit_area_disabled(true)	
+
+
+func _on_animated_sprite_2d_died():
+	queue_free()
