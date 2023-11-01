@@ -55,7 +55,7 @@ frame_progress = 0.133781
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Spider"]
 stream = ExtResource("4_h21pl")
-volume_db = 2.0
+volume_db = 5.0
 pitch_scale = 2.0
 
 [connection signal="body_entered" from="Spider" to="Spider" method="_on_body_entered"]

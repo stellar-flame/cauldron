@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp24qm4635mc1"]
+
+[ext_resource type="Script" path="res://platformer/game_over/GameOver.gd" id="1_g2ndn"]
+[ext_resource type="FontFile" uid="uid://bpln6ewufg4h7" path="res://assets/fonts/Halls___.ttf" id="2_ux7e3"]
+
+[node name="GameOver" type="CanvasLayer"]
+script = ExtResource("1_g2ndn")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1051.0
+offset_bottom = 611.0
+
+[node name="GameOver" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -211.0
+offset_top = -155.5
+offset_right = 211.0
+offset_bottom = -56.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.976471, 0.901961, 0.776471, 0.905882)
+theme_override_fonts/font = ExtResource("2_ux7e3")
+theme_override_font_sizes/font_size = 50
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Restart" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -356.5
+offset_top = -46.5
+offset_right = 357.5
+offset_bottom = 90.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.72549, 0.776471, 0.654902, 1)
+theme_override_fonts/font = ExtResource("2_ux7e3")
+theme_override_font_sizes/font_size = 45
+text = "Press Any Key To Restart"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -16,6 +16,4 @@ func _ready():
 	collision_shape.position =  Vector2(x,y)
 	collision_shape.shape =  RectangleShape2D.new()  
 	collision_shape.shape.size = text_rect.size
-	print("Initialise platform: " + str(self.get_instance_id()) + " size " + str(text_rect.size) +
-	" shape " + str(collision_shape.shape.get_instance_id()) + " size " + str(collision_shape.shape.size))
-
+	

@@ -1,6 +1,5 @@
 extends CharacterBody2D 
 
-
 @export  var spell: PackedScene
 
 const SPEED = 500.0
@@ -62,7 +61,6 @@ func _cast_spell():
 
 func _on_animated_sprite_2d_died():
 	queue_free()
-
 
 func _on_health_died():
 	sprite.die()

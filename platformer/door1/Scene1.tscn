@@ -183,7 +183,7 @@ position = Vector2(256, 1279)
 collision_mask = 1
 
 [node name="SpiderWithWeb" parent="." instance=ExtResource("26_7etp7")]
-position = Vector2(679, 953)
+position = Vector2(678, 953)
 
 [node name="HUD" parent="." instance=ExtResource("26_gvofu")]
 

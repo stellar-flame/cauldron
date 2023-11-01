@@ -8,10 +8,13 @@
 script = ExtResource("1_vwblq")
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = 50.0
-offset_top = 30.0
-offset_right = 773.0
-offset_bottom = 282.0
+anchors_preset = -1
+offset_left = 27.0
+offset_top = 27.0
+offset_right = 27.0
+offset_bottom = 27.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="LunaHUD" parent="Panel" instance=ExtResource("6_btm7t")]
 layout_mode = 0

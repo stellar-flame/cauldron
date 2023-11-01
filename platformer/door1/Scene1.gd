@@ -1,9 +1,7 @@
-extends Node2D
+extends "res://platformer/door1/Scene.gd"
 
 @export var scene_id = 1
 @onready var exit_control = $ExitControl
-@onready var luna = $Luna
-@onready var stella = $Stella
 
 func _ready():
 	exit_control.scene_id = scene_id
@@ -17,3 +15,6 @@ func init_position(character :CharacterBody2D, vector: Vector2):
 	character.position = vector
 	character.get_node("AnimatedSprite2D").flip_h = true
 		
+
+
+

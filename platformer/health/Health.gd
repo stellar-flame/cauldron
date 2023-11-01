@@ -25,4 +25,4 @@ func increase_health(amount: int) -> void:
 
 func die() -> void:
 	emit_signal("died")
-	print("Died!")
+	
