@@ -1,6 +1,5 @@
 extends Area2D
 
-@onready var number_of_characters = 0
 @onready var door = $Door
 @onready var sprite = $Door/Sprite2D
 @onready var door_collision = $Door/CollisionShape2D
@@ -17,13 +16,13 @@ func _ready():
 func _on_body_entered(body):
 	var nodes = get_overlapping_bodies()
 	if (nodes.size() == 2):
-		if (nodes[0].is_in_group("character") and  nodes[1].is_in_group("character")):
+		if (nodes[0].is_in_group("player") and  nodes[1].is_in_group("player")):
 			set_collision_mask_for_node(exit, true)
 			door.set_collision_layer_value(1, false)
 			sprite.visible = false
 
 func _on_body_exited(body):
-	if (body.is_in_group("character")):
+	if (body.is_in_group("player")):
 		door.set_collision_layer_value(1, true)
 		sprite.visible = true
 	

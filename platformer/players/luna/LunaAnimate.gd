@@ -1,4 +1,4 @@
-extends "res://platformer/characters/CharacterAnimation.gd"
+extends "res://platformer/players/CharacterAnimation.gd"
 
 signal cast_spell
 

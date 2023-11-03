@@ -45,6 +45,7 @@ animations = [{
 }]
 
 [node name="Ghost" type="Area2D" groups=["enemy"]]
+collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_8jtaj")
 
@@ -57,11 +58,8 @@ sprite_frames = SubResource("SpriteFrames_nukmj")
 animation = &"float"
 autoplay = "float"
 
-[node name="FlickerTimer" type="Timer" parent="."]
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_k7xwg")
 volume_db = -10.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="timeout" from="FlickerTimer" to="." method="_on_flicker_timer_timeout"]

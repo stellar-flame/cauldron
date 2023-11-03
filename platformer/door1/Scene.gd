@@ -2,10 +2,16 @@ extends Node
 
 @onready var luna = $Luna
 @onready var stella = $Stella
+@onready var hud = $HUD
 @onready var game_over_scene_class = preload("res://platformer/game_over/GameOver.tscn")
 
 var game_over_scene 		
 		
+func _ready():
+	$Luna.health.connect("health_changed", Callable(hud, "_on_luna_health_changed"))
+	$Stella.health.connect("health_changed", Callable(hud, "_on_stella_health_changed"))
+	
+	
 func _process(delta):
 	if (!game_over_scene and !luna and !stella):
 		game_over_scene = game_over_scene_class.instantiate()

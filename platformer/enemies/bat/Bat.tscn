@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c8ug7ksaet368"]
+[gd_scene load_steps=34 format=3 uid="uid://c8ug7ksaet368"]
 
 [ext_resource type="Script" path="res://platformer/enemies/bat/Bat.gd" id="1_gpsyn"]
 [ext_resource type="Texture2D" uid="uid://b8vxaftgon6pj" path="res://assets/bluebat/skeleton-fly_00.png" id="1_yoy21"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cptj4vvehmbi3" path="res://assets/bluebat/bats-new.png" id="13_5t6ac"]
 [ext_resource type="Texture2D" uid="uid://dohpcjjebkwm7" path="res://assets/bluebat/bats-brown-1.png" id="14_n423c"]
 [ext_resource type="AudioStream" uid="uid://cg1cbb762fgbg" path="res://assets/audio/bat_01.ogg" id="16_3n8s6"]
+[ext_resource type="PackedScene" uid="uid://dqmmypkmhrr54" path="res://platformer/enemies/particles/Blood.tscn" id="17_5jrad"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o06tg"]
 radius = 38.3275
@@ -184,7 +185,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Bat" type="CharacterBody2D"]
+[node name="Bat" type="CharacterBody2D" groups=["enemy"]]
 scale = Vector2(0.6, 0.6)
 collision_layer = 4
 collision_mask = 3
@@ -204,3 +205,5 @@ frame_progress = 0.0439479
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_3n8s6")
 pitch_scale = 2.0
+
+[node name="Blood" parent="." instance=ExtResource("17_5jrad")]

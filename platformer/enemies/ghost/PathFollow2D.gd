@@ -14,8 +14,6 @@ func  _ready():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):	
-	if (!ghost):
-		spawn_ghost()
 	# Calculate the new offset based on speed, direction, and delta time
 	var new_offset = get_progress() + (speed * direction * delta)
 

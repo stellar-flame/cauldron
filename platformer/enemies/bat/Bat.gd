@@ -8,14 +8,17 @@ var separation_distance = 400  # distance to keep from player
 var target
 var start_position 
 var attacking 
+var damageable = Damageable.new()
+
 @onready var sprite = $AnimatedSprite2D
 @onready var audio = $AudioStreamPlayer2D
-@onready var player = get_parent().get_node("Luna")
+
 
 func _ready():
 	sprite.play("bat")
 	start_position = self.global_position
-	
+	damageable.initialise(self, 5)
+
 	
 func _physics_process(delta):	
 	if (target):
@@ -44,7 +47,7 @@ func _physics_process(delta):
 func attack_player():
 	audio.play()
 	var collision = get_last_slide_collision();
-	if (collision.get_collider().is_in_group("character")):
+	if (collision.get_collider().is_in_group("player")):
 		target.take_damage(2)
 		attacking = true	
 		
@@ -61,3 +64,5 @@ func start_attack(body):
 
 func stop_attack(body):
 	target = null
+
+

@@ -13,5 +13,16 @@ func set_hit_area_disabled(value: bool):
 	collision_body.disabled = value
 
 func _on_area_entered(area):
-	if (area.is_in_group("enemy")):
-		area.take_damage()
+	attack_enemy(area)
+
+
+func _on_body_entered(body):
+	attack_enemy(body)
+
+func attack_enemy(obj):
+	if (obj.is_in_group("enemy")):
+		obj.damageable.take_damage(3)
+		
+
+
+		

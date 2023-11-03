@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ctgxuacoc6bxw"]
+[gd_scene load_steps=10 format=3]
 
 [ext_resource type="Script" path="res://platformer/door1/Scene3.gd" id="1_mrkqe"]
 [ext_resource type="PackedScene" uid="uid://bv3nwqw7dlit1" path="res://platformer/scene_parts/Background.tscn" id="2_w4qvw"]
@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" path="res://platformer/scene_parts/Wall.tscn" id="4_27n1e"]
 [ext_resource type="PackedScene" uid="uid://5xgfqnw1px4x" path="res://platformer/scene_parts/FloorCeiling.tscn" id="5_cd1js"]
 [ext_resource type="PackedScene" uid="uid://cm5cwh0yun126" path="res://platformer/scene_parts/SimplePlatform.tscn" id="6_yfvcg"]
-[ext_resource type="PackedScene" uid="uid://c2ehadlrw56to" path="res://platformer/characters/luna/Luna.tscn" id="7_il60q"]
-[ext_resource type="PackedScene" path="res://platformer/characters/stella/Stella.tscn" id="8_jfk7h"]
+[ext_resource type="PackedScene" path="res://platformer/players/luna/Luna.tscn" id="7_il60q"]
+[ext_resource type="PackedScene" path="res://platformer/players/stella/Stella.tscn" id="8_jfk7h"]
 [ext_resource type="PackedScene" uid="uid://b7fx5mrmrtdwq" path="res://platformer/ExitControl.tscn" id="9_bqedk"]
 
 [node name="Scene3" type="Node2D"]

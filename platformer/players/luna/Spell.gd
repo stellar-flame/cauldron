@@ -13,10 +13,14 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	queue_free()
+	attack(body)
 
 
 func _on_area_entered(area):
-	if (area.is_in_group("enemy")):
-		area.take_damage()
+	attack(area)
+	
+func attack(obj):
+	if (obj.is_in_group("enemy")):
+		obj.damageable.take_damage(5)
 		queue_free()
+	

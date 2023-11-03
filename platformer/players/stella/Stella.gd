@@ -9,10 +9,13 @@ const JUMP_VELOCITY = -850.0
 @onready var animation_blocked = false
 @onready var hit_area_right = $Hit_Area_Right
 @onready var hit_area_left = $Hit_Area_Left
-@onready var health = $Health 
+@onready var health = Health.new() 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+	
+func _ready():
+	health.health_died.connect(_on_health_died)
 	
 func _physics_process(delta):
 	# Add the gravity.
@@ -57,3 +60,5 @@ func _on_animated_sprite_2d_animation_unblocked():
 
 func _on_animated_sprite_2d_died():
 	queue_free()
+
+

@@ -1,6 +1,6 @@
-[gd_scene load_steps=79 format=3 uid="uid://b747onem8lyg1"]
+[gd_scene load_steps=78 format=3 uid="uid://7jopf8qqxkmc"]
 
-[ext_resource type="Script" path="res://platformer/characters/stella/Stella.gd" id="1_llmu7"]
+[ext_resource type="Script" path="res://platformer/players/stella/Stella.gd" id="1_llmu7"]
 [ext_resource type="Texture2D" uid="uid://bvnbrqvjfex6x" path="res://assets/stella/11_gameover/skeleton-11_gameover_00.png" id="2_620iv"]
 [ext_resource type="Texture2D" uid="uid://b87vmahbwnsks" path="res://assets/stella/01_idle/skeleton-01_idle_00.png" id="2_dh3j1"]
 [ext_resource type="Texture2D" uid="uid://ci5p51mxugrn5" path="res://assets/stella/05_gethit/skeleton-05_gethit_0.png" id="2_glkmh"]
@@ -73,9 +73,8 @@
 [ext_resource type="Texture2D" uid="uid://bfbhlxp8wsbqq" path="res://assets/stella/04_running/skeleton-04_running_09.png" id="56_gy2qy"]
 [ext_resource type="Texture2D" uid="uid://bsc8k6idmcrl1" path="res://assets/stella/04_running/skeleton-04_running_10.png" id="57_ho03d"]
 [ext_resource type="Texture2D" uid="uid://cvr1ewm4h5lsu" path="res://assets/stella/04_running/skeleton-04_running_11.png" id="58_j4gdx"]
-[ext_resource type="PackedScene" path="res://platformer/characters/stella/HitArea.tscn" id="59_lt0bn"]
-[ext_resource type="PackedScene" uid="uid://caju08k51fjps" path="res://platformer/health/Health.tscn" id="68_hqa2a"]
-[ext_resource type="Script" path="res://platformer/characters/stella/StellaAnimate.gd" id="74_4uqyv"]
+[ext_resource type="PackedScene" uid="uid://coxjdybd4cpkk" path="res://platformer/players/stella/HitArea.tscn" id="59_lt0bn"]
+[ext_resource type="Script" path="res://platformer/players/stella/StellaAnimate.gd" id="74_4uqyv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dn1wo"]
 radius = 36.0
@@ -330,7 +329,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[node name="Stella" type="CharacterBody2D" groups=["character"]]
+[node name="Stella" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_llmu7")
@@ -343,7 +342,9 @@ shape = SubResource("CapsuleShape2D_dn1wo")
 position = Vector2(2, 13)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_i32wk")
-animation = &"die"
+animation = &"paw_attack"
+frame = 14
+frame_progress = 1.0
 script = ExtResource("74_4uqyv")
 
 [node name="Hit_Area_Right" parent="." instance=ExtResource("59_lt0bn")]
@@ -352,11 +353,11 @@ position = Vector2(70, 22)
 [node name="Hit_Area_Left" parent="." instance=ExtResource("59_lt0bn")]
 position = Vector2(-70, 22)
 
-[node name="Health" parent="." instance=ExtResource("68_hqa2a")]
-
 [connection signal="animation_changed" from="AnimatedSprite2D" to="AnimatedSprite2D" method="_on_animation_changed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="AnimatedSprite2D" method="_on_animation_finished"]
 [connection signal="animation_unblocked" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_unblocked"]
 [connection signal="died" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_died"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="AnimatedSprite2D" method="_on_frame_changed"]
 [connection signal="paw_attack" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_paw_attack"]
-[connection signal="died" from="Health" to="." method="_on_health_died"]
+[connection signal="sprite_frames_changed" from="AnimatedSprite2D" to="AnimatedSprite2D" method="_on_sprite_frames_changed"]

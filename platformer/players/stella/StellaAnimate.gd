@@ -1,14 +1,15 @@
-extends "res://platformer/characters/CharacterAnimation.gd"
+extends "res://platformer/players/CharacterAnimation.gd"
 
 signal paw_attack
 	
 func update_animation_parameters(direction = 0, on_floor = true):
 	if (not animation_blocked):
-		if (on_floor):
-			if Input.is_action_just_pressed("stella_paw_attack"):
+	
+		if Input.is_action_just_pressed("stella_paw_attack"):
 					play("paw_attack")
 					animation_blocked = true
-			elif direction != 0:
+		elif (on_floor):
+			if direction != 0:
 				play("run")
 			else:
 				play("idle")
@@ -23,3 +24,4 @@ func take_damage():
 func _on_animation_changed():
 	if (animation == "paw_attack"):
 		emit_signal("paw_attack")
+

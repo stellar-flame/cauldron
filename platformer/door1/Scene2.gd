@@ -19,6 +19,6 @@ func _ready():
 		init_position(luna, pos)
 		
 	
-func init_position(character :CharacterBody2D, vector: Vector2):
-	character.position = vector
-	character.get_node("AnimatedSprite2D").flip_h = true
+func init_position(player :CharacterBody2D, vector: Vector2):
+	player.position = vector
+	player.get_node("AnimatedSprite2D").flip_h = true
