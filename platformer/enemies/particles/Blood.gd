@@ -10,8 +10,8 @@ func _ready():
 func _process(delta):
 	pass
 
-func splatter(dir = 1):
-	direction.x = dir
+func splatter():
 	emitting = true
 	await get_tree().create_timer(lifetime).timeout
 	emitting = false
+	queue_free()

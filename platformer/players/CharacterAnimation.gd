@@ -24,7 +24,7 @@ func _on_animation_finished():
 		state = "dead"
 	elif (state == "dead"):
 		for i in 4:
-			self_modulate.a = 0.5
-			await get_tree().create_timer(0.3).timeout
+			visible = !visible
+			await get_tree().create_timer(0.2).timeout
 
 		emit_signal("died")		
