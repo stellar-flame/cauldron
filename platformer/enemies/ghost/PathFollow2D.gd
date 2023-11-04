@@ -14,17 +14,18 @@ func  _ready():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):	
-	# Calculate the new offset based on speed, direction, and delta time
-	var new_offset = get_progress() + (speed * direction * delta)
+	if (ghost != null and ghost.sprite.is_playing()):
+		# Calculate the new offset based on speed, direction, and delta time
+		var new_offset = get_progress() + (speed * direction * delta)
 
-	# Check if the new_offset is beyond the path limits
-	if new_offset < 0 or new_offset > get_parent().get_curve().get_baked_length():
-		# Reverse direction
-		direction *= -1
-		if (ghost != null): ghost.flip_sprite()
-	else:
-		# Update the offset
-		set_progress(new_offset)
+		# Check if the new_offset is beyond the path limits
+		if new_offset < 0 or new_offset > get_parent().get_curve().get_baked_length():
+			# Reverse direction
+			direction *= -1
+			if (ghost != null): ghost.flip_sprite()
+		else:
+			# Update the offset
+			set_progress(new_offset)
 
 func spawn_ghost():
 	ghost = ghost_scene.instantiate()

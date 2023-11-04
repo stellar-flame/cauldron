@@ -13,9 +13,10 @@ func _ready():
 	sprite.play("moving")
 	
 func _physics_process(delta):
-	time_passed += delta
-	var y_movement = amplitude * sin(time_passed * frequency)	
-	self.position.y = y_movement
+	if (sprite.is_playing()):
+		time_passed += delta
+		var y_movement = amplitude * sin(time_passed * frequency)	
+		self.position.y = y_movement
 	
 
 func _on_body_entered(body):
