@@ -8,6 +8,8 @@ dungeon theme - https://opengameart.org/content/platformer-game-music-pack
 spider-chattering - https://opengameart.org/content/spider-chattering
 bat-screeches - https://opengameart.org/content/bat-screeches 
 ghost - https://opengameart.org/content/ghost
+spell - https://mixkit.co/free-sound-effects/swoosh/
+cat-swipe - https://pixabay.com/sound-effects/search/slash/
 
 
 Audio sites: 

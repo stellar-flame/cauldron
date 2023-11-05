@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://coxjdybd4cpkk"]
+[gd_scene load_steps=4 format=3 uid="uid://coxjdybd4cpkk"]
 
 [ext_resource type="Script" path="res://platformer/players/stella/HitArea.gd" id="1_3wlh2"]
+[ext_resource type="AudioStream" uid="uid://bv54tr1pp6wyk" path="res://assets/audio/sword-sound-2-36274.mp3" id="2_81ihi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0kwuq"]
 size = Vector2(65, 80)
@@ -12,6 +13,9 @@ script = ExtResource("1_3wlh2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_0kwuq")
 debug_color = Color(0.356863, 0.0431373, 0.443137, 0.839216)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_81ihi")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

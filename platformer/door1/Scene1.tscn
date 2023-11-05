@@ -51,11 +51,6 @@ position = Vector2(16, -8)
 [node name="Floor" parent="Scene" instance=ExtResource("4_e2gas")]
 position = Vector2(-18, 1341)
 
-[node name="Web5" type="Sprite2D" parent="Scene"]
-position = Vector2(680, 761)
-rotation = 1.5708
-texture = ExtResource("5_ud6fy")
-
 [node name="Floating_platform" parent="Scene" instance=ExtResource("6_pbipe")]
 position = Vector2(723, 639)
 
@@ -82,12 +77,6 @@ metadata/_edit_group_ = true
 [node name="Lantern" parent="Scene" instance=ExtResource("9_p6imu")]
 position = Vector2(1317, 186)
 metadata/_edit_group_ = true
-
-[node name="Web2" type="Sprite2D" parent="Scene"]
-position = Vector2(2396, 200)
-scale = Vector2(2, 2)
-texture = ExtResource("10_7gsmt")
-flip_h = true
 
 [node name="LeftWall" parent="Scene" instance=ExtResource("7_7nu1t")]
 position = Vector2(-50, 131)
@@ -117,6 +106,9 @@ position = Vector2(671, 1123)
 [node name="SimplePlatform2" parent="Scene" instance=ExtResource("11_0mrne")]
 position = Vector2(273, 885)
 
+[node name="SimplePlatform3" parent="Scene" instance=ExtResource("11_0mrne")]
+position = Vector2(2210, 998)
+
 [node name="Chair1left" type="Sprite2D" parent="Scene"]
 position = Vector2(1341.5, 1291.5)
 texture = ExtResource("12_rr2sh")
@@ -134,18 +126,35 @@ position = Vector2(1055, 1189)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("15_i8aoe")
 
-[node name="Web3" type="Sprite2D" parent="Scene"]
-position = Vector2(1112, 1239)
-texture = ExtResource("16_mnwnb")
-
 [node name="Web1" type="Sprite2D" parent="Scene"]
 position = Vector2(146, 1585)
 texture = ExtResource("17_g30i3")
+
+[node name="Web2" type="Sprite2D" parent="Scene"]
+position = Vector2(2396, 200)
+scale = Vector2(2, 2)
+texture = ExtResource("10_7gsmt")
+flip_h = true
+
+[node name="Web3" type="Sprite2D" parent="Scene"]
+position = Vector2(1112, 1239)
+texture = ExtResource("16_mnwnb")
 
 [node name="Web4" type="Sprite2D" parent="Scene"]
 position = Vector2(1103, 763)
 texture = ExtResource("10_7gsmt")
 flip_h = true
+
+[node name="Web5" type="Sprite2D" parent="Scene"]
+position = Vector2(680, 761)
+rotation = 1.5708
+texture = ExtResource("5_ud6fy")
+
+[node name="Web6" type="Sprite2D" parent="Scene"]
+position = Vector2(2181, 188)
+rotation = 1.5708
+scale = Vector2(1.91993, 2.0906)
+texture = ExtResource("5_ud6fy")
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(23, 30)
@@ -182,8 +191,14 @@ metadata/_edit_group_ = true
 position = Vector2(256, 1279)
 collision_mask = 1
 
+[node name="SpiderWithWebLarge" parent="." instance=ExtResource("26_7etp7")]
+position = Vector2(2183, 600)
+scale = Vector2(1.5, 1.5)
+range_of_movement = 180
+
 [node name="SpiderWithWeb" parent="." instance=ExtResource("26_7etp7")]
 position = Vector2(678, 953)
+range_of_movement = 100
 
 [node name="HUD" parent="." instance=ExtResource("26_gvofu")]
 

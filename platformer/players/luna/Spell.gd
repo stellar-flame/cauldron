@@ -5,6 +5,7 @@ var direction
 
 func _ready():
 	$AnimatedSprite2D.play("shoot")
+	$AudioStreamPlayer2D.play()
 
 func _process(delta):	
 	if (direction.x == -1):

@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var collision_body = $CollisionShape2D
+@onready var audio = $AudioStreamPlayer2D
 
 func _ready():
 	collision_body.disabled = true
@@ -22,6 +23,8 @@ func _on_body_entered(body):
 func attack_enemy(obj):
 	if (obj.is_in_group("enemy")):
 		obj.damageable.take_damage(3)
+		audio.play()
+		
 		
 
 
