@@ -1,21 +1,20 @@
-extends CharacterBody2D 
+extends Player 
+
+class_name Luna
 
 @export  var spell: PackedScene
 
 const SPEED = 500.0
 const JUMP_VELOCITY = -625.0
 @onready var direction = 0
-@onready var sprite = $AnimatedSprite2D
-@onready var health = Health.new() 
 
 var max_jumps = 2
 var jump_count = 0
+const NAME = "Luna"
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")	
-	
-func _ready():
-	health.health_died.connect(_on_health_died)
 	
 func _physics_process(delta):
 	# Add the gravity.
@@ -64,5 +63,4 @@ func _cast_spell():
 func _on_animated_sprite_2d_died():
 	queue_free()
 
-func _on_health_died():
-	sprite.die()
+	

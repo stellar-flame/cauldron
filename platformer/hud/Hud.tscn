@@ -8,7 +8,6 @@
 script = ExtResource("1_vwblq")
 
 [node name="Panel" type="Panel" parent="."]
-anchors_preset = -1
 offset_left = 27.0
 offset_top = 27.0
 offset_right = 27.0

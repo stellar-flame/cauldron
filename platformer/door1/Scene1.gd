@@ -1,4 +1,4 @@
-extends "res://platformer/door1/Scene.gd"
+extends BaseScene
 
 @export var scene_id = 1
 @onready var exit_control = $ExitControl

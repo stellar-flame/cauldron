@@ -1,12 +1,11 @@
-extends Node2D
+extends BaseScene
 
 @export var scene_id = 2
 @onready var exit_control_top = $ExitControlTop
 @onready var exit_control_bottom = $ExitControlBottom
-@onready var luna = $Luna
-@onready var stella = $Stella
 
 func _ready():
+	super()
 	exit_control_top.scene_id = scene_id
 	exit_control_top.next_scene = "res://platformer/door1/Scene1.tscn"
 	

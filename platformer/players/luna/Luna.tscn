@@ -153,6 +153,7 @@ sprite_frames = SubResource("SpriteFrames_cii11")
 animation = &"idle"
 script = ExtResource("25_5l2ur")
 
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="AnimatedSprite2D" method="_on_animation_finished"]
 [connection signal="cast_spell" from="AnimatedSprite2D" to="." method="_cast_spell"]
 [connection signal="died" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_died"]

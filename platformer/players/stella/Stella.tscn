@@ -305,6 +305,7 @@ position = Vector2(70, 22)
 [node name="Hit_Area_Left" parent="." instance=ExtResource("59_lt0bn")]
 position = Vector2(-70, 22)
 
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="animation_changed" from="AnimatedSprite2D" to="AnimatedSprite2D" method="_on_animation_changed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="AnimatedSprite2D" method="_on_animation_finished"]
 [connection signal="animation_unblocked" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_unblocked"]

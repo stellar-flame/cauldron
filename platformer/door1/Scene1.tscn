@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://t6e5wjfh4epe"]
+[gd_scene load_steps=28 format=3 uid="uid://t6e5wjfh4epe"]
 
 [ext_resource type="Script" path="res://platformer/door1/Scene1.gd" id="1_jxdwe"]
 [ext_resource type="PackedScene" uid="uid://bv3nwqw7dlit1" path="res://platformer/scene_parts/Background.tscn" id="2_yukka"]
@@ -25,7 +25,6 @@
 [ext_resource type="PackedScene" uid="uid://bi1y861npo00e" path="res://platformer/players/luna/Luna.tscn" id="23_sbjhe"]
 [ext_resource type="PackedScene" uid="uid://7jopf8qqxkmc" path="res://platformer/players/stella/Stella.tscn" id="24_fqfpm"]
 [ext_resource type="PackedScene" uid="uid://eeq7sucf4aq1" path="res://platformer/enemies/spider/Spider.tscn" id="26_7etp7"]
-[ext_resource type="PackedScene" uid="uid://dlrqk60l1ev46" path="res://platformer/hud/Hud.tscn" id="26_gvofu"]
 
 [sub_resource type="Curve2D" id="Curve2D_ppkf3"]
 _data = {
@@ -199,8 +198,6 @@ range_of_movement = 180
 [node name="SpiderWithWeb" parent="." instance=ExtResource("26_7etp7")]
 position = Vector2(678, 953)
 range_of_movement = 100
-
-[node name="HUD" parent="." instance=ExtResource("26_gvofu")]
 
 [connection signal="body_entered" from="EnemyZone" to="EnemyZone" method="_on_body_entered"]
 [connection signal="body_exited" from="EnemyZone" to="EnemyZone" method="_on_body_exited"]
