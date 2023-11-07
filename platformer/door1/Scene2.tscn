@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cm6jy8cobhd0h"]
+[gd_scene load_steps=14 format=3 uid="uid://cm6jy8cobhd0h"]
 
 [ext_resource type="Script" path="res://platformer/door1/Scene2.gd" id="1_xcoiv"]
 [ext_resource type="PackedScene" uid="uid://b5482wafkhojc" path="res://platformer/enemies/skeleton/Skeleton.tscn" id="2_0io3v"]
@@ -10,14 +10,18 @@
 [ext_resource type="PackedScene" uid="uid://dm5244vs8gaeu" path="res://platformer/scene_parts/Step.tscn" id="7_4my6n"]
 [ext_resource type="PackedScene" uid="uid://7jopf8qqxkmc" path="res://platformer/players/stella/Stella.tscn" id="8_2jcv3"]
 [ext_resource type="PackedScene" uid="uid://bi1y861npo00e" path="res://platformer/players/luna/Luna.tscn" id="9_ihwy7"]
+[ext_resource type="Script" path="res://platformer/enemies/Path.gd" id="11_gmp8m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_08ylh"]
 
+[sub_resource type="Curve2D" id="Curve2D_nqk1h"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 508, 777, 0, 0, 0, 0, 2101, 777)
+}
+point_count = 2
+
 [node name="Scene2" type="Node2D"]
 script = ExtResource("1_xcoiv")
-
-[node name="Skeleton" parent="." instance=ExtResource("2_0io3v")]
-position = Vector2(637, 309)
 
 [node name="ExitControlTop" parent="." instance=ExtResource("2_q6jiv")]
 position = Vector2(0, 292)
@@ -99,6 +103,19 @@ position = Vector2(245, 366)
 
 [node name="Luna" parent="." instance=ExtResource("9_ihwy7")]
 position = Vector2(167, 328)
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_nqk1h")
+script = ExtResource("11_gmp8m")
+speed = 200.0
+direction = 1
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(508, 777)
+
+[node name="Skeleton" parent="Path2D/PathFollow2D" instance=ExtResource("2_0io3v")]
+
+[connection signal="direction_changed" from="Path2D" to="Path2D/PathFollow2D/Skeleton" method="_on_path_2d_direction_changed"]
 
 [editable path="Scene/Wall2"]
 [editable path="Scene/Floating_platform1"]

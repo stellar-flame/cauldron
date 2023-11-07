@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://b5482wafkhojc"]
+[gd_scene load_steps=15 format=3 uid="uid://b5482wafkhojc"]
 
 [ext_resource type="Texture2D" uid="uid://b7wnvu5bh4n3k" path="res://assets/enemies/skeleton/skeleton-3.png" id="1_6me2p"]
 [ext_resource type="Texture2D" uid="uid://d36t21ts416te" path="res://assets/enemies/skeleton/skeleton-sprite.png" id="1_il3xo"]
+[ext_resource type="Script" path="res://platformer/enemies/skeleton/Skeleton.gd" id="1_rs7h1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8boja"]
 radius = 61.0
@@ -84,16 +85,16 @@ animations = [{
 }]
 
 [node name="Skeleton" type="Area2D"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_rs7h1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3, -2)
-scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_8boja")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_b472t")
-animation = &"attack"
-frame = 4
-frame_progress = 1.0
+animation = &"run"
