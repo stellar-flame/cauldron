@@ -107,7 +107,7 @@ position = Vector2(167, 328)
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_nqk1h")
 script = ExtResource("11_gmp8m")
-speed = 200.0
+base_speed = 200.0
 direction = 1
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
@@ -116,6 +116,9 @@ position = Vector2(508, 777)
 [node name="Skeleton" parent="Path2D/PathFollow2D" instance=ExtResource("2_0io3v")]
 
 [connection signal="direction_changed" from="Path2D" to="Path2D/PathFollow2D/Skeleton" method="_on_path_2d_direction_changed"]
+[connection signal="change_direction" from="Path2D/PathFollow2D/Skeleton" to="Path2D" method="reverse_direction"]
+[connection signal="dash" from="Path2D/PathFollow2D/Skeleton" to="Path2D" method="_on_dash"]
+[connection signal="stop_dash" from="Path2D/PathFollow2D/Skeleton" to="Path2D" method="_on_stop_dash"]
 
 [editable path="Scene/Wall2"]
 [editable path="Scene/Floating_platform1"]

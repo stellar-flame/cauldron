@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://7jopf8qqxkmc"]
+[gd_scene load_steps=77 format=3 uid="uid://7jopf8qqxkmc"]
 
 [ext_resource type="Script" path="res://platformer/players/stella/Stella.gd" id="1_llmu7"]
 [ext_resource type="Texture2D" uid="uid://bvnbrqvjfex6x" path="res://assets/stella/11_gameover/skeleton-11_gameover_00.png" id="2_620iv"]
@@ -11,22 +11,33 @@
 [ext_resource type="Texture2D" uid="uid://c0sci1rl6x8te" path="res://assets/stella/01_idle/skeleton-01_idle_05.png" id="7_rslu1"]
 [ext_resource type="Texture2D" uid="uid://cmg85t45saged" path="res://assets/stella/01_idle/skeleton-01_idle_06.png" id="8_7ccmc"]
 [ext_resource type="Texture2D" uid="uid://xrwto568d6qo" path="res://assets/stella/05_gethit/skeleton-05_gethit_6.png" id="8_5086a"]
-[ext_resource type="Texture2D" uid="uid://c1ngbbniomjx8" path="res://assets/stella/05_gethit/skeleton-05_gethit_7.png" id="9_a50xx"]
+[ext_resource type="Texture2D" uid="uid://c5jbkait4sgjx" path="res://assets/stella/03_fall/skeleton-03_fall_00.png" id="9_o05n4"]
 [ext_resource type="Texture2D" uid="uid://dh8t6dcovns5v" path="res://assets/stella/01_idle/skeleton-01_idle_07.png" id="9_qh5ek"]
 [ext_resource type="Texture2D" uid="uid://da3utwoqita86" path="res://assets/stella/01_idle/skeleton-01_idle_08.png" id="10_2yhe3"]
+[ext_resource type="Texture2D" uid="uid://c167b4iv87276" path="res://assets/stella/03_fall/skeleton-03_fall_01.png" id="10_8180w"]
 [ext_resource type="Texture2D" uid="uid://dlohisaucrclk" path="res://assets/stella/11_gameover/skeleton-11_gameover_08.png" id="10_ux1gq"]
 [ext_resource type="Texture2D" uid="uid://8ka0tgphqkon" path="res://assets/stella/01_idle/skeleton-01_idle_09.png" id="11_hy16b"]
+[ext_resource type="Texture2D" uid="uid://dniajdp67455a" path="res://assets/stella/03_fall/skeleton-03_fall_02.png" id="11_r10hm"]
 [ext_resource type="Texture2D" uid="uid://c03tkmfu8wior" path="res://assets/stella/01_idle/skeleton-01_idle_10.png" id="12_8qg1d"]
+[ext_resource type="Texture2D" uid="uid://d4avu40es715s" path="res://assets/stella/03_fall/skeleton-03_fall_03.png" id="12_xk3s2"]
+[ext_resource type="Texture2D" uid="uid://b2e24ruxlgas2" path="res://assets/stella/03_fall/skeleton-03_fall_04.png" id="13_eyoc2"]
 [ext_resource type="Texture2D" uid="uid://b4nv8yivqhpg3" path="res://assets/stella/01_idle/skeleton-01_idle_11.png" id="13_r8ybi"]
 [ext_resource type="Texture2D" uid="uid://w7nq7ueumfch" path="res://assets/stella/11_gameover/skeleton-11_gameover_12.png" id="14_tfsc7"]
+[ext_resource type="Texture2D" uid="uid://d0mwg4dooon8r" path="res://assets/stella/03_fall/skeleton-03_fall_05.png" id="14_tidh5"]
 [ext_resource type="Texture2D" uid="uid://7j4nhb7p8xdo" path="res://assets/stella/01_idle/skeleton-01_idle_12.png" id="14_w564q"]
+[ext_resource type="Texture2D" uid="uid://bgyomf8cwl7ya" path="res://assets/stella/03_fall/skeleton-03_fall_06.png" id="15_lrwvf"]
 [ext_resource type="Texture2D" uid="uid://ccfcer55y03qu" path="res://assets/stella/01_idle/skeleton-01_idle_13.png" id="15_s2oup"]
+[ext_resource type="Texture2D" uid="uid://b1f2c72qugrvx" path="res://assets/stella/03_fall/skeleton-03_fall_07.png" id="16_3uxrb"]
 [ext_resource type="Texture2D" uid="uid://brb41enb6l3a8" path="res://assets/stella/01_idle/skeleton-01_idle_14.png" id="16_h4t5l"]
 [ext_resource type="Texture2D" uid="uid://dm4omn6lotrwd" path="res://assets/stella/01_idle/skeleton-01_idle_15.png" id="17_8p0vv"]
+[ext_resource type="Texture2D" uid="uid://b85nrf6xvk57y" path="res://assets/stella/03_fall/skeleton-03_fall_08.png" id="17_yv62p"]
+[ext_resource type="Texture2D" uid="uid://dglrwobcuffmy" path="res://assets/stella/03_fall/skeleton-03_fall_09.png" id="18_dim2b"]
 [ext_resource type="Texture2D" uid="uid://c2hwbnicvc4mt" path="res://assets/stella/11_gameover/skeleton-11_gameover_16.png" id="18_mdstm"]
 [ext_resource type="Texture2D" uid="uid://b6hma0jhocje0" path="res://assets/stella/01_idle/skeleton-01_idle_16.png" id="18_pfjv1"]
 [ext_resource type="Texture2D" uid="uid://01kvrmekelmu" path="res://assets/stella/01_idle/skeleton-01_idle_17.png" id="19_xs1ss"]
+[ext_resource type="Texture2D" uid="uid://bt0qrgqkku50x" path="res://assets/stella/05_gethit/skeleton-05_gethit_4.png" id="20_uu7qx"]
 [ext_resource type="Texture2D" uid="uid://bpclvmjxiyxf0" path="res://assets/stella/01_idle/skeleton-01_idle_18.png" id="20_ym4mv"]
+[ext_resource type="Texture2D" uid="uid://c5j7w6s7jbaxc" path="res://assets/stella/05_gethit/skeleton-05_gethit_5.png" id="21_vpr8m"]
 [ext_resource type="Texture2D" uid="uid://citpyqni1bw37" path="res://assets/stella/01_idle/skeleton-01_idle_19.png" id="21_x60jk"]
 [ext_resource type="Texture2D" uid="uid://de55lf5vderac" path="res://assets/stella/11_gameover/skeleton-11_gameover_20.png" id="22_gwmvy"]
 [ext_resource type="Texture2D" uid="uid://cguhe2hme5jk2" path="res://assets/stella/02_jump/skeleton-02_jump_00.png" id="22_n0ph0"]
@@ -98,10 +109,51 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("9_o05n4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8180w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_r10hm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xk3s2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_eyoc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_tidh5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_lrwvf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_3uxrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_yv62p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_dim2b")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("8_5086a")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_a50xx")
+"texture": ExtResource("20_uu7qx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_vpr8m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5086a")
 }],
 "loop": false,
 "name": &"get_hit",
@@ -294,9 +346,7 @@ shape = SubResource("CapsuleShape2D_dn1wo")
 position = Vector2(2, 13)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_i32wk")
-animation = &"paw_attack"
-frame = 8
-frame_progress = 1.0
+animation = &"die"
 script = ExtResource("74_4uqyv")
 
 [node name="Hit_Area_Right" parent="." instance=ExtResource("59_lt0bn")]

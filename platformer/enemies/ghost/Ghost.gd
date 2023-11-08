@@ -5,7 +5,6 @@ class_name Ghost
 var damageable = Damageable.new()
 
 @onready var sprite = $AnimatedSprite2D
-@onready var flicker = $FlickerTimer
 @onready var audio = $AudioStreamPlayer2D
 
 func _ready():

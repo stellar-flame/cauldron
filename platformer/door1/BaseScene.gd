@@ -25,7 +25,7 @@ func _process(delta):
 		game_over_scene.key_pressed.connect(_restart)
 		get_tree().current_scene.add_child(game_over_scene)
 		
-		
-
+	
 func _restart():
+	Global._init()
 	get_tree().change_scene_to_file("res://platformer/door1/Scene1.tscn")

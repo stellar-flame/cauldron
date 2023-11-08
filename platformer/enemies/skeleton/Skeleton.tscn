@@ -1,32 +1,25 @@
-[gd_scene load_steps=15 format=3 uid="uid://b5482wafkhojc"]
+[gd_scene load_steps=14 format=3 uid="uid://b5482wafkhojc"]
 
 [ext_resource type="Texture2D" uid="uid://b7wnvu5bh4n3k" path="res://assets/enemies/skeleton/skeleton-3.png" id="1_6me2p"]
 [ext_resource type="Texture2D" uid="uid://d36t21ts416te" path="res://assets/enemies/skeleton/skeleton-sprite.png" id="1_il3xo"]
 [ext_resource type="Script" path="res://platformer/enemies/skeleton/Skeleton.gd" id="1_rs7h1"]
+[ext_resource type="PackedScene" uid="uid://dqbg2l1ef7xwu" path="res://platformer/enemies/EnemyDetectionZone.tscn" id="4_vhm7w"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8boja"]
-radius = 61.0
-height = 182.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hrcok"]
+radius = 59.0
+height = 196.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtxc2"]
+atlas = ExtResource("1_il3xo")
+region = Rect2(284, 668, 241, 311)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnui2"]
+atlas = ExtResource("1_il3xo")
+region = Rect2(525, 357, 241, 311)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3cs1b"]
 atlas = ExtResource("1_il3xo")
 region = Rect2(41, 68, 245, 284)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_07bb5"]
-atlas = ExtResource("1_il3xo")
-region = Rect2(286, 68, 245, 284)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_211fm"]
-atlas = ExtResource("1_il3xo")
-region = Rect2(531, 68, 245, 284)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vq3pm"]
-atlas = ExtResource("1_il3xo")
-region = Rect2(287, 654, 258, 303)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_le5ej"]
-atlas = ExtResource("1_il3xo")
-region = Rect2(527, 686, 247, 317)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cuhf3"]
 atlas = ExtResource("1_6me2p")
@@ -48,23 +41,22 @@ region = Rect2(20, 322, 305, 316)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3cs1b")
+"texture": SubResource("AtlasTexture_wtxc2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_07bb5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_211fm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vq3pm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_le5ej")
+"texture": SubResource("AtlasTexture_gnui2")
 }],
 "loop": false,
 "name": &"attack",
-"speed": 4.0
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cs1b")
+}],
+"loop": false,
+"name": &"dash",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -90,11 +82,16 @@ collision_mask = 3
 script = ExtResource("1_rs7h1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3, -2)
-shape = SubResource("CapsuleShape2D_8boja")
+shape = SubResource("CapsuleShape2D_hrcok")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_b472t")
-animation = &"run"
+animation = &"attack"
+
+[node name="EnemyDetectionZone" parent="." instance=ExtResource("4_vhm7w")]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="EnemyDetectionZone" to="." method="_on_enemy_detection_zone_body_entered"]
+[connection signal="body_exited" from="EnemyDetectionZone" to="." method="_on_enemy_detection_zone_body_exited"]
