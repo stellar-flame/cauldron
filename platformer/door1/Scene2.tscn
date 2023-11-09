@@ -16,7 +16,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_nqk1h"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 508, 777, 0, 0, 0, 0, 2101, 777)
+"points": PackedVector2Array(0, 0, 0, 0, 596, 771, 0, 0, 0, 0, 2014, 765)
 }
 point_count = 2
 
@@ -105,15 +105,18 @@ position = Vector2(245, 366)
 position = Vector2(167, 328)
 
 [node name="Path2D" type="Path2D" parent="."]
+position = Vector2(-24, 1)
 curve = SubResource("Curve2D_nqk1h")
 script = ExtResource("11_gmp8m")
 base_speed = 200.0
 direction = 1
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(508, 777)
+position = Vector2(596, 771)
+rotation = -0.00423129
 
 [node name="Skeleton" parent="Path2D/PathFollow2D" instance=ExtResource("2_0io3v")]
+position = Vector2(97.1557, -36.5893)
 
 [connection signal="direction_changed" from="Path2D" to="Path2D/PathFollow2D/Skeleton" method="_on_path_2d_direction_changed"]
 [connection signal="change_direction" from="Path2D/PathFollow2D/Skeleton" to="Path2D" method="reverse_direction"]

@@ -1,97 +1,163 @@
-[gd_scene load_steps=14 format=3 uid="uid://b5482wafkhojc"]
+[gd_scene load_steps=32 format=3 uid="uid://b5482wafkhojc"]
 
-[ext_resource type="Texture2D" uid="uid://b7wnvu5bh4n3k" path="res://assets/enemies/skeleton/skeleton-3.png" id="1_6me2p"]
-[ext_resource type="Texture2D" uid="uid://d36t21ts416te" path="res://assets/enemies/skeleton/skeleton-sprite.png" id="1_il3xo"]
 [ext_resource type="Script" path="res://platformer/enemies/skeleton/Skeleton.gd" id="1_rs7h1"]
-[ext_resource type="PackedScene" uid="uid://dqbg2l1ef7xwu" path="res://platformer/enemies/EnemyDetectionZone.tscn" id="4_vhm7w"]
+[ext_resource type="Texture2D" uid="uid://dsyisqxvo80f2" path="res://assets/enemies/Sceleton1/Attack_000.png" id="2_o1y1p"]
+[ext_resource type="Texture2D" uid="uid://c28i21g6ubdh3" path="res://assets/enemies/Sceleton1/Run_000.png" id="3_0rkoh"]
+[ext_resource type="Texture2D" uid="uid://ch470pvtd1tbw" path="res://assets/enemies/Sceleton1/Run_001.png" id="4_6jcxg"]
+[ext_resource type="Texture2D" uid="uid://duicknmgibcun" path="res://assets/enemies/Sceleton1/Walk_000.png" id="4_kw0m8"]
+[ext_resource type="Texture2D" uid="uid://cbu44oybbj324" path="res://assets/enemies/Sceleton1/Attack_002.png" id="4_oekxr"]
+[ext_resource type="Texture2D" uid="uid://cqmw188khliml" path="res://assets/enemies/Sceleton1/Run_002.png" id="5_6tv1s"]
+[ext_resource type="Texture2D" uid="uid://dwcbjsynpr6iy" path="res://assets/enemies/Sceleton1/Walk_001.png" id="5_67xw5"]
+[ext_resource type="Texture2D" uid="uid://c1ymtpiw2pvni" path="res://assets/enemies/Sceleton1/Attack_003.png" id="5_fbpw3"]
+[ext_resource type="Texture2D" uid="uid://c0nqichnvvaf3" path="res://assets/enemies/Sceleton1/Walk_002.png" id="6_8mr7j"]
+[ext_resource type="Texture2D" uid="uid://bjqpwp8tcgj70" path="res://assets/enemies/Sceleton1/Attack_004.png" id="6_at6up"]
+[ext_resource type="Texture2D" uid="uid://blgd0ivrnlumy" path="res://assets/enemies/Sceleton1/Run_003.png" id="6_f82ou"]
+[ext_resource type="Texture2D" uid="uid://dax08gcq7q3wx" path="res://assets/enemies/Sceleton1/Run_004.png" id="7_ccmm6"]
+[ext_resource type="Texture2D" uid="uid://bojmx6tt6c42r" path="res://assets/enemies/Sceleton1/Walk_003.png" id="7_njj3v"]
+[ext_resource type="Texture2D" uid="uid://c831ui13qitn5" path="res://assets/enemies/Sceleton1/Attack_005.png" id="7_wmxby"]
+[ext_resource type="Texture2D" uid="uid://c1ovwcw6c03ed" path="res://assets/enemies/Sceleton1/Walk_004.png" id="8_4mdk2"]
+[ext_resource type="Texture2D" uid="uid://bih26qamjmvry" path="res://assets/enemies/Sceleton1/Run_005.png" id="8_6agsd"]
+[ext_resource type="Texture2D" uid="uid://qhw8pbchabet" path="res://assets/enemies/Sceleton1/Attack_006.png" id="8_hflcn"]
+[ext_resource type="Texture2D" uid="uid://bobpodl0j6bng" path="res://assets/enemies/Sceleton1/Walk_005.png" id="9_dv6sj"]
+[ext_resource type="Texture2D" uid="uid://d2mhmk61biftc" path="res://assets/enemies/Sceleton1/Attack_007.png" id="9_p6e0x"]
+[ext_resource type="Texture2D" uid="uid://bmn7slconu14c" path="res://assets/enemies/Sceleton1/Run_006.png" id="9_q6by3"]
+[ext_resource type="Texture2D" uid="uid://bm1tq2rmb7nog" path="res://assets/enemies/Sceleton1/Run_007.png" id="10_ibnc5"]
+[ext_resource type="Texture2D" uid="uid://c5lgsgmbqead5" path="res://assets/enemies/Sceleton1/Walk_006.png" id="10_qjob2"]
+[ext_resource type="Texture2D" uid="uid://mhovarj5bmk3" path="res://assets/enemies/Sceleton1/Run_008.png" id="11_3fppt"]
+[ext_resource type="Texture2D" uid="uid://kufwwnk3mxvn" path="res://assets/enemies/Sceleton1/Walk_007.png" id="11_mdnbf"]
+[ext_resource type="Texture2D" uid="uid://cyfb1koi3pv5f" path="res://assets/enemies/Sceleton1/Walk_008.png" id="12_5m04j"]
+[ext_resource type="Texture2D" uid="uid://d3j48lhvdgyx1" path="res://assets/enemies/Sceleton1/Run_009.png" id="12_n8mi8"]
+[ext_resource type="Texture2D" uid="uid://n7psreeql16u" path="res://assets/enemies/Sceleton1/Walk_009.png" id="13_pkiwa"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hrcok"]
-radius = 59.0
-height = 196.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wtxc2"]
-atlas = ExtResource("1_il3xo")
-region = Rect2(284, 668, 241, 311)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gnui2"]
-atlas = ExtResource("1_il3xo")
-region = Rect2(525, 357, 241, 311)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3cs1b"]
-atlas = ExtResource("1_il3xo")
-region = Rect2(41, 68, 245, 284)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cuhf3"]
-atlas = ExtResource("1_6me2p")
-region = Rect2(20, 6, 305, 316)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r2g3o"]
-atlas = ExtResource("1_6me2p")
-region = Rect2(325, 322, 305, 316)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rrknp"]
-atlas = ExtResource("1_6me2p")
-region = Rect2(325, 6, 305, 316)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5awrb"]
-atlas = ExtResource("1_6me2p")
-region = Rect2(20, 322, 305, 316)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2xg3"]
+radius = 117.0
+height = 254.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b472t"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wtxc2")
+"duration": 0.5,
+"texture": ExtResource("2_o1y1p")
+}, {
+"duration": 0.5,
+"texture": ExtResource("4_oekxr")
+}, {
+"duration": 0.5,
+"texture": ExtResource("5_fbpw3")
+}, {
+"duration": 0.5,
+"texture": ExtResource("6_at6up")
+}, {
+"duration": 0.5,
+"texture": ExtResource("7_wmxby")
+}, {
+"duration": 0.5,
+"texture": ExtResource("8_hflcn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gnui2")
+"texture": ExtResource("9_p6e0x")
 }],
 "loop": false,
 "name": &"attack",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3cs1b")
-}],
-"loop": false,
-"name": &"dash",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cuhf3")
+"texture": ExtResource("3_0rkoh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_r2g3o")
+"texture": ExtResource("4_6jcxg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rrknp")
+"texture": ExtResource("5_6tv1s")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5awrb")
+"texture": ExtResource("6_f82ou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ccmm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6agsd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_q6by3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ibnc5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_3fppt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_n8mi8")
 }],
 "loop": true,
 "name": &"run",
-"speed": 5.0
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_kw0m8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_67xw5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8mr7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_njj3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4mdk2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_dv6sj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qjob2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_mdnbf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_5m04j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_pkiwa")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
 }]
 
-[node name="Skeleton" type="Area2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bu2f3"]
+size = Vector2(1065, 103)
+
+[node name="Skeleton" type="Area2D" groups=["enemy"]]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_rs7h1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_hrcok")
+shape = SubResource("CapsuleShape2D_g2xg3")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 1)
-scale = Vector2(0.8, 0.8)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemy"]]
+position = Vector2(33, 16)
+scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_b472t")
-animation = &"attack"
+animation = &"run"
 
-[node name="EnemyDetectionZone" parent="." instance=ExtResource("4_vhm7w")]
+[node name="EnemyDetectionZone" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="DetectionZone" type="CollisionShape2D" parent="EnemyDetectionZone"]
+position = Vector2(-20.5, 0)
+shape = SubResource("RectangleShape2D_bu2f3")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_changed"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="EnemyDetectionZone" to="." method="_on_enemy_detection_zone_body_entered"]
-[connection signal="body_exited" from="EnemyDetectionZone" to="." method="_on_enemy_detection_zone_body_exited"]

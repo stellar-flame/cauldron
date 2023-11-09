@@ -34,8 +34,8 @@ func reverse_direction():
 func _on_dash(direction):
 	if (self.direction != direction):
 		reverse_direction()
-	self.speed *= 10
+	speed *= 10
 
 
 func _on_stop_dash():
-	self.speed = base_speed
+	speed = base_speed

@@ -21,5 +21,5 @@ func take_damage():
 	animation_blocked = true;
 
 func _on_frame_changed():
-	if (animation == "attack" and frame == 3):
+	if (animation == "attack" and frame == 2):
 		emit_signal("cast_spell")

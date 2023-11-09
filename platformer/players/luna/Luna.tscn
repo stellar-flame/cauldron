@@ -50,7 +50,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack",
-"speed": 10.0
+"speed": 11.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -150,7 +150,7 @@ shape = SubResource("CapsuleShape2D_aikpy")
 position = Vector2(-4.4125, 0)
 scale = Vector2(0.13, 0.13)
 sprite_frames = SubResource("SpriteFrames_cii11")
-animation = &"idle"
+animation = &"jump"
 script = ExtResource("25_5l2ur")
 
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
