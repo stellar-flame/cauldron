@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://c6piwgry7k7th" path="res://assets/Props/ShelfWithBooks.png" id="15_i8aoe"]
 [ext_resource type="Texture2D" uid="uid://cokgcsdb4kv3n" path="res://assets/Props/Web3.png" id="16_mnwnb"]
 [ext_resource type="Texture2D" uid="uid://csdxv0hmvsm2w" path="res://assets/Props/Web1.png" id="17_g30i3"]
-[ext_resource type="Script" path="res://platformer/enemies/ghost/PathFollow2D.gd" id="18_kc7qn"]
+[ext_resource type="Script" path="res://platformer/enemies/Path.gd" id="18_5le8m"]
 [ext_resource type="PackedScene" uid="uid://cj8kkgmso5b0f" path="res://platformer/enemies/ghost/Ghost.tscn" id="19_0dfln"]
 [ext_resource type="PackedScene" uid="uid://b7fx5mrmrtdwq" path="res://platformer/ExitControl.tscn" id="20_t275g"]
 [ext_resource type="Script" path="res://platformer/door1/EnemyZone.gd" id="21_25qr4"]
@@ -159,13 +159,14 @@ texture = ExtResource("5_ud6fy")
 position = Vector2(23, 90.9659)
 scale = Vector2(1, 0.880707)
 curve = SubResource("Curve2D_ppkf3")
+script = ExtResource("18_5le8m")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(755, 510)
 rotation = -0.000945179
 rotates = false
-script = ExtResource("18_kc7qn")
-ghost_scene = ExtResource("19_0dfln")
+
+[node name="Ghost" parent="Path2D/PathFollow2D" instance=ExtResource("19_0dfln")]
 
 [node name="ExitControl" parent="." instance=ExtResource("20_t275g")]
 position = Vector2(2572, 1198)
@@ -200,6 +201,7 @@ range_of_movement = 180
 position = Vector2(678, 953)
 range_of_movement = 100
 
+[connection signal="direction_changed" from="Path2D" to="Path2D/PathFollow2D/Ghost" method="flip_sprite"]
 [connection signal="body_entered" from="EnemyZone" to="EnemyZone" method="_on_body_entered"]
 [connection signal="body_exited" from="EnemyZone" to="EnemyZone" method="_on_body_exited"]
 
