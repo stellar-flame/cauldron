@@ -187,7 +187,7 @@ position = Vector2(2432, 954)
 
 [node name="TextureRect" parent="Scene/RightWall2" index="1"]
 offset_top = 44.0
-offset_bottom = 486.0
+offset_bottom = 430.0
 
 [node name="Luna" parent="." instance=ExtResource("7_il60q")]
 position = Vector2(2210, 352)

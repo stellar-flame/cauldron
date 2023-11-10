@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b7fx5mrmrtdwq"]
 
 [ext_resource type="Script" path="res://platformer/ExitControl.gd" id="1_aqu2g"]
-[ext_resource type="Texture2D" uid="uid://bgqner0dul4gj" path="res://assets/Doors/barrier.png" id="2_a7bu0"]
+[ext_resource type="Texture2D" uid="uid://bgqner0dul4gj" path="res://assets/doors/barrier.png" id="2_a7bu0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hggb7"]
 size = Vector2(352.75, 171)

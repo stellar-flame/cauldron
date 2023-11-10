@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cj8kkgmso5b0f"]
 
 [ext_resource type="Script" path="res://platformer/enemies/ghost/Ghost.gd" id="1_8jtaj"]
-[ext_resource type="Texture2D" uid="uid://cx876ytbtikkc" path="res://assets/Ghosts/ghost_sprite_sheet_3.png" id="2_04y8p"]
+[ext_resource type="Texture2D" uid="uid://cx876ytbtikkc" path="res://assets/enemies/ghosts/ghost_sprite_sheet_3.png" id="2_23fy7"]
 [ext_resource type="AudioStream" uid="uid://bc4vmhspu3264" path="res://assets/audio/ghost.wav" id="3_k7xwg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yi3by"]
@@ -9,19 +9,19 @@ radius = 43.0
 height = 124.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4f3ok"]
-atlas = ExtResource("2_04y8p")
+atlas = ExtResource("2_23fy7")
 region = Rect2(27, 27, 249, 249)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ffq18"]
-atlas = ExtResource("2_04y8p")
+atlas = ExtResource("2_23fy7")
 region = Rect2(27, 276, 249, 249)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qp4oh"]
-atlas = ExtResource("2_04y8p")
+atlas = ExtResource("2_23fy7")
 region = Rect2(276, 276, 249, 249)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_blrgj"]
-atlas = ExtResource("2_04y8p")
+atlas = ExtResource("2_23fy7")
 region = Rect2(276, 525, 249, 249)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nukmj"]

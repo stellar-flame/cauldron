@@ -1,79 +1,79 @@
 [gd_scene load_steps=33 format=3 uid="uid://c8ug7ksaet368"]
 
 [ext_resource type="Script" path="res://platformer/enemies/bat/Bat.gd" id="1_gpsyn"]
-[ext_resource type="Texture2D" uid="uid://b8vxaftgon6pj" path="res://assets/bluebat/skeleton-fly_00.png" id="1_yoy21"]
-[ext_resource type="Texture2D" uid="uid://dvs8pyticfo6m" path="res://assets/bluebat/skeleton-fly_01.png" id="2_1x5rg"]
-[ext_resource type="Texture2D" uid="uid://cx2u3c5gaewwr" path="res://assets/bluebat/skeleton-fly_02.png" id="3_glgjj"]
-[ext_resource type="Texture2D" uid="uid://bv2j3l8wgqkaa" path="res://assets/bluebat/bats-brown-2.png" id="3_golrg"]
-[ext_resource type="Texture2D" uid="uid://djbknmj8nv0jc" path="res://assets/bluebat/skeleton-fly_03.png" id="4_esbbf"]
-[ext_resource type="Texture2D" uid="uid://xfdno0b3u8ur" path="res://assets/bluebat/skeleton-fly_04.png" id="5_cpcf7"]
-[ext_resource type="Texture2D" uid="uid://tu1m4cdw608v" path="res://assets/bluebat/skeleton-fly_05.png" id="6_5n4q8"]
-[ext_resource type="Texture2D" uid="uid://di0kr3gh01ogd" path="res://assets/bluebat/skeleton-fly_06.png" id="7_aq6hi"]
-[ext_resource type="Texture2D" uid="uid://r237f4b5rsei" path="res://assets/bluebat/skeleton-fly_07.png" id="8_p0hii"]
-[ext_resource type="Texture2D" uid="uid://d27ckdpu7gk3b" path="res://assets/bluebat/skeleton-fly_08.png" id="9_7lni6"]
-[ext_resource type="Texture2D" uid="uid://dn4xj5g68lcq5" path="res://assets/bluebat/skeleton-fly_09.png" id="10_s4s78"]
-[ext_resource type="Texture2D" uid="uid://ddyyac5a3ml3q" path="res://assets/bluebat/skeleton-fly_10.png" id="11_3sixr"]
-[ext_resource type="Texture2D" uid="uid://cptj4vvehmbi3" path="res://assets/bluebat/bats-new.png" id="13_5t6ac"]
-[ext_resource type="Texture2D" uid="uid://dohpcjjebkwm7" path="res://assets/bluebat/bats-brown-1.png" id="14_n423c"]
+[ext_resource type="Texture2D" uid="uid://cptj4vvehmbi3" path="res://assets/enemies/bats/bats-new.png" id="2_i7v46"]
+[ext_resource type="Texture2D" uid="uid://bv2j3l8wgqkaa" path="res://assets/enemies/bats/bats-brown-2.png" id="3_wm305"]
+[ext_resource type="Texture2D" uid="uid://b8vxaftgon6pj" path="res://assets/enemies/bats/skeleton-fly_00.png" id="4_0j6a2"]
+[ext_resource type="Texture2D" uid="uid://dvs8pyticfo6m" path="res://assets/enemies/bats/skeleton-fly_01.png" id="5_woh5v"]
+[ext_resource type="Texture2D" uid="uid://cx2u3c5gaewwr" path="res://assets/enemies/bats/skeleton-fly_02.png" id="6_bhnrd"]
+[ext_resource type="Texture2D" uid="uid://djbknmj8nv0jc" path="res://assets/enemies/bats/skeleton-fly_03.png" id="7_dxnlw"]
+[ext_resource type="Texture2D" uid="uid://xfdno0b3u8ur" path="res://assets/enemies/bats/skeleton-fly_04.png" id="8_v0kxt"]
+[ext_resource type="Texture2D" uid="uid://tu1m4cdw608v" path="res://assets/enemies/bats/skeleton-fly_05.png" id="9_1hk6l"]
+[ext_resource type="Texture2D" uid="uid://di0kr3gh01ogd" path="res://assets/enemies/bats/skeleton-fly_06.png" id="10_pv6iv"]
+[ext_resource type="Texture2D" uid="uid://r237f4b5rsei" path="res://assets/enemies/bats/skeleton-fly_07.png" id="11_b8p2t"]
+[ext_resource type="Texture2D" uid="uid://d27ckdpu7gk3b" path="res://assets/enemies/bats/skeleton-fly_08.png" id="12_t3md8"]
+[ext_resource type="Texture2D" uid="uid://dn4xj5g68lcq5" path="res://assets/enemies/bats/skeleton-fly_09.png" id="13_m0q27"]
+[ext_resource type="Texture2D" uid="uid://ddyyac5a3ml3q" path="res://assets/enemies/bats/skeleton-fly_10.png" id="14_s3wj1"]
+[ext_resource type="Texture2D" uid="uid://dohpcjjebkwm7" path="res://assets/enemies/bats/bats-brown-1.png" id="15_16eur"]
 [ext_resource type="AudioStream" uid="uid://cg1cbb762fgbg" path="res://assets/audio/bat_01.ogg" id="16_3n8s6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o06tg"]
 radius = 38.3275
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7skhm"]
-atlas = ExtResource("13_5t6ac")
+atlas = ExtResource("2_i7v46")
 region = Rect2(0, 0, 512, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uj5py"]
-atlas = ExtResource("13_5t6ac")
+atlas = ExtResource("2_i7v46")
 region = Rect2(0, 400, 512, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uojgo"]
-atlas = ExtResource("13_5t6ac")
+atlas = ExtResource("2_i7v46")
 region = Rect2(512, 400, 512, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jl6j5"]
-atlas = ExtResource("13_5t6ac")
+atlas = ExtResource("2_i7v46")
 region = Rect2(512, 0, 512, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nfmjs"]
-atlas = ExtResource("13_5t6ac")
+atlas = ExtResource("2_i7v46")
 region = Rect2(0, 401, 512, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t25br"]
-atlas = ExtResource("13_5t6ac")
+atlas = ExtResource("2_i7v46")
 region = Rect2(512, 401, 512, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oey5m"]
-atlas = ExtResource("3_golrg")
+atlas = ExtResource("3_wm305")
 region = Rect2(0, 295, 512, 295)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rjsak"]
-atlas = ExtResource("3_golrg")
+atlas = ExtResource("3_wm305")
 region = Rect2(512, 0, 512, 295)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fpqo6"]
-atlas = ExtResource("3_golrg")
+atlas = ExtResource("3_wm305")
 region = Rect2(0, 0, 512, 295)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_riyyq"]
-atlas = ExtResource("14_n423c")
+atlas = ExtResource("15_16eur")
 region = Rect2(512, 0, 512, 300)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hmvbx"]
-atlas = ExtResource("14_n423c")
+atlas = ExtResource("15_16eur")
 region = Rect2(0, 0, 512, 300)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4hq1t"]
-atlas = ExtResource("14_n423c")
+atlas = ExtResource("15_16eur")
 region = Rect2(0, 300, 512, 300)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_foj3g"]
-atlas = ExtResource("13_5t6ac")
+atlas = ExtResource("2_i7v46")
 region = Rect2(512, 25, 512, 374)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kxpc0"]
-atlas = ExtResource("13_5t6ac")
+atlas = ExtResource("2_i7v46")
 region = Rect2(0, 25, 512, 374)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y2sqf"]
@@ -122,37 +122,37 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_yoy21")
+"texture": ExtResource("4_0j6a2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_1x5rg")
+"texture": ExtResource("5_woh5v")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_glgjj")
+"texture": ExtResource("6_bhnrd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_esbbf")
+"texture": ExtResource("7_dxnlw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_cpcf7")
+"texture": ExtResource("8_v0kxt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_5n4q8")
+"texture": ExtResource("9_1hk6l")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_aq6hi")
+"texture": ExtResource("10_pv6iv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_p0hii")
+"texture": ExtResource("11_b8p2t")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_7lni6")
+"texture": ExtResource("12_t3md8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_s4s78")
+"texture": ExtResource("13_m0q27")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_3sixr")
+"texture": ExtResource("14_s3wj1")
 }],
 "loop": true,
 "name": &"bluebat",
@@ -199,7 +199,6 @@ position = Vector2(16, 0)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_y2sqf")
 animation = &"bat"
-frame_progress = 0.0439479
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_3n8s6")
