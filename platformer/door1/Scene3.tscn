@@ -1,14 +1,32 @@
-[gd_scene load_steps=10 format=3]
+[gd_scene load_steps=19 format=3 uid="uid://bxs1ca2ds370j"]
 
 [ext_resource type="Script" path="res://platformer/door1/Scene3.gd" id="1_mrkqe"]
 [ext_resource type="PackedScene" uid="uid://bv3nwqw7dlit1" path="res://platformer/scene_parts/Background.tscn" id="2_w4qvw"]
 [ext_resource type="PackedScene" path="res://platformer/scene_parts/FloatingPlatform.tscn" id="3_8yfhn"]
 [ext_resource type="PackedScene" path="res://platformer/scene_parts/Wall.tscn" id="4_27n1e"]
-[ext_resource type="PackedScene" uid="uid://5xgfqnw1px4x" path="res://platformer/scene_parts/FloorCeiling.tscn" id="5_cd1js"]
+[ext_resource type="PackedScene" uid="uid://blbm0pd8mxphu" path="res://platformer/scene_parts/Spikes.tscn" id="6_gyp0a"]
 [ext_resource type="PackedScene" uid="uid://cm5cwh0yun126" path="res://platformer/scene_parts/SimplePlatform.tscn" id="6_yfvcg"]
-[ext_resource type="PackedScene" path="res://platformer/players/luna/Luna.tscn" id="7_il60q"]
-[ext_resource type="PackedScene" path="res://platformer/players/stella/Stella.tscn" id="8_jfk7h"]
+[ext_resource type="Texture2D" uid="uid://km0f1grpu8cv" path="res://assets/Non-Tiles/Column1.png" id="7_h75tp"]
+[ext_resource type="PackedScene" uid="uid://bi1y861npo00e" path="res://platformer/players/luna/Luna.tscn" id="7_il60q"]
+[ext_resource type="PackedScene" uid="uid://7jopf8qqxkmc" path="res://platformer/players/stella/Stella.tscn" id="8_jfk7h"]
+[ext_resource type="Texture2D" uid="uid://qcmcrcxh03mx" path="res://assets/Tiles/Sealing1.png" id="8_qie8k"]
 [ext_resource type="PackedScene" uid="uid://b7fx5mrmrtdwq" path="res://platformer/ExitControl.tscn" id="9_bqedk"]
+[ext_resource type="Texture2D" uid="uid://b7b3mwajh1qai" path="res://assets/Tiles/Floor1.png" id="9_s5u8h"]
+[ext_resource type="Texture2D" uid="uid://n52csljdx38" path="res://assets/Non-Tiles/Column-SHORT1_1.png" id="10_6hcx0"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_s717n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4hoy8"]
+size = Vector2(2115.5, 272)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gt4j7"]
+size = Vector2(120, 278.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2oyhc"]
+size = Vector2(119, 274)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6dm7"]
+size = Vector2(446.5, 277)
 
 [node name="Scene3" type="Node2D"]
 script = ExtResource("1_mrkqe")
@@ -35,22 +53,14 @@ offset_left = -148.0
 offset_right = 2018.0
 
 [node name="LeftWall" parent="Scene" instance=ExtResource("4_27n1e")]
+position = Vector2(0, 1)
 
 [node name="TextureRect" parent="Scene/LeftWall" index="1"]
 offset_top = 52.0
 offset_bottom = 1381.0
 
-[node name="RightWall" parent="Scene" instance=ExtResource("4_27n1e")]
-position = Vector2(2430, 2)
-
-[node name="TextureRect" parent="Scene/RightWall" index="1"]
-offset_bottom = 1017.0
-
-[node name="Floor_Ceiling" parent="Scene" instance=ExtResource("5_cd1js")]
-position = Vector2(-45, 452)
-
 [node name="SimplePlatform" parent="Scene" instance=ExtResource("6_yfvcg")]
-position = Vector2(188, 732)
+position = Vector2(191, 734)
 scale = Vector2(0.5, 0.5)
 
 [node name="SimplePlatform2" parent="Scene" instance=ExtResource("6_yfvcg")]
@@ -60,6 +70,124 @@ scale = Vector2(0.5, 0.5)
 [node name="SimplePlatform3" parent="Scene" instance=ExtResource("6_yfvcg")]
 position = Vector2(2365, 226)
 scale = Vector2(0.5, 0.5)
+
+[node name="SpikeCeiling" type="StaticBody2D" parent="Scene"]
+position = Vector2(89, 457)
+
+[node name="Spikes" parent="Scene/SpikeCeiling" instance=ExtResource("6_gyp0a")]
+position = Vector2(480, 244)
+
+[node name="SpikeTexture" parent="Scene/SpikeCeiling/Spikes" index="0"]
+offset_right = 700.0
+
+[node name="CollisionShape2D" parent="Scene/SpikeCeiling/Spikes" index="1"]
+position = Vector2(356, 26)
+
+[node name="Spikes2" parent="Scene/SpikeCeiling" instance=ExtResource("6_gyp0a")]
+position = Vector2(1517, 238)
+
+[node name="SpikeTexture" parent="Scene/SpikeCeiling/Spikes2" index="0"]
+offset_left = -201.0
+offset_top = 7.0
+offset_right = 494.0
+offset_bottom = 47.0
+
+[node name="CollisionShape2D" parent="Scene/SpikeCeiling/Spikes2" index="1"]
+position = Vector2(144, 31)
+
+[node name="Scene" type="Node2D" parent="Scene/SpikeCeiling"]
+
+[node name="Floor2" type="Sprite2D" parent="Scene/SpikeCeiling/Scene"]
+position = Vector2(2143, 143)
+texture = ExtResource("7_h75tp")
+
+[node name="Floor1" type="Sprite2D" parent="Scene/SpikeCeiling/Scene"]
+position = Vector2(2332, 144)
+texture = ExtResource("9_s5u8h")
+
+[node name="Column-short12" type="Sprite2D" parent="Scene/SpikeCeiling/Scene"]
+position = Vector2(1248, 144)
+texture = ExtResource("10_6hcx0")
+
+[node name="Column-short15" type="Sprite2D" parent="Scene/SpikeCeiling/Scene"]
+position = Vector2(415, 423)
+texture = ExtResource("10_6hcx0")
+flip_h = true
+flip_v = true
+
+[node name="Column-short14" type="Sprite2D" parent="Scene/SpikeCeiling/Scene"]
+position = Vector2(416, 144)
+texture = ExtResource("10_6hcx0")
+
+[node name="Ceiling1" type="Sprite2D" parent="Scene/SpikeCeiling/Scene"]
+position = Vector2(2342, 423)
+texture = ExtResource("8_qie8k")
+
+[node name="Ceiling2" type="Sprite2D" parent="Scene/SpikeCeiling/Scene"]
+position = Vector2(2087, 421)
+texture = ExtResource("8_qie8k")
+
+[node name="Ceiling3" type="Sprite2D" parent="Scene/SpikeCeiling/Scene"]
+position = Vector2(1831, 421)
+texture = ExtResource("8_qie8k")
+
+[node name="Ceiling4" type="Sprite2D" parent="Scene/SpikeCeiling/Scene"]
+position = Vector2(1576, 420)
+texture = ExtResource("8_qie8k")
+
+[node name="Ceiling5" type="Sprite2D" parent="Scene/SpikeCeiling/Scene"]
+position = Vector2(1320, 420)
+texture = ExtResource("8_qie8k")
+
+[node name="Ceiling6" type="Sprite2D" parent="Scene/SpikeCeiling/Scene"]
+position = Vector2(1068, 420)
+texture = ExtResource("8_qie8k")
+
+[node name="Ceiling7" type="Sprite2D" parent="Scene/SpikeCeiling/Scene"]
+position = Vector2(816, 421)
+texture = ExtResource("8_qie8k")
+
+[node name="Ceiling8" type="Sprite2D" parent="Scene/SpikeCeiling/Scene"]
+material = SubResource("CanvasItemMaterial_s717n")
+position = Vector2(560, 422)
+texture = ExtResource("8_qie8k")
+
+[node name="Ceiling9" type="Sprite2D" parent="Scene/SpikeCeiling/Scene"]
+position = Vector2(489, 421)
+texture = ExtResource("8_qie8k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/SpikeCeiling"]
+visible = false
+position = Vector2(1410.25, 420)
+shape = SubResource("RectangleShape2D_4hoy8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Scene/SpikeCeiling"]
+visible = false
+position = Vector2(415, 143.75)
+shape = SubResource("RectangleShape2D_gt4j7")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Scene/SpikeCeiling"]
+visible = false
+position = Vector2(1247.5, 149)
+shape = SubResource("RectangleShape2D_2oyhc")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Scene/SpikeCeiling"]
+visible = false
+position = Vector2(2244, 140)
+shape = SubResource("RectangleShape2D_g6dm7")
+
+[node name="RightWall" parent="Scene" instance=ExtResource("4_27n1e")]
+position = Vector2(2430, 2)
+
+[node name="TextureRect" parent="Scene/RightWall" index="1"]
+offset_bottom = 483.0
+
+[node name="RightWall2" parent="Scene" instance=ExtResource("4_27n1e")]
+position = Vector2(2432, 954)
+
+[node name="TextureRect" parent="Scene/RightWall2" index="1"]
+offset_top = 44.0
+offset_bottom = 486.0
 
 [node name="Luna" parent="." instance=ExtResource("7_il60q")]
 position = Vector2(2210, 352)
@@ -74,4 +202,7 @@ rotation = 4.71239
 [editable path="Scene/Floating_platform2"]
 [editable path="Scene/Floating_platform"]
 [editable path="Scene/LeftWall"]
+[editable path="Scene/SpikeCeiling/Spikes"]
+[editable path="Scene/SpikeCeiling/Spikes2"]
 [editable path="Scene/RightWall"]
+[editable path="Scene/RightWall2"]

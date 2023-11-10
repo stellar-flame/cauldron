@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://blbm0pd8mxphu"]
 
 [ext_resource type="Texture2D" uid="uid://b5jtlg3lu2i1w" path="res://assets/Props/Spike.png" id="1_ywljx"]
 [ext_resource type="Script" path="res://platformer/scene_parts/Spikes.gd" id="2_oyf0t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xoj4b"]
-size = Vector2(271, 26)
+size = Vector2(696, 29)
 
 [node name="Spikes" type="Area2D"]
 collision_mask = 6

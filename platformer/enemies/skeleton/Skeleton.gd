@@ -18,7 +18,7 @@ func _on_body_entered(body):
 		attack_player(body)
 
 func attack_player(body):
-	body.take_damage(0)
+	body.take_damage(8)
 	sprite.play("attack")
 		
 
