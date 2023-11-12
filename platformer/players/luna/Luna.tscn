@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bi1y861npo00e"]
+[gd_scene load_steps=35 format=3 uid="uid://bi1y861npo00e"]
 
 [ext_resource type="Script" path="res://platformer/players/luna/Luna.gd" id="1_qh012"]
 [ext_resource type="PackedScene" uid="uid://css5283lrvei3" path="res://platformer/players/luna/Spell.tscn" id="2_8vcsm"]
@@ -24,7 +24,14 @@
 [ext_resource type="Texture2D" uid="uid://0v7c4dqdh8bp" path="res://assets/luna/run/run_003.png" id="15_kx2ak"]
 [ext_resource type="Texture2D" uid="uid://ba72btu5moipx" path="res://assets/luna/run/run_004.png" id="16_w4jqo"]
 [ext_resource type="Texture2D" uid="uid://cl7e0d1ybarps" path="res://assets/luna/run/run_005.png" id="17_oqcl7"]
+[ext_resource type="Texture2D" uid="uid://drtd5jsg1ah36" path="res://assets/luna/luna_torch/idle_torch_000.png" id="18_228u6"]
+[ext_resource type="Texture2D" uid="uid://c4b0uqmkrfj4h" path="res://assets/luna/luna_torch/idle_torch_001.png" id="19_5w4ri"]
+[ext_resource type="Texture2D" uid="uid://8ohltenyxple" path="res://assets/luna/luna_torch/idle_torch_002.png" id="20_8widh"]
+[ext_resource type="Texture2D" uid="uid://s2xdsjliofyr" path="res://assets/luna/jump/jump_torch_001_m.png" id="22_cf22y"]
 [ext_resource type="Script" path="res://platformer/players/luna/LunaAnimate.gd" id="25_5l2ur"]
+[ext_resource type="Texture2D" uid="uid://ltkh6g1nq2wb" path="res://assets/luna/run_with_torch/run_torch_000.png" id="29_g3qdq"]
+[ext_resource type="Texture2D" uid="uid://ci6ajc10ssa75" path="res://assets/luna/run_with_torch/run_torch_001.png" id="30_8v61l"]
+[ext_resource type="Texture2D" uid="uid://cbsfr4rr5mjk8" path="res://assets/luna/run_with_torch/run_torch_002.png" id="31_2oyq7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aikpy"]
 radius = 32.0
@@ -105,10 +112,32 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("18_228u6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_5w4ri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_8widh")
+}],
+"loop": true,
+"name": &"idle_with_torch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("11_agkt0")
 }],
 "loop": false,
 "name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_cf22y")
+}],
+"loop": true,
+"name": &"jump_with_torch",
 "speed": 5.0
 }, {
 "frames": [{
@@ -132,7 +161,21 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 12.0
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_g3qdq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_8v61l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_2oyq7")
+}],
+"loop": true,
+"name": &"run_with_torch",
+"speed": 10.0
 }]
 
 [node name="Luna" type="CharacterBody2D" groups=["player"]]
@@ -150,7 +193,7 @@ shape = SubResource("CapsuleShape2D_aikpy")
 position = Vector2(-4.4125, 0)
 scale = Vector2(0.13, 0.13)
 sprite_frames = SubResource("SpriteFrames_cii11")
-animation = &"jump"
+animation = &"jump_with_torch"
 script = ExtResource("25_5l2ur")
 
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]

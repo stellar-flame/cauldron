@@ -1,4 +1,4 @@
-extends "res://platformer/players/CharacterAnimation.gd"
+extends PlayerAnimation
 
 signal paw_attack
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=5 format=3 uid="uid://dumot6m6l1tbo"]
 
 [ext_resource type="Script" path="res://platformer/scene_parts/FloatingPlatform.gd" id="1_32stb"]
 [ext_resource type="Texture2D" uid="uid://ctm2tihn0ov52" path="res://assets/Homemade/Platform1-internals.png" id="1_s12n4"]
@@ -6,7 +6,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ry31u"]
 
-[node name="Floating_platform" type="StaticBody2D"]
+[node name="FloatingPlatform" type="StaticBody2D"]
 script = ExtResource("1_32stb")
 metadata/_edit_group_ = true
 

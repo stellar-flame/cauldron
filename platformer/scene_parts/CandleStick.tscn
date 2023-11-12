@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://brm0fg71vut1d"]
 
 [ext_resource type="Texture2D" uid="uid://dqbq1b5bmq4tx" path="res://assets/props/Candlestick.png" id="1_p2hfu"]
 [ext_resource type="PackedScene" uid="uid://bsl06gkbe6btl" path="res://platformer/scene_parts/Flame.tscn" id="2_tqojk"]
 
-[node name="CandleStick" type="Sprite2D"]
+[node name="CandleStick" type="Sprite2D" groups=["light"]]
 position = Vector2(483, 301)
 texture = ExtResource("1_p2hfu")
 
@@ -11,6 +11,7 @@ texture = ExtResource("1_p2hfu")
 position = Vector2(-37, -35)
 
 [node name="Flame2" parent="." instance=ExtResource("2_tqojk")]
+visible = false
 position = Vector2(-1, -25)
 
 [node name="Flame3" parent="." instance=ExtResource("2_tqojk")]

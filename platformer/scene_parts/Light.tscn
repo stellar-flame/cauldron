@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmsbn1d4j7yqd"]
+
+[ext_resource type="Texture2D" uid="uid://bx5gxhdqk2iif" path="res://assets/props/2d_lights_and_shadows_neutral_point_light.webp" id="1_dyscv"]
+
+[node name="Light" type="PointLight2D"]
+position = Vector2(1, 5)
+color = Color(0.909804, 0.866667, 0.533333, 1)
+shadow_enabled = true
+texture = ExtResource("1_dyscv")
+texture_scale = 2.0

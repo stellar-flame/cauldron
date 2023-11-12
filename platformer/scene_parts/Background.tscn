@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c1sbv24t6prgs" path="res://assets/Homemade/Bricks1BG.png" id="1_rw32h"]
 
-[node name="background" type="Sprite2D"]
+[node name="Background" type="Sprite2D"]
 z_index = -10
 
 [node name="TextureRect" type="TextureRect" parent="."]

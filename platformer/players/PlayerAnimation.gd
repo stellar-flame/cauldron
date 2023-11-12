@@ -1,11 +1,15 @@
 extends AnimatedSprite2D
+class_name PlayerAnimation
+
 
 @onready var animation_blocked = false
 signal died
 signal animation_unblocked
+signal direction_changed 
 var state = "alive"
 
 func update_facing_direction(direction = 0):
+	emit_signal("direction_changed")
 	if direction > 0:
 		flip_h = false
 	elif direction < 0:
