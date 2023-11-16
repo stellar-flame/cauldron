@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2he2rmu7vvrn"]
+
+[ext_resource type="PackedScene" uid="uid://0o1y465bytst" path="res://platformer/enemies/soot_sprite/SootSprite.tscn" id="1_f853j"]
+[ext_resource type="Script" path="res://platformer/enemies/soot_sprite/SootSpriteTest.gd" id="1_qn0v0"]
+[ext_resource type="PackedScene" uid="uid://bmsbn1d4j7yqd" path="res://platformer/light/Light.tscn" id="2_5gd5v"]
+[ext_resource type="PackedScene" uid="uid://63giocnsvrqi" path="res://platformer/scene_parts/Floor.tscn" id="4_eomln"]
+[ext_resource type="PackedScene" uid="uid://7jopf8qqxkmc" path="res://platformer/players/stella/Stella.tscn" id="5_qvwet"]
+
+[node name="SootSpriteTest" type="Node2D"]
+script = ExtResource("1_qn0v0")
+
+[node name="Light" parent="." instance=ExtResource("2_5gd5v")]
+position = Vector2(1846, 1176)
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="SootSprite" parent="Sprites" instance=ExtResource("1_f853j")]
+position = Vector2(1384, 969)
+scale = Vector2(1, 1)
+
+[node name="SootSprite3" parent="Sprites" instance=ExtResource("1_f853j")]
+position = Vector2(2221, 1035)
+scale = Vector2(1, 1)
+
+[node name="SootSprite2" parent="Sprites" instance=ExtResource("1_f853j")]
+position = Vector2(1722, 949)
+scale = Vector2(1, 1)
+
+[node name="SootSprite5" parent="Sprites" instance=ExtResource("1_f853j")]
+position = Vector2(1431, 1097)
+scale = Vector2(1, 1)
+
+[node name="SootSprite4" parent="Sprites" instance=ExtResource("1_f853j")]
+position = Vector2(1019, 1178)
+scale = Vector2(1, 1)
+
+[node name="Floor" parent="." instance=ExtResource("4_eomln")]
+position = Vector2(8, 1333)
+
+[node name="Stella" parent="." instance=ExtResource("5_qvwet")]
+position = Vector2(1760, 1269)

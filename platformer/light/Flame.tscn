@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bsl06gkbe6btl"]
 
-[ext_resource type="PackedScene" uid="uid://bmsbn1d4j7yqd" path="res://platformer/scene_parts/Light.tscn" id="1_p0vtb"]
+[ext_resource type="PackedScene" uid="uid://bmsbn1d4j7yqd" path="res://platformer/light/Light.tscn" id="1_wb45e"]
 
 [sub_resource type="Curve" id="Curve_ecy1u"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -26,4 +26,4 @@ initial_velocity_max = 15.0
 scale_amount_curve = SubResource("Curve_ecy1u")
 color_ramp = SubResource("Gradient_1nfnd")
 
-[node name="Light" parent="." instance=ExtResource("1_p0vtb")]
+[node name="Light" parent="." instance=ExtResource("1_wb45e")]

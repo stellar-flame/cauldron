@@ -92,4 +92,6 @@ stella_paw_attack={
 2d_physics/layer_1="environment"
 2d_physics/layer_2="characters"
 2d_physics/layer_3="enemies"
-2d_physics/layer_4="EnemyDetectionZone"
+2d_physics/layer_4="enemy_detection_zone"
+2d_physics/layer_5="light"
+2d_physics/layer_6="light_sensitive"

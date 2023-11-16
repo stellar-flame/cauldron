@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://f2ur0dc6322s"]
+
+[ext_resource type="PackedScene" uid="uid://0o1y465bytst" path="res://platformer/enemies/soot_sprite/SootSprite.tscn" id="1_kemb8"]
+
+[node name="SootSprites" type="Node2D"]
+
+[node name="SootSprite" parent="." instance=ExtResource("1_kemb8")]
+position = Vector2(682, 375)
+
+[node name="SootSprite2" parent="." instance=ExtResource("1_kemb8")]
+position = Vector2(1622, 770)
+
+[node name="SootSprite3" parent="." instance=ExtResource("1_kemb8")]
+position = Vector2(473, 588)
+
+[node name="SootSprite4" parent="." instance=ExtResource("1_kemb8")]
+position = Vector2(1369, 605)
+
+[node name="SootSprite5" parent="." instance=ExtResource("1_kemb8")]
+position = Vector2(477, 1274)
+
+[node name="SootSprite6" parent="." instance=ExtResource("1_kemb8")]
+position = Vector2(834, 721)
+
+[node name="SootSprite7" parent="." instance=ExtResource("1_kemb8")]
+position = Vector2(1317, 1148)
+
+[node name="SootSprite8" parent="." instance=ExtResource("1_kemb8")]
+position = Vector2(743, 990)
+
+[node name="SootSprite9" parent="." instance=ExtResource("1_kemb8")]
+position = Vector2(1915, 416)
+
+[node name="SootSprite10" parent="." instance=ExtResource("1_kemb8")]
+position = Vector2(2111, 938)
+
+[node name="SootSprite11" parent="." instance=ExtResource("1_kemb8")]
+position = Vector2(1464, 216)
+
+[node name="SootSprite12" parent="." instance=ExtResource("1_kemb8")]
+position = Vector2(1026, 297)
+
+[node name="SootSprite13" parent="." instance=ExtResource("1_kemb8")]
+position = Vector2(1828, 1127)
+
+[node name="SootSprite14" parent="." instance=ExtResource("1_kemb8")]
+position = Vector2(1128, 871)
+
+[node name="SootSprite15" parent="." instance=ExtResource("1_kemb8")]
+position = Vector2(347, 843)

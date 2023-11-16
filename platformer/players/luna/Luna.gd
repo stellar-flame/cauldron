@@ -67,10 +67,10 @@ func _on_animated_sprite_2d_died():
 	queue_free()
 
 func add_light():
-	var LightScene =  load("res://platformer/scene_parts/Light.tscn")
+	var LightScene =  load("res://platformer/light/Light.tscn")
 	var light : PointLight2D = LightScene.instantiate()
-	light.energy = 10
-	light.texture_scale = 1
+	light.set_energy(10)
+	light.set_radius(2)
 	var change_pos_func = func(): 
 		if (sprite.flip_h):
 			light.position = STICK_POS_RIGHT

@@ -2,6 +2,9 @@ luna - itch.io
 stella -  envato.com - Item By: bevouliin
 particles - kenny.nl
 spells - pngegg.com
+soot sprite - https://pngtree.com/
+skeleton - https://graphicriver.net/
+snake/spider/plant - https://graphicriver.net/
 
 Audio:
 dungeon theme - https://opengameart.org/content/platformer-game-music-pack

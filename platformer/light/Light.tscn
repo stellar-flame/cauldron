@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmsbn1d4j7yqd"]
+
+[ext_resource type="Texture2D" uid="uid://bx5gxhdqk2iif" path="res://assets/props/2d_lights_and_shadows_neutral_point_light.webp" id="1_dyscv"]
+[ext_resource type="Script" path="res://platformer/light/Light.gd" id="2_kt2cd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_djd14"]
+
+[node name="Light" type="PointLight2D"]
+position = Vector2(1, 5)
+color = Color(0.909804, 0.866667, 0.533333, 1)
+shadow_enabled = true
+texture = ExtResource("1_dyscv")
+texture_scale = 2.0
+script = ExtResource("2_kt2cd")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 34
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_djd14")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_light_area_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_light_area_body_exited"]

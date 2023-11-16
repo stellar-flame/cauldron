@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://0o1y465bytst"]
+
+[ext_resource type="Script" path="res://platformer/enemies/soot_sprite/SootSprite.gd" id="1_ao83f"]
+[ext_resource type="Texture2D" uid="uid://b6xbylbfrh57h" path="res://assets/enemies/soot_sprite/soot_sprite.png" id="1_sullj"]
+[ext_resource type="Texture2D" uid="uid://bgx1xejweqr6w" path="res://assets/enemies/soot_sprite/soot_sprite_1.png" id="2_y6isf"]
+[ext_resource type="Texture2D" uid="uid://ck44xk7h3hl8f" path="res://assets/enemies/soot_sprite/soot_sprite_2.png" id="3_cwhej"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b3g30"]
+radius = 26.1725
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bgo85"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sullj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_y6isf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cwhej")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[node name="SootSprite" type="CharacterBody2D" groups=["enemies", "light_sensitive"]]
+collision_layer = 36
+collision_mask = 3
+script = ExtResource("1_ao83f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(2, 1)
+shape = SubResource("CircleShape2D_b3g30")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.411765, 0.411765, 0.411765, 1)
+position = Vector2(2, -3.99998)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_bgo85")
+animation = &"idle"
+frame_progress = 0.324168
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
