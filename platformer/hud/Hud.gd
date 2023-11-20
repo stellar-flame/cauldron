@@ -3,7 +3,7 @@ extends CanvasLayer
 class_name HUD
 
 @onready var luna_hp = $Panel/LunaHUD/TextureProgressBar
-@onready var stella_hp = $Panel/StellaHud/TextureProgressBar
+@onready var stella_hp = $Panel/StellaHUD/TextureProgressBar
 
 
 func setup(luna_health : Health, stella_health : Health):	

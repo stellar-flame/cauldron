@@ -41,7 +41,7 @@ position = Vector2(2, -3.99998)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_bgo85")
 animation = &"idle"
-frame_progress = 0.324168
+frame_progress = 0.301945
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5

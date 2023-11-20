@@ -28,4 +28,4 @@ func _process(delta):
 	
 func _restart():
 	Global._init()
-	get_tree().change_scene_to_file("res://platformer/door1/Scene1.tscn")
+	get_tree().change_scene_to_file("res://platformer/dungeon1/Scene1.tscn")

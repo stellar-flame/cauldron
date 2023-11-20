@@ -5,7 +5,7 @@ var player
 var retreat 
 var attack_radius = 300
 var speed = 200
-
+var damageable : Damageable = Damageable.new()
 
 @onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
 

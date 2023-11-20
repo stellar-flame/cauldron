@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://7o8p30wkrjy4" path="res://platformer/hud/LunaHud.tscn" id="6_btm7t"]
 
 [node name="HUD" type="CanvasLayer"]
+scale = Vector2(0.8, 0.8)
+transform = Transform2D(0.8, 0, 0, 0.8, 0, 0)
 script = ExtResource("1_vwblq")
 
 [node name="Panel" type="Panel" parent="."]
@@ -18,7 +20,7 @@ size_flags_vertical = 0
 [node name="LunaHUD" parent="Panel" instance=ExtResource("6_btm7t")]
 layout_mode = 0
 
-[node name="StellaHud" parent="Panel" instance=ExtResource("3_8y5ex")]
+[node name="StellaHUD" parent="Panel" instance=ExtResource("3_8y5ex")]
 layout_mode = 0
-offset_top = 124.0
-offset_bottom = 247.0
+offset_top = 90.5
+offset_bottom = 176.5

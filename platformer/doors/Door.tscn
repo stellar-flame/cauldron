@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://hvpvxcw80087"]
+
+[ext_resource type="Texture2D" uid="uid://bgqner0dul4gj" path="res://assets/doors/barrier.png" id="1_kyn4g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgoul"]
+size = Vector2(84, 720)
+
+[node name="Door" type="StaticBody2D"]
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-19, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_kyn4g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-17, 5)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_hgoul")

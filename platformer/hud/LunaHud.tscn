@@ -8,14 +8,21 @@
 
 [node name="LunaHUD" type="Panel"]
 offset_right = 714.0
-offset_bottom = 123.0
+offset_bottom = 86.0
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
-layout_mode = 0
-offset_left = 145.0
-offset_top = 37.0
-offset_right = 645.0
-offset_bottom = 87.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -24.5
+offset_right = 250.0
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
 texture_under = ExtResource("1_hkysv")
 texture_over = ExtResource("2_ua3v3")
 texture_progress = ExtResource("3_ho8sf")
@@ -23,6 +30,6 @@ tint_over = Color(0.847059, 1, 0.0352941, 0.266667)
 script = ExtResource("4_hwbi4")
 
 [node name="Luna-head" type="Sprite2D" parent="."]
-position = Vector2(69, 62)
-scale = Vector2(0.254883, 0.226562)
+position = Vector2(59, 46)
+scale = Vector2(0.2, 0.178)
 texture = ExtResource("5_s3jem")

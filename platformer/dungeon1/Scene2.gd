@@ -7,10 +7,10 @@ extends BaseScene
 func _ready():
 	super()
 	exit_control_top.scene_id = scene_id
-	exit_control_top.next_scene = "res://platformer/door1/Scene1.tscn"
+	exit_control_top.next_scene = "res://platformer/dungeon1/Scene1.tscn"
 	
 	exit_control_bottom.scene_id = scene_id
-	exit_control_bottom.next_scene = "res://platformer/door1/Scene3.tscn"
+	exit_control_bottom.next_scene = "res://platformer/dungeon1/Scene3.tscn"
 	
 	if (Global.previous_scene_id and Global.previous_scene_id > scene_id):
 		var pos = exit_control_bottom.get_node("ExitCollisionArea").get_global_position()

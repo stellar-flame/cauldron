@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://t6e5wjfh4epe"]
 
-[ext_resource type="Script" path="res://platformer/door1/Scene1.gd" id="1_jxdwe"]
+[ext_resource type="Script" path="res://platformer/dungeon1/Scene1.gd" id="1_jxdwe"]
 [ext_resource type="PackedScene" uid="uid://bv3nwqw7dlit1" path="res://platformer/scene_parts/Background.tscn" id="2_yukka"]
 [ext_resource type="PackedScene" uid="uid://cb2dvojxoxhol" path="res://platformer/scene_parts/Ceiling.tscn" id="3_j63qa"]
 [ext_resource type="PackedScene" uid="uid://63giocnsvrqi" path="res://platformer/scene_parts/Floor.tscn" id="4_e2gas"]
@@ -20,7 +20,7 @@
 [ext_resource type="Script" path="res://platformer/enemies/Path.gd" id="18_5le8m"]
 [ext_resource type="PackedScene" uid="uid://cj8kkgmso5b0f" path="res://platformer/enemies/ghost/Ghost.tscn" id="19_0dfln"]
 [ext_resource type="PackedScene" uid="uid://b7fx5mrmrtdwq" path="res://platformer/ExitControl.tscn" id="20_t275g"]
-[ext_resource type="Script" path="res://platformer/door1/EnemyZone.gd" id="21_25qr4"]
+[ext_resource type="Script" path="res://platformer/dungeon1/EnemyZone.gd" id="21_25qr4"]
 [ext_resource type="PackedScene" uid="uid://c8ug7ksaet368" path="res://platformer/enemies/bat/Bat.tscn" id="22_7vgnf"]
 [ext_resource type="PackedScene" uid="uid://bi1y861npo00e" path="res://platformer/players/luna/Luna.tscn" id="23_sbjhe"]
 [ext_resource type="PackedScene" uid="uid://7jopf8qqxkmc" path="res://platformer/players/stella/Stella.tscn" id="24_fqfpm"]

@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bewe2d3wycbeg"]
+
+[ext_resource type="Texture2D" uid="uid://wbtom6ppjkjs" path="res://assets/calcifer/hava0466_calcifer_sprite_for_Howls_Moving_Castle_for_2D_game_65ad284e-1096-45ab-991a-a965c06b7678.png" id="1_jsfy7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dopod"]
+atlas = ExtResource("1_jsfy7")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cq6g"]
+atlas = ExtResource("1_jsfy7")
+region = Rect2(1024, 0, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f62om"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dopod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cq6g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Calcifer" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_f62om")
+frame_progress = 0.172189

@@ -1,13 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7fx5mrmrtdwq"]
+[gd_scene load_steps=5 format=3 uid="uid://b7fx5mrmrtdwq"]
 
 [ext_resource type="Script" path="res://platformer/ExitControl.gd" id="1_aqu2g"]
-[ext_resource type="Texture2D" uid="uid://bgqner0dul4gj" path="res://assets/doors/barrier.png" id="2_a7bu0"]
+[ext_resource type="PackedScene" uid="uid://hvpvxcw80087" path="res://platformer/doors/Door.tscn" id="2_pjavy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hggb7"]
 size = Vector2(352.75, 171)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgoul"]
-size = Vector2(84, 720)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i2svb"]
 size = Vector2(76, 234)
@@ -20,18 +17,7 @@ script = ExtResource("1_aqu2g")
 position = Vector2(-221.5, 43.5)
 shape = SubResource("RectangleShape2D_hggb7")
 
-[node name="Door" type="StaticBody2D" parent="."]
-collision_mask = 0
-
-[node name="Sprite2D" type="Sprite2D" parent="Door"]
-position = Vector2(-19, 0)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_a7bu0")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
-position = Vector2(-17, 5)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_hgoul")
+[node name="Door" parent="." instance=ExtResource("2_pjavy")]
 
 [node name="Exit" type="Area2D" parent="."]
 collision_mask = 6

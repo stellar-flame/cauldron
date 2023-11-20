@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://bxs1ca2ds370j"]
 
-[ext_resource type="Script" path="res://platformer/door1/Scene3.gd" id="1_mrkqe"]
+[ext_resource type="Script" path="res://platformer/dungeon1/Scene3.gd" id="1_mrkqe"]
 [ext_resource type="PackedScene" uid="uid://bv3nwqw7dlit1" path="res://platformer/scene_parts/Background.tscn" id="2_w4qvw"]
 [ext_resource type="PackedScene" uid="uid://dumot6m6l1tbo" path="res://platformer/scene_parts/FloatingPlatform.tscn" id="3_8yfhn"]
 [ext_resource type="PackedScene" uid="uid://c7cvc0vmc2yjo" path="res://platformer/scene_parts/Wall.tscn" id="4_27n1e"]

@@ -6,7 +6,7 @@ extends BaseScene
 func _ready():
 	super()
 	exit_control.scene_id = scene_id
-	exit_control.next_scene = "res://platformer/door1/Scene2.tscn"
+	exit_control.next_scene = "res://platformer/dungeon1/Scene2.tscn"
 	if (Global.previous_scene_id and Global.previous_scene_id > scene_id):
 		init_position(luna, Vector2(2340, 1280))
 		init_position(stella, Vector2(2340, 1280))

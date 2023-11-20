@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3]
 
-[ext_resource type="Script" path="res://vampire/Vampire.gd" id="1_8cw16"]
+[ext_resource type="Script" path="res://platformer/experiment/vampire/Vampire.gd" id="1_8cw16"]
 [ext_resource type="Texture2D" uid="uid://bhyn13wlcu8xk" path="res://assets/vampire/idle/idle_000.png" id="1_c5hnl"]
 [ext_resource type="Texture2D" uid="uid://cfqj5fr36bara" path="res://assets/vampire/run/run_000.png" id="1_ecqry"]
 [ext_resource type="Texture2D" uid="uid://5dttfkdsry7c" path="res://assets/vampire/idle/idle_002.png" id="2_0u60s"]

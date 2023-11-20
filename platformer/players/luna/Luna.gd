@@ -66,11 +66,11 @@ func _cast_spell():
 func _on_animated_sprite_2d_died():
 	queue_free()
 
-func add_light():
+func add_light(energy, radius):
 	var LightScene =  load("res://platformer/light/Light.tscn")
 	var light : PointLight2D = LightScene.instantiate()
-	light.set_energy(10)
-	light.set_radius(2)
+	light.set_energy(energy)
+	light.set_radius(radius)
 	var change_pos_func = func(): 
 		if (sprite.flip_h):
 			light.position = STICK_POS_RIGHT
@@ -80,6 +80,7 @@ func add_light():
 	sprite.direction_changed.connect(change_pos_func)
 	change_pos_func.call()
 	add_child(light)
+	return light
 	
 	
 	

@@ -2,19 +2,16 @@ extends BaseScene
 
 func _ready():
 	super()
-	luna.add_light()
+	var luna_light = luna.add_light(100, 2)
 	
-	var color = Color(0.1, 0.1, 0.1, 1)
+	var color = Color(0.01, 0.01, 0.01, 1)
 	modulate_children(self, color)
 	
-	var candle_stick = $Scene/CandleStick
-	candle_stick.modulate = Color(0.3, 0.3, 0.3, 1)
-	for f in candle_stick.get_children():
-		if f.is_in_group("flame"):
-			var light: PointLight2D = f.get_node("Light")
-			light.set_energy(5)
-			light.set_radius(1)		
-
+#	for s in $SootSprites.get_children():
+#		if (s is SootSprite):
+#			luna_light.player_exited.connect(s.set_player)
+#			luna_light.player_entered.connect(s.clear_player)
+#
 func modulate_children(node, color):
 	for child in node.get_children():
 		if not (child.is_in_group("light") or child is CanvasLayer):

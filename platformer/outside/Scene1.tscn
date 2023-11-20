@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://crjhjw440xya2"]
+
+[ext_resource type="Texture2D" uid="uid://biglepc7fx64c" path="res://assets/outside/foreground/bg.png" id="1_ea18c"]
+[ext_resource type="Texture2D" uid="uid://dgqmpdyb3smmb" path="res://assets/outside/foreground/fg2.png" id="1_gox5r"]
+[ext_resource type="PackedScene" uid="uid://bi1y861npo00e" path="res://platformer/players/luna/Luna.tscn" id="1_rjsw3"]
+[ext_resource type="PackedScene" uid="uid://7jopf8qqxkmc" path="res://platformer/players/stella/Stella.tscn" id="2_iq6i6"]
+[ext_resource type="Texture2D" uid="uid://bp7u1ro3p6pdy" path="res://assets/outside/foreground/tree4.png" id="4_mkupt"]
+[ext_resource type="Texture2D" uid="uid://bnsra2l7se2d7" path="res://assets/outside/foreground/tree3.png" id="5_fpn54"]
+[ext_resource type="PackedScene" uid="uid://dho0diwcnoid0" path="res://platformer/outside/TileMap.tscn" id="7_vkqtv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_agl5q"]
+size = Vector2(5116, 79.5)
+
+[node name="Scene1" type="Node2D"]
+position = Vector2(0, -155)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(678, -26)
+
+[node name="Bg" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(-683, 291)
+scale = Vector2(5, 1)
+texture = ExtResource("1_ea18c")
+
+[node name="Ground" type="StaticBody2D" parent="."]
+use_parent_material = true
+position = Vector2(1294, 966)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(-10, 130)
+shape = SubResource("RectangleShape2D_agl5q")
+
+[node name="TextureRect" type="TextureRect" parent="Ground"]
+offset_left = -2458.0
+offset_top = -42.0
+offset_right = 2561.0
+offset_bottom = 156.0
+texture = ExtResource("1_gox5r")
+stretch_mode = 1
+
+[node name="TileMap2" parent="." instance=ExtResource("7_vkqtv")]
+position = Vector2(-42, 1058)
+scale = Vector2(4, 1)
+
+[node name="Tree4" type="Sprite2D" parent="."]
+position = Vector2(-1187, 582)
+texture = ExtResource("4_mkupt")
+
+[node name="Tree3" type="Sprite2D" parent="."]
+position = Vector2(-956, 651)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("5_fpn54")
+
+[node name="TileMap" parent="." instance=ExtResource("7_vkqtv")]
+position = Vector2(-2312, 821)
+scale = Vector2(1, 2)
+
+[node name="Luna" parent="." instance=ExtResource("1_rjsw3")]
+position = Vector2(-7, 918)
+
+[node name="Camera2D" type="Camera2D" parent="Luna"]
+position = Vector2(0, -500)
+scale = Vector2(0.5, 0.5)
+
+[node name="Stella" parent="." instance=ExtResource("2_iq6i6")]
+position = Vector2(95, 955)
