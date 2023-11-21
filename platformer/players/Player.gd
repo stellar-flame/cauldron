@@ -18,3 +18,10 @@ func set_health(health : Health):
 	
 func _on_health_died():
 	sprite.die()
+
+func distance_between_players_too_far(other_player: Player, direction):
+	var direction_to_player = position.direction_to(other_player.position).x
+	var distance_to_player = position.distance_to(other_player.position)
+	var limit = get_viewport().size.x - 500
+	return  distance_to_player > limit and ((direction_to_player > 0 and direction < 0) or (direction_to_player < 0 and direction > 0))
+

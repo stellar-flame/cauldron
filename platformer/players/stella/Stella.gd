@@ -1,6 +1,6 @@
-extends Player 
-
 class_name Stella
+
+extends Player 
 
 var hit_area
 
@@ -10,6 +10,8 @@ const JUMP_VELOCITY = -850.0
 @onready var animation_blocked = false
 @onready var hit_area_right = $Hit_Area_Right
 @onready var hit_area_left = $Hit_Area_Left
+
+var luna
 
 const NAME = "Stella"
 
@@ -27,12 +29,13 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
+	
 	direction = Input.get_axis("stella_left", "stella_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
+	if direction == 0 or distance_between_players_too_far(luna, direction):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	else:	
+		velocity.x = direction * SPEED
+			
 	move_and_slide()
 	sprite.update_animation_parameters(direction, is_on_floor())
 	sprite.update_facing_direction(direction)

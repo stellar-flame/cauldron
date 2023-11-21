@@ -15,13 +15,13 @@ const NAME = "Luna"
 const STICK_POS_RIGHT = Vector2(-80, -50)
 const STICK_POS_LEFT = Vector2(60, -50)
 
+var stella
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")	
 	
 func _physics_process(delta):
 	# Add the gravity.
-		
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	else:
@@ -34,15 +34,17 @@ func _physics_process(delta):
 			velocity.y = JUMP_VELOCITY
 			jump_count += 1
 
+		
 		if (sprite.animation_blocked):
 			velocity.x = 0
 		else:
 			direction = Input.get_axis("luna_left", "luna_right")
-			if direction:
-				velocity.x = direction * SPEED
-			else:
+			if direction == 0 or distance_between_players_too_far(stella, direction):
 				velocity.x = move_toward(velocity.x, 0, SPEED)
+			else:	
+				velocity.x = direction * SPEED
 			
+		
 	move_and_slide()
 	sprite.update_animation(direction, is_on_floor())
 	sprite.update_facing_direction(direction)
