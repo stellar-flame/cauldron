@@ -1,15 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://cm6jy8cobhd0h"]
+[gd_scene load_steps=12 format=3 uid="uid://cm6jy8cobhd0h"]
 
 [ext_resource type="Script" path="res://platformer/dungeon1/Scene2.gd" id="1_xcoiv"]
 [ext_resource type="PackedScene" uid="uid://b5482wafkhojc" path="res://platformer/enemies/skeleton/Skeleton.tscn" id="2_0io3v"]
-[ext_resource type="PackedScene" uid="uid://b7fx5mrmrtdwq" path="res://platformer/ExitControl.tscn" id="2_q6jiv"]
+[ext_resource type="PackedScene" uid="uid://cq7bdxhnnktl1" path="res://platformer/dungeon1/CameraLimitSetter.tscn" id="2_pkxqr"]
 [ext_resource type="PackedScene" uid="uid://bv3nwqw7dlit1" path="res://platformer/scene_parts/Background.tscn" id="3_fwjt5"]
 [ext_resource type="PackedScene" uid="uid://c7cvc0vmc2yjo" path="res://platformer/scene_parts/Wall.tscn" id="4_uebxx"]
 [ext_resource type="PackedScene" uid="uid://dumot6m6l1tbo" path="res://platformer/scene_parts/FloatingPlatform.tscn" id="5_1cvgu"]
 [ext_resource type="PackedScene" uid="uid://cb2dvojxoxhol" path="res://platformer/scene_parts/Ceiling.tscn" id="6_c1jup"]
 [ext_resource type="PackedScene" uid="uid://dm5244vs8gaeu" path="res://platformer/scene_parts/Step.tscn" id="7_4my6n"]
-[ext_resource type="PackedScene" uid="uid://7jopf8qqxkmc" path="res://platformer/players/stella/Stella.tscn" id="8_2jcv3"]
-[ext_resource type="PackedScene" uid="uid://bi1y861npo00e" path="res://platformer/players/luna/Luna.tscn" id="9_ihwy7"]
 [ext_resource type="Script" path="res://platformer/enemies/Path.gd" id="11_gmp8m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_08ylh"]
@@ -23,13 +21,8 @@ point_count = 2
 [node name="Scene2" type="Node2D"]
 script = ExtResource("1_xcoiv")
 
-[node name="ExitControlTop" parent="." instance=ExtResource("2_q6jiv")]
-position = Vector2(0, 292)
-rotation = 3.14159
-scale = Vector2(1, -1)
-
-[node name="ExitControlBottom" parent="." instance=ExtResource("2_q6jiv")]
-position = Vector2(2188, 1250)
+[node name="CameraLimitSetter" parent="." instance=ExtResource("2_pkxqr")]
+position = Vector2(2265, 576)
 
 [node name="Scene" type="Node2D" parent="."]
 position = Vector2(1, 0)
@@ -97,12 +90,6 @@ position = Vector2(2462, 20)
 
 [node name="LeftWall" parent="Scene" instance=ExtResource("4_uebxx")]
 position = Vector2(-56, 504)
-
-[node name="Stella" parent="." instance=ExtResource("8_2jcv3")]
-position = Vector2(245, 366)
-
-[node name="Luna" parent="." instance=ExtResource("9_ihwy7")]
-position = Vector2(167, 328)
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(-24, 1)

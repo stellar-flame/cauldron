@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cb2dvojxoxhol"]
 
-[ext_resource type="Texture2D" uid="uid://bujydn7rwnxc1" path="res://assets/Tiles/Floor_top_half.png" id="1_o0hxj"]
+[ext_resource type="Texture2D" uid="uid://qcmcrcxh03mx" path="res://assets/tiles/Sealing1.png" id="1_8esty"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0mljy"]
 size = Vector2(2555, 121)
@@ -12,10 +12,8 @@ position = Vector2(1281.5, 50.5)
 shape = SubResource("RectangleShape2D_0mljy")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -16.0
-offset_top = 2.0
-offset_right = 2567.0
-offset_bottom = 112.0
-texture = ExtResource("1_o0hxj")
+offset_top = -147.0
+offset_right = 2583.0
+offset_bottom = 133.0
+texture = ExtResource("1_8esty")
 stretch_mode = 1
-flip_v = true

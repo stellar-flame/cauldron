@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwmvg06mjeseb"]
+
+[ext_resource type="Script" path="res://platformer/outside/Players.gd" id="1_wnm3q"]
+[ext_resource type="PackedScene" uid="uid://bi1y861npo00e" path="res://platformer/players/luna/Luna.tscn" id="2_1i0rl"]
+[ext_resource type="PackedScene" uid="uid://7jopf8qqxkmc" path="res://platformer/players/stella/Stella.tscn" id="3_csoyj"]
+
+[node name="Players" type="Node2D"]
+script = ExtResource("1_wnm3q")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-7, 418)
+
+[node name="Luna" parent="." instance=ExtResource("2_1i0rl")]
+position = Vector2(-7, 1035)
+
+[node name="Stella" parent="." instance=ExtResource("3_csoyj")]
+position = Vector2(112, 1051)

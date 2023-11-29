@@ -6,16 +6,6 @@ extends PointLight2D
 signal player_exited(player)
 signal player_entered(player)
 
-func _process(delta):
-	if Input.is_key_pressed(KEY_LEFT):
-		position += Vector2(-10, 0)
-	if Input.is_key_pressed(KEY_RIGHT):
-		position += Vector2(10, 0)
-	if Input.is_key_pressed(KEY_UP):
-		position += Vector2(0, -10)
-	if Input.is_key_pressed(KEY_DOWN):
-		position += Vector2(0, 10)
-		
 func set_radius(texture_scale):
 	set_texture_scale(texture_scale)
 	var shape = CircleShape2D.new()

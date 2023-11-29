@@ -12,8 +12,8 @@ script = ExtResource("1_rfhw4")
 shape = SubResource("RectangleShape2D_c3bh2")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 128.0
+offset_left = -2.0
+offset_right = 126.0
 offset_bottom = 1436.0
 texture = ExtResource("2_5kkk6")
 stretch_mode = 1
-flip_v = true

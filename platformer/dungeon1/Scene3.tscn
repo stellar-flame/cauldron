@@ -9,9 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://km0f1grpu8cv" path="res://assets/Non-Tiles/Column1.png" id="7_h75tp"]
 [ext_resource type="PackedScene" uid="uid://bi1y861npo00e" path="res://platformer/players/luna/Luna.tscn" id="7_il60q"]
 [ext_resource type="PackedScene" uid="uid://7jopf8qqxkmc" path="res://platformer/players/stella/Stella.tscn" id="8_jfk7h"]
-[ext_resource type="Texture2D" uid="uid://qcmcrcxh03mx" path="res://assets/Tiles/Sealing1.png" id="8_qie8k"]
+[ext_resource type="Texture2D" uid="uid://qcmcrcxh03mx" path="res://assets/tiles/Sealing1.png" id="8_qie8k"]
 [ext_resource type="PackedScene" uid="uid://b7fx5mrmrtdwq" path="res://platformer/ExitControl.tscn" id="9_bqedk"]
-[ext_resource type="Texture2D" uid="uid://b7b3mwajh1qai" path="res://assets/Tiles/Floor1.png" id="9_s5u8h"]
+[ext_resource type="Texture2D" uid="uid://b7b3mwajh1qai" path="res://assets/tiles/Floor1.png" id="9_s5u8h"]
 [ext_resource type="Texture2D" uid="uid://n52csljdx38" path="res://assets/Non-Tiles/Column-SHORT1_1.png" id="10_6hcx0"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_s717n"]

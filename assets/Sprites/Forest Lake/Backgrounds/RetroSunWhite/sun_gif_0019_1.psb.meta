@@ -1,0 +1,783 @@
+fileFormatVersion: 2
+guid: 944918c12f9d8a5488ecb08113d321d2
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMasterTextureLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: sun_gif_0000_20
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 317
+      height: 316
+    spriteID: f3560dd762db1c74783dd198dae7ad0b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 81, y: 23}
+  - name: sun_gif_0001_19
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 329
+      y: 4
+      width: 317
+      height: 316
+    spriteID: 4f29f201da7bb0a4e89ec19a7903e136
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 329, y: 4}
+    spritePosition: {x: 81, y: 23}
+  - name: sun_gif_0002_18
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 654
+      y: 4
+      width: 317
+      height: 316
+    spriteID: 71827fbd1c56e1044b86bffb881d4072
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 654, y: 4}
+    spritePosition: {x: 81, y: 23}
+  - name: sun_gif_0003_17
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 979
+      y: 4
+      width: 317
+      height: 316
+    spriteID: e6ded12e84c0c7740a53476383a9450c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 979, y: 4}
+    spritePosition: {x: 81, y: 23}
+  - name: sun_gif_0019_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1304
+      y: 4
+      width: 317
+      height: 316
+    spriteID: 78412fac0c2e45547939888f4314ce0f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1304, y: 4}
+    spritePosition: {x: 81, y: 23}
+  - name: sun_gif_0018_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1629
+      y: 4
+      width: 317
+      height: 316
+    spriteID: 4ec7ddbab807f5244adc2d5369dac800
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1629, y: 4}
+    spritePosition: {x: 81, y: 23}
+  - name: sun_gif_0017_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 328
+      width: 317
+      height: 316
+    spriteID: c19c5139685afc34691e5e3f69e95dc5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 328}
+    spritePosition: {x: 81, y: 23}
+  - name: sun_gif_0016_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 329
+      y: 328
+      width: 317
+      height: 316
+    spriteID: 12dafe133ea3a064cbef804c973b5e66
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 329, y: 328}
+    spritePosition: {x: 81, y: 23}
+  - name: sun_gif_0015_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 329
+      y: 974
+      width: 317
+      height: 298
+    spriteID: 8d0aa1b2cef656c45a69987840ea444e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 329, y: 974}
+    spritePosition: {x: 81, y: 41}
+  - name: sun_gif_0014_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 974
+      width: 317
+      height: 301
+    spriteID: cdc22f7128e0c384d9a90e954b84ee8c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 974}
+    spritePosition: {x: 81, y: 38}
+  - name: sun_gif_0013_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1629
+      y: 652
+      width: 317
+      height: 302
+    spriteID: a7d6d660b7ad3e1408272348bcdec10f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1629, y: 652}
+    spritePosition: {x: 81, y: 37}
+  - name: sun_gif_0012_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1304
+      y: 652
+      width: 317
+      height: 305
+    spriteID: 7caeb08f5e50b2049930f7fd40818d98
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1304, y: 652}
+    spritePosition: {x: 81, y: 34}
+  - name: sun_gif_0011_9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 979
+      y: 652
+      width: 317
+      height: 307
+    spriteID: ca26c09b824cad54abfceaaa18f7fbb8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 979, y: 652}
+    spritePosition: {x: 81, y: 32}
+  - name: sun_gif_0010_10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 654
+      y: 652
+      width: 317
+      height: 310
+    spriteID: f784ad96cab1ab541b089e21b60b2d1a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 654, y: 652}
+    spritePosition: {x: 81, y: 29}
+  - name: sun_gif_0009_11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 329
+      y: 652
+      width: 317
+      height: 311
+    spriteID: 1acb62e0e4934d84abe0477dd07fb604
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 329, y: 652}
+    spritePosition: {x: 81, y: 28}
+  - name: sun_gif_0008_12
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 652
+      width: 317
+      height: 314
+    spriteID: c7f1d457edc265f47bf77435883cb959
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 652}
+    spritePosition: {x: 81, y: 25}
+  - name: sun_gif_0004_16
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 654
+      y: 328
+      width: 317
+      height: 316
+    spriteID: 487f93d1a00f7c74c98697797717b40e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 654, y: 328}
+    spritePosition: {x: 81, y: 23}
+  - name: sun_gif_0005_15
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 979
+      y: 328
+      width: 317
+      height: 316
+    spriteID: 0a22ac1941fdd5e46a49285b23dcc36f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 979, y: 328}
+    spritePosition: {x: 81, y: 23}
+  - name: sun_gif_0006_14
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1304
+      y: 328
+      width: 317
+      height: 316
+    spriteID: bcf62b4e6c0c8684fbbb6cef8b3e129c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1304, y: 328}
+    spritePosition: {x: 81, y: 23}
+  - name: sun_gif_0007_13
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1629
+      y: 328
+      width: 317
+      height: 316
+    spriteID: 0d0939e415a8f1144bff4edc06764dce
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1629, y: 328}
+    spritePosition: {x: 81, y: 23}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
+  platformSettings: []
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  layerMappingOption: 2
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  skeletonAssetReferenceID: 
+  spriteCategoryList:
+    categories: []
+  spritePackingTag: 
+  resliceFromLayer: 0
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: Group 1
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 59aebef43f398f940b4de1b9742d84b9
+    layerID: 25
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: sun_gif_0000_20
+    spriteName: sun_gif_0000_20
+    isGroup: 0
+    parentIndex: 0
+    spriteID: f3560dd762db1c74783dd198dae7ad0b
+    layerID: 4
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: sun_gif_0001_19
+    spriteName: sun_gif_0001_19
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 4f29f201da7bb0a4e89ec19a7903e136
+    layerID: 5
+    mosaicPosition: {x: 329, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: sun_gif_0002_18
+    spriteName: sun_gif_0002_18
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 71827fbd1c56e1044b86bffb881d4072
+    layerID: 8
+    mosaicPosition: {x: 654, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: sun_gif_0003_17
+    spriteName: sun_gif_0003_17
+    isGroup: 0
+    parentIndex: 0
+    spriteID: e6ded12e84c0c7740a53476383a9450c
+    layerID: 9
+    mosaicPosition: {x: 979, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: sun_gif_0019_1
+    spriteName: sun_gif_0019_1
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 78412fac0c2e45547939888f4314ce0f
+    layerID: 24
+    mosaicPosition: {x: 1304, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: sun_gif_0018_2
+    spriteName: sun_gif_0018_2
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 4ec7ddbab807f5244adc2d5369dac800
+    layerID: 23
+    mosaicPosition: {x: 1629, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: sun_gif_0017_3
+    spriteName: sun_gif_0017_3
+    isGroup: 0
+    parentIndex: 0
+    spriteID: c19c5139685afc34691e5e3f69e95dc5
+    layerID: 22
+    mosaicPosition: {x: 4, y: 328}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: sun_gif_0016_4
+    spriteName: sun_gif_0016_4
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 12dafe133ea3a064cbef804c973b5e66
+    layerID: 21
+    mosaicPosition: {x: 329, y: 328}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: sun_gif_0015_5
+    spriteName: sun_gif_0015_5
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 8d0aa1b2cef656c45a69987840ea444e
+    layerID: 20
+    mosaicPosition: {x: 329, y: 974}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: sun_gif_0014_6
+    spriteName: sun_gif_0014_6
+    isGroup: 0
+    parentIndex: 0
+    spriteID: cdc22f7128e0c384d9a90e954b84ee8c
+    layerID: 19
+    mosaicPosition: {x: 4, y: 974}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: sun_gif_0013_7
+    spriteName: sun_gif_0013_7
+    isGroup: 0
+    parentIndex: 0
+    spriteID: a7d6d660b7ad3e1408272348bcdec10f
+    layerID: 18
+    mosaicPosition: {x: 1629, y: 652}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: sun_gif_0012_8
+    spriteName: sun_gif_0012_8
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 7caeb08f5e50b2049930f7fd40818d98
+    layerID: 17
+    mosaicPosition: {x: 1304, y: 652}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: sun_gif_0011_9
+    spriteName: sun_gif_0011_9
+    isGroup: 0
+    parentIndex: 0
+    spriteID: ca26c09b824cad54abfceaaa18f7fbb8
+    layerID: 16
+    mosaicPosition: {x: 979, y: 652}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: sun_gif_0010_10
+    spriteName: sun_gif_0010_10
+    isGroup: 0
+    parentIndex: 0
+    spriteID: f784ad96cab1ab541b089e21b60b2d1a
+    layerID: 15
+    mosaicPosition: {x: 654, y: 652}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: sun_gif_0009_11
+    spriteName: sun_gif_0009_11
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 1acb62e0e4934d84abe0477dd07fb604
+    layerID: 14
+    mosaicPosition: {x: 329, y: 652}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: sun_gif_0008_12
+    spriteName: sun_gif_0008_12
+    isGroup: 0
+    parentIndex: 0
+    spriteID: c7f1d457edc265f47bf77435883cb959
+    layerID: 13
+    mosaicPosition: {x: 4, y: 652}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: sun_gif_0004_16
+    spriteName: sun_gif_0004_16
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 487f93d1a00f7c74c98697797717b40e
+    layerID: 10
+    mosaicPosition: {x: 654, y: 328}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: sun_gif_0005_15
+    spriteName: sun_gif_0005_15
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 0a22ac1941fdd5e46a49285b23dcc36f
+    layerID: 11
+    mosaicPosition: {x: 979, y: 328}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: sun_gif_0006_14
+    spriteName: sun_gif_0006_14
+    isGroup: 0
+    parentIndex: 0
+    spriteID: bcf62b4e6c0c8684fbbb6cef8b3e129c
+    layerID: 12
+    mosaicPosition: {x: 1304, y: 328}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: sun_gif_0007_13
+    spriteName: sun_gif_0007_13
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 0d0939e415a8f1144bff4edc06764dce
+    layerID: 7
+    mosaicPosition: {x: 1629, y: 328}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  sharedRigPSDLayers: []
+  pSDLayerImportSetting: []
+  generateGOHierarchy: 0
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []

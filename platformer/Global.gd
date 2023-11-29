@@ -1,6 +1,6 @@
 extends Node
 
-var previous_scene_id 
+var current_scene = 1 
 var players_health : Dictionary
 
 @onready var base_window_size = Vector2(

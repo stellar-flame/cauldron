@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=3 uid="uid://ds7v731w16353"]
+
+[ext_resource type="PackedScene" uid="uid://da24r2cukk36w" path="res://platformer/dungeon1/Scene1.tscn" id="1_c1rja"]
+[ext_resource type="PackedScene" uid="uid://dwmvg06mjeseb" path="res://platformer/players/Players.tscn" id="2_h54dm"]
+[ext_resource type="PackedScene" uid="uid://cm6jy8cobhd0h" path="res://platformer/dungeon1/Scene2.tscn" id="3_vt4va"]
+
+[sub_resource type="GDScript" id="GDScript_32hxb"]
+script/source = "extends Node
+
+class_name FirstScene
+
+@onready var players_node = $Players
+@onready var luna : Luna = $Players/Luna
+@onready var stella : Stella = $Players/Stella
+
+var HUDScene = preload(\"res://platformer/hud/Hud.tscn\")
+@onready var hud : HUD =  HUDScene.instantiate() 
+
+@onready var game_over_scene_class = preload(\"res://platformer/game_over/GameOver.tscn\")
+var game_over_scene 		
+
+
+		
+func _ready():
+	add_child(hud)
+
+	luna.set_health(Global.players_health[Luna.NAME])
+	stella.set_health(Global.players_health[Stella.NAME])
+	
+	hud.setup(luna.health, stella.health)
+	
+	players_node.player_entered_scene($Scene1)
+	
+	
+func _process(delta):
+	if (!game_over_scene and !luna and !stella):
+		game_over_scene = game_over_scene_class.instantiate()
+		game_over_scene.key_pressed.connect(_restart)
+		get_tree().current_scene.add_child(game_over_scene)
+		
+	
+func _restart():
+	Global._init()
+	get_tree().change_scene_to_file(\"res://platformer/dungeon1/Scene1.tscn\")
+"
+
+[node name="FirstScene" type="Node2D"]
+script = SubResource("GDScript_32hxb")
+
+[node name="Scene1" parent="." instance=ExtResource("1_c1rja")]
+
+[node name="Scene2" parent="." instance=ExtResource("3_vt4va")]
+position = Vector2(2560, 914)
+
+[node name="Players" parent="." instance=ExtResource("2_h54dm")]
+position = Vector2(0, 1)
+
+[node name="Camera2D" parent="Players" index="0"]
+position = Vector2(1270, 719)
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+rotation_smoothing_enabled = true
+
+[node name="Luna" parent="Players" index="1"]
+position = Vector2(167, 1232)
+metadata/_edit_group_ = true
+
+[node name="Stella" parent="Players" index="2"]
+position = Vector2(262, 1270)
+
+[connection signal="player_in_scene" from="Scene1" to="Players" method="player_entered_scene"]
+[connection signal="player_in_scene" from="Scene2" to="Players" method="player_entered_scene"]
+
+[editable path="Players"]

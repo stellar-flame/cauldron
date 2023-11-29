@@ -1,7 +1,6 @@
-extends BaseScene
+extends Node2D
 
 func _ready():
-	super()
 	var luna_light = luna.add_light(100, 2)
 	
 	var color = Color(0.01, 0.01, 0.01, 1)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://t6e5wjfh4epe"]
+[gd_scene load_steps=26 format=3 uid="uid://da24r2cukk36w"]
 
-[ext_resource type="Script" path="res://platformer/dungeon1/Scene1.gd" id="1_jxdwe"]
+[ext_resource type="Script" path="res://platformer/dungeon1/Scene1.gd" id="1_vc7c1"]
+[ext_resource type="PackedScene" uid="uid://cq7bdxhnnktl1" path="res://platformer/dungeon1/CameraLimitSetter.tscn" id="2_l5c1n"]
 [ext_resource type="PackedScene" uid="uid://bv3nwqw7dlit1" path="res://platformer/scene_parts/Background.tscn" id="2_yukka"]
 [ext_resource type="PackedScene" uid="uid://cb2dvojxoxhol" path="res://platformer/scene_parts/Ceiling.tscn" id="3_j63qa"]
 [ext_resource type="PackedScene" uid="uid://63giocnsvrqi" path="res://platformer/scene_parts/Floor.tscn" id="4_e2gas"]
@@ -19,11 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://uyvpbgj44u05" path="res://assets/props/Web4.png" id="17_th50s"]
 [ext_resource type="Script" path="res://platformer/enemies/Path.gd" id="18_5le8m"]
 [ext_resource type="PackedScene" uid="uid://cj8kkgmso5b0f" path="res://platformer/enemies/ghost/Ghost.tscn" id="19_0dfln"]
-[ext_resource type="PackedScene" uid="uid://b7fx5mrmrtdwq" path="res://platformer/ExitControl.tscn" id="20_t275g"]
 [ext_resource type="Script" path="res://platformer/dungeon1/EnemyZone.gd" id="21_25qr4"]
 [ext_resource type="PackedScene" uid="uid://c8ug7ksaet368" path="res://platformer/enemies/bat/Bat.tscn" id="22_7vgnf"]
-[ext_resource type="PackedScene" uid="uid://bi1y861npo00e" path="res://platformer/players/luna/Luna.tscn" id="23_sbjhe"]
-[ext_resource type="PackedScene" uid="uid://7jopf8qqxkmc" path="res://platformer/players/stella/Stella.tscn" id="24_fqfpm"]
 [ext_resource type="PackedScene" uid="uid://eeq7sucf4aq1" path="res://platformer/enemies/spider/Spider.tscn" id="26_7etp7"]
 
 [sub_resource type="Curve2D" id="Curve2D_ppkf3"]
@@ -36,10 +34,13 @@ point_count = 5
 radius = 319.006
 
 [node name="Scene1" type="Node2D"]
-position = Vector2(0, 1)
-script = ExtResource("1_jxdwe")
+script = ExtResource("1_vc7c1")
+
+[node name="CameraLimitSetter" parent="." instance=ExtResource("2_l5c1n")]
+position = Vector2(2336, 1192)
 
 [node name="Scene" type="Node2D" parent="."]
+position = Vector2(0, 1)
 metadata/_edit_group_ = true
 
 [node name="background" parent="Scene" instance=ExtResource("2_yukka")]
@@ -60,9 +61,7 @@ offset_left = -110.0
 position = Vector2(1175, 699)
 
 [node name="TextureRect" parent="Scene/Wall" index="1"]
-offset_left = -2.0
 offset_top = 17.0
-offset_right = 126.0
 offset_bottom = 663.0
 
 [node name="CandleStick" parent="Scene" instance=ExtResource("8_wf0db")]
@@ -78,7 +77,7 @@ position = Vector2(1317, 186)
 metadata/_edit_group_ = true
 
 [node name="LeftWall" parent="Scene" instance=ExtResource("7_7nu1t")]
-position = Vector2(-50, 131)
+position = Vector2(-18, 125)
 metadata/_edit_group_ = true
 
 [node name="TextureRect" parent="Scene/LeftWall" index="1"]
@@ -89,7 +88,7 @@ offset_bottom = 958.0
 flip_h = true
 
 [node name="RightWall" parent="Scene" instance=ExtResource("7_7nu1t")]
-position = Vector2(2487, 84)
+position = Vector2(2487, 73)
 metadata/_edit_group_ = true
 
 [node name="TextureRect" parent="Scene/RightWall" index="1"]
@@ -156,7 +155,7 @@ scale = Vector2(1.91993, 2.0906)
 texture = ExtResource("17_th50s")
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2(23, 90.9659)
+position = Vector2(23, 91.9659)
 scale = Vector2(1, 0.880707)
 curve = SubResource("Curve2D_ppkf3")
 script = ExtResource("18_5le8m")
@@ -168,10 +167,8 @@ rotates = false
 
 [node name="Ghost" parent="Path2D/PathFollow2D" instance=ExtResource("19_0dfln")]
 
-[node name="ExitControl" parent="." instance=ExtResource("20_t275g")]
-position = Vector2(2572, 1198)
-
 [node name="EnemyZone" type="Area2D" parent="." node_paths=PackedStringArray("enemy")]
+position = Vector2(0, 1)
 collision_mask = 3
 script = ExtResource("21_25qr4")
 enemy = NodePath("Bat")
@@ -183,22 +180,13 @@ position = Vector2(391, 433)
 position = Vector2(416, 420)
 shape = SubResource("CircleShape2D_spa2j")
 
-[node name="Luna" parent="." instance=ExtResource("23_sbjhe")]
-position = Vector2(158, 1244)
-collision_mask = 1
-metadata/_edit_group_ = true
-
-[node name="Stella" parent="." instance=ExtResource("24_fqfpm")]
-position = Vector2(256, 1279)
-collision_mask = 1
-
 [node name="SpiderWithWebLarge" parent="." instance=ExtResource("26_7etp7")]
-position = Vector2(2183, 600)
+position = Vector2(2183, 601)
 scale = Vector2(1.5, 1.5)
 range_of_movement = 180
 
 [node name="SpiderWithWeb" parent="." instance=ExtResource("26_7etp7")]
-position = Vector2(678, 953)
+position = Vector2(678, 954)
 range_of_movement = 100
 
 [connection signal="direction_changed" from="Path2D" to="Path2D/PathFollow2D/Ghost" method="flip_sprite"]

@@ -190,10 +190,11 @@ position = Vector2(0, 10)
 shape = SubResource("CapsuleShape2D_aikpy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-4.4125, 0)
+position = Vector2(-4, 0)
 scale = Vector2(0.13, 0.13)
 sprite_frames = SubResource("SpriteFrames_cii11")
-animation = &"jump_with_torch"
+animation = &"idle"
+frame_progress = 0.0798013
 script = ExtResource("25_5l2ur")
 
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]

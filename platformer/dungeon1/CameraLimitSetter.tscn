@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq7bdxhnnktl1"]
+
+[ext_resource type="Script" path="res://platformer/dungeon1/CameraLimitSetter.gd" id="1_qxyik"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_87xhy"]
+size = Vector2(352, 296)
+
+[node name="CameraLimitSetter" type="Node2D"]
+script = ExtResource("1_qxyik")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_87xhy")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

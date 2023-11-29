@@ -1,23 +1,16 @@
 extends BaseScene
 
-@export var scene_id = 2
-@onready var exit_control_top = $ExitControlTop
-@onready var exit_control_bottom = $ExitControlBottom
 
+# Called when the node enters the scene tree for the first time.
 func _ready():
 	super()
-	exit_control_top.scene_id = scene_id
-	exit_control_top.next_scene = "res://platformer/dungeon1/Scene1.tscn"
+	screen_id = 2
+	camera_limits = { "right" = Global.base_window_size.x + self.position.x, 
+						"left" = Global.base_window_size.x}
 	
-	exit_control_bottom.scene_id = scene_id
-	exit_control_bottom.next_scene = "res://platformer/dungeon1/Scene3.tscn"
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
 	
-	if (Global.previous_scene_id and Global.previous_scene_id > scene_id):
-		var pos = exit_control_bottom.get_node("ExitCollisionArea").get_global_position()
-		init_position(stella, pos)
-		init_position(luna, pos)
-		
 	
-func init_position(player :CharacterBody2D, vector: Vector2):
-	player.position = vector
-	player.get_node("AnimatedSprite2D").flip_h = true
