@@ -22,24 +22,15 @@ point_count = 2
 script = ExtResource("1_xcoiv")
 
 [node name="CameraLimitSetter" parent="." instance=ExtResource("2_pkxqr")]
-position = Vector2(2265, 576)
+position = Vector2(2299, 617)
 
 [node name="Scene" type="Node2D" parent="."]
 position = Vector2(1, 0)
 
 [node name="background" parent="Scene" instance=ExtResource("3_fwjt5")]
 
-[node name="Wall2" parent="Scene" instance=ExtResource("4_uebxx")]
-position = Vector2(2165, 950)
-
-[node name="TextureRect" parent="Scene/Wall2" index="1"]
-offset_left = -65.0
-offset_top = -67.0
-offset_right = 63.0
-offset_bottom = 187.0
-
 [node name="Floating_platform1" parent="Scene" instance=ExtResource("5_1cvgu")]
-position = Vector2(226, 498)
+position = Vector2(284, 509)
 
 [node name="TextureRect" parent="Scene/Floating_platform1" index="1"]
 offset_left = -273.0
@@ -59,16 +50,13 @@ offset_left = -1033.0
 offset_right = 958.0
 
 [node name="Floating_platform" parent="Scene" instance=ExtResource("5_1cvgu")]
-position = Vector2(106, 1376)
+position = Vector2(108, 1384)
 
 [node name="TextureRect" parent="Scene/Floating_platform" index="1"]
 offset_left = -27.0
 offset_top = 8.0
-offset_right = 2192.0
+offset_right = 2104.0
 offset_bottom = 88.0
-
-[node name="Ceiling" parent="Scene" instance=ExtResource("6_c1jup")]
-position = Vector2(11, -70)
 
 [node name="Step2" parent="Scene" instance=ExtResource("7_4my6n")]
 position = Vector2(2338, 657)
@@ -76,20 +64,17 @@ position = Vector2(2338, 657)
 [node name="Step" parent="Scene" instance=ExtResource("7_4my6n")]
 position = Vector2(200, 1159)
 
-[node name="Wall" parent="Scene" instance=ExtResource("4_uebxx")]
-position = Vector2(4, 2)
-
-[node name="TextureRect" parent="Scene/Wall" index="1"]
-offset_left = -65.0
-offset_top = -70.0
-offset_right = 63.0
-offset_bottom = 187.0
+[node name="Ceiling" parent="Scene" instance=ExtResource("6_c1jup")]
+position = Vector2(-3, -68)
 
 [node name="RightWall" parent="Scene" instance=ExtResource("4_uebxx")]
-position = Vector2(2462, 20)
+position = Vector2(2438, 20)
 
 [node name="LeftWall" parent="Scene" instance=ExtResource("4_uebxx")]
-position = Vector2(-56, 504)
+position = Vector2(-1, 510)
+
+[node name="TextureRect" parent="Scene/LeftWall" index="1"]
+offset_bottom = 961.0
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(-24, 1)
@@ -110,8 +95,7 @@ position = Vector2(97.1557, -36.5893)
 [connection signal="dash" from="Path2D/PathFollow2D/Skeleton" to="Path2D" method="_on_dash"]
 [connection signal="stop_dash" from="Path2D/PathFollow2D/Skeleton" to="Path2D" method="_on_stop_dash"]
 
-[editable path="Scene/Wall2"]
 [editable path="Scene/Floating_platform1"]
 [editable path="Scene/Floating_platform2"]
 [editable path="Scene/Floating_platform"]
-[editable path="Scene/Wall"]
+[editable path="Scene/LeftWall"]

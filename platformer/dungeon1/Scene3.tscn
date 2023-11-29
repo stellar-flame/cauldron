@@ -1,16 +1,14 @@
-[gd_scene load_steps=19 format=3 uid="uid://bxs1ca2ds370j"]
+[gd_scene load_steps=17 format=3 uid="uid://bxs1ca2ds370j"]
 
 [ext_resource type="Script" path="res://platformer/dungeon1/Scene3.gd" id="1_mrkqe"]
+[ext_resource type="PackedScene" uid="uid://cq7bdxhnnktl1" path="res://platformer/dungeon1/CameraLimitSetter.tscn" id="2_exi4h"]
 [ext_resource type="PackedScene" uid="uid://bv3nwqw7dlit1" path="res://platformer/scene_parts/Background.tscn" id="2_w4qvw"]
 [ext_resource type="PackedScene" uid="uid://dumot6m6l1tbo" path="res://platformer/scene_parts/FloatingPlatform.tscn" id="3_8yfhn"]
 [ext_resource type="PackedScene" uid="uid://c7cvc0vmc2yjo" path="res://platformer/scene_parts/Wall.tscn" id="4_27n1e"]
 [ext_resource type="PackedScene" uid="uid://blbm0pd8mxphu" path="res://platformer/scene_parts/Spikes.tscn" id="6_gyp0a"]
 [ext_resource type="PackedScene" uid="uid://cm5cwh0yun126" path="res://platformer/scene_parts/SimplePlatform.tscn" id="6_yfvcg"]
 [ext_resource type="Texture2D" uid="uid://km0f1grpu8cv" path="res://assets/Non-Tiles/Column1.png" id="7_h75tp"]
-[ext_resource type="PackedScene" uid="uid://bi1y861npo00e" path="res://platformer/players/luna/Luna.tscn" id="7_il60q"]
-[ext_resource type="PackedScene" uid="uid://7jopf8qqxkmc" path="res://platformer/players/stella/Stella.tscn" id="8_jfk7h"]
 [ext_resource type="Texture2D" uid="uid://qcmcrcxh03mx" path="res://assets/tiles/Sealing1.png" id="8_qie8k"]
-[ext_resource type="PackedScene" uid="uid://b7fx5mrmrtdwq" path="res://platformer/ExitControl.tscn" id="9_bqedk"]
 [ext_resource type="Texture2D" uid="uid://b7b3mwajh1qai" path="res://assets/tiles/Floor1.png" id="9_s5u8h"]
 [ext_resource type="Texture2D" uid="uid://n52csljdx38" path="res://assets/Non-Tiles/Column-SHORT1_1.png" id="10_6hcx0"]
 
@@ -31,6 +29,9 @@ size = Vector2(446.5, 277)
 [node name="Scene3" type="Node2D"]
 script = ExtResource("1_mrkqe")
 
+[node name="CameraLimitSetter" parent="." instance=ExtResource("2_exi4h")]
+position = Vector2(2268, 162)
+
 [node name="Scene" type="Node2D" parent="."]
 
 [node name="background" parent="Scene" instance=ExtResource("2_w4qvw")]
@@ -44,19 +45,11 @@ offset_top = -3.0
 offset_right = 2517.0
 offset_bottom = 77.0
 
-[node name="Floating_platform" parent="Scene" instance=ExtResource("3_8yfhn")]
-position = Vector2(153, 80)
-scale = Vector2(1, -1)
-
-[node name="TextureRect" parent="Scene/Floating_platform" index="1"]
-offset_left = -148.0
-offset_right = 2018.0
-
 [node name="LeftWall" parent="Scene" instance=ExtResource("4_27n1e")]
 position = Vector2(0, 1)
 
 [node name="TextureRect" parent="Scene/LeftWall" index="1"]
-offset_top = 52.0
+offset_top = -1.0
 offset_bottom = 1381.0
 
 [node name="SimplePlatform" parent="Scene" instance=ExtResource("6_yfvcg")]
@@ -189,18 +182,7 @@ position = Vector2(2432, 954)
 offset_top = 44.0
 offset_bottom = 430.0
 
-[node name="Luna" parent="." instance=ExtResource("7_il60q")]
-position = Vector2(2210, 352)
-
-[node name="Stella" parent="." instance=ExtResource("8_jfk7h")]
-position = Vector2(2294, 392)
-
-[node name="ExitControl" parent="." instance=ExtResource("9_bqedk")]
-position = Vector2(2294, 3)
-rotation = 4.71239
-
 [editable path="Scene/Floating_platform2"]
-[editable path="Scene/Floating_platform"]
 [editable path="Scene/LeftWall"]
 [editable path="Scene/SpikeCeiling/Spikes"]
 [editable path="Scene/SpikeCeiling/Spikes2"]

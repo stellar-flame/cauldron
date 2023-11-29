@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ds7v731w16353"]
+[gd_scene load_steps=6 format=3 uid="uid://ds7v731w16353"]
 
 [ext_resource type="PackedScene" uid="uid://da24r2cukk36w" path="res://platformer/dungeon1/Scene1.tscn" id="1_c1rja"]
 [ext_resource type="PackedScene" uid="uid://dwmvg06mjeseb" path="res://platformer/players/Players.tscn" id="2_h54dm"]
 [ext_resource type="PackedScene" uid="uid://cm6jy8cobhd0h" path="res://platformer/dungeon1/Scene2.tscn" id="3_vt4va"]
+[ext_resource type="PackedScene" uid="uid://bxs1ca2ds370j" path="res://platformer/dungeon1/Scene3.tscn" id="4_1tojv"]
 
 [sub_resource type="GDScript" id="GDScript_32hxb"]
 script/source = "extends Node
@@ -50,7 +51,10 @@ script = SubResource("GDScript_32hxb")
 [node name="Scene1" parent="." instance=ExtResource("1_c1rja")]
 
 [node name="Scene2" parent="." instance=ExtResource("3_vt4va")]
-position = Vector2(2560, 914)
+position = Vector2(2556, 900)
+
+[node name="Scene3" parent="." instance=ExtResource("4_1tojv")]
+position = Vector2(2560, 2344)
 
 [node name="Players" parent="." instance=ExtResource("2_h54dm")]
 position = Vector2(0, 1)
@@ -71,5 +75,6 @@ position = Vector2(262, 1270)
 
 [connection signal="player_in_scene" from="Scene1" to="Players" method="player_entered_scene"]
 [connection signal="player_in_scene" from="Scene2" to="Players" method="player_entered_scene"]
+[connection signal="player_in_scene" from="Scene3" to="Players" method="player_entered_scene"]
 
 [editable path="Players"]

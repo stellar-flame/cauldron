@@ -46,10 +46,10 @@ metadata/_edit_group_ = true
 [node name="background" parent="Scene" instance=ExtResource("2_yukka")]
 
 [node name="Ceiling" parent="Scene" instance=ExtResource("3_j63qa")]
-position = Vector2(16, -8)
+position = Vector2(-4, -1)
 
 [node name="Floor" parent="Scene" instance=ExtResource("4_e2gas")]
-position = Vector2(-18, 1341)
+position = Vector2(-4, 1341)
 
 [node name="Floating_platform" parent="Scene" instance=ExtResource("6_pbipe")]
 position = Vector2(723, 639)
@@ -88,7 +88,7 @@ offset_bottom = 958.0
 flip_h = true
 
 [node name="RightWall" parent="Scene" instance=ExtResource("7_7nu1t")]
-position = Vector2(2487, 73)
+position = Vector2(2440, 73)
 metadata/_edit_group_ = true
 
 [node name="TextureRect" parent="Scene/RightWall" index="1"]
