@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dm5244vs8gaeu"]
 
-[ext_resource type="Texture2D" uid="uid://0rff55077erq" path="res://assets/Non-Tiles/Platform1.png" id="1_y6bxt"]
+[ext_resource type="Texture2D" uid="uid://ch7tfqsifyumi" path="res://assets/Non-Tiles/Platform1.png" id="1_y6bxt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pni4p"]
 size = Vector2(244, 72)
@@ -11,4 +11,5 @@ size = Vector2(244, 72)
 shape = SubResource("RectangleShape2D_pni4p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_y6bxt")
