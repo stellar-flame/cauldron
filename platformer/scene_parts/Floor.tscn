@@ -1,15 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://63giocnsvrqi"]
+[gd_scene load_steps=4 format=3 uid="uid://63giocnsvrqi"]
 
+[ext_resource type="Script" path="res://platformer/scene_parts/StaticBody.gd" id="1_50r7c"]
 [ext_resource type="Texture2D" uid="uid://b7b3mwajh1qai" path="res://assets/tiles/Floor1.png" id="1_85oxa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jdoxp"]
-size = Vector2(2576, 103.5)
+size = Vector2(2517, 124.5)
 
 [node name="Floor" type="StaticBody2D"]
+script = ExtResource("1_50r7c")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1296, 56.75)
+position = Vector2(1293.5, 72.75)
 shape = SubResource("RectangleShape2D_jdoxp")
 
 [node name="TextureRect" type="TextureRect" parent="."]

@@ -1,7 +1,9 @@
+class_name Bat
 extends AttackingCharacter
 
 # Adjust these variables according to your game
 var start_position 
+var damage =  2
 
 @onready var audio = $AudioStreamPlayer2D
 
@@ -13,8 +15,8 @@ func _ready():
 
 	
 func _physics_process(delta):	
-	if (player):
-		attack()
+	if !players.is_empty():
+		attack(damage)
 	else:
 		if (self.global_position.distance_to(start_position) < 5):
 			velocity = Vector2()
@@ -22,20 +24,15 @@ func _physics_process(delta):
 			var direction_to_start_pos = (start_position - self.global_position).normalized()
 			velocity = direction_to_start_pos *speed
 		move_and_slide()
-				
-func attack_player():
-	audio.play()
-	var collision = get_last_slide_collision();
-	if (collision.get_collider().is_in_group("player")):
-		player.take_damage(2)
-		retreat = true	
-		
+						
 						
 
 func start_attack(body):
-	player = body
+	if body.is_in_group("player"):
+		players.append(body)
 
 func stop_attack(body):
-	player = null
+	if body.is_in_group("player"):
+		players.erase(body)
 
 

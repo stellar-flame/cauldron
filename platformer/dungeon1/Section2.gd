@@ -1,10 +1,16 @@
-extends Node2D
+extends Section
 
-@onready var light: Light_Area = $Light
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	light.set_radius(2)
+	super()
+	screen_id = 2
+	camera_limits = { "right" = Global.base_window_size.x + self.position.x, 
+						"left" = Global.base_window_size.x}
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+	
+	

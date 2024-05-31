@@ -11,6 +11,8 @@ script = ExtResource("1_qn0v0")
 
 [node name="Light" parent="." instance=ExtResource("2_5gd5v")]
 position = Vector2(1846, 1176)
+color = Color(0.847059, 0.537255, 0.533333, 1)
+energy = 9.12
 
 [node name="Sprites" type="Node2D" parent="."]
 

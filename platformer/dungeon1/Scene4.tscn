@@ -1,58 +1,58 @@
-[gd_scene load_steps=16 format=3 uid="uid://1hceqwjx8iua"]
+[gd_scene load_steps=11 format=3 uid="uid://1hceqwjx8iua"]
 
 [ext_resource type="Script" path="res://platformer/dungeon1/Scene4.gd" id="1_dhnag"]
 [ext_resource type="PackedScene" uid="uid://cm5cwh0yun126" path="res://platformer/scene_parts/SimplePlatform.tscn" id="2_wqauy"]
-[ext_resource type="PackedScene" uid="uid://b7fx5mrmrtdwq" path="res://platformer/ExitControl.tscn" id="3_gldya"]
 [ext_resource type="PackedScene" uid="uid://bv3nwqw7dlit1" path="res://platformer/scene_parts/Background.tscn" id="4_wqf2d"]
 [ext_resource type="PackedScene" uid="uid://cb2dvojxoxhol" path="res://platformer/scene_parts/Ceiling.tscn" id="5_36fbc"]
 [ext_resource type="PackedScene" uid="uid://63giocnsvrqi" path="res://platformer/scene_parts/Floor.tscn" id="6_5sllh"]
 [ext_resource type="PackedScene" uid="uid://c7cvc0vmc2yjo" path="res://platformer/scene_parts/Wall.tscn" id="7_dhxjk"]
 [ext_resource type="PackedScene" uid="uid://dumot6m6l1tbo" path="res://platformer/scene_parts/FloatingPlatform.tscn" id="8_7wbdo"]
 [ext_resource type="Texture2D" uid="uid://dj22tlmsv34jw" path="res://assets/doors/Door2.png" id="9_1lkbm"]
-[ext_resource type="Texture2D" uid="uid://by6s2j6txmbyt" path="res://assets/doors/Door6.png" id="10_tomng"]
-[ext_resource type="PackedScene" uid="uid://hvpvxcw80087" path="res://platformer/doors/Door.tscn" id="11_gha6i"]
-[ext_resource type="PackedScene" uid="uid://0o1y465bytst" path="res://platformer/enemies/soot_sprite/SootSprite.tscn" id="12_e54qn"]
-[ext_resource type="PackedScene" uid="uid://bi1y861npo00e" path="res://platformer/players/luna/Luna.tscn" id="13_e3kdv"]
-[ext_resource type="Script" path="res://platformer/players/luna/LunaDarkAnimate.gd" id="14_l76q0"]
-[ext_resource type="PackedScene" uid="uid://7jopf8qqxkmc" path="res://platformer/players/stella/Stella.tscn" id="15_2oota"]
+[ext_resource type="PackedScene" uid="uid://dwmvg06mjeseb" path="res://platformer/players/Players.tscn" id="11_efnop"]
+[ext_resource type="Texture2D" uid="uid://c1qfux17ue8mu" path="res://assets/props/fireplace.png" id="13_cackm"]
 
 [node name="Scene4" type="Node2D"]
 script = ExtResource("1_dhnag")
 
 [node name="Scene" type="Node" parent="."]
 
-[node name="SimplePlatform2" parent="Scene" instance=ExtResource("2_wqauy")]
-position = Vector2(2342, 499)
-
 [node name="SimplePlatform" parent="Scene" instance=ExtResource("2_wqauy")]
-position = Vector2(252, 1066)
+position = Vector2(252, 1169)
 
-[node name="Exit_Control" parent="Scene" instance=ExtResource("3_gldya")]
-position = Vector2(2558, 1195)
+[node name="SimplePlatform2" parent="Scene" instance=ExtResource("2_wqauy")]
+position = Vector2(1816, 1030)
+
+[node name="SimplePlatform3" parent="Scene" instance=ExtResource("2_wqauy")]
+position = Vector2(2275, 614)
 
 [node name="Background" parent="Scene" instance=ExtResource("4_wqf2d")]
+
+[node name="TextureRect" parent="Scene/Background" index="0"]
+offset_right = 5000.0
+offset_bottom = 3000.0
 
 [node name="Ceiling" parent="Scene" instance=ExtResource("5_36fbc")]
 position = Vector2(15, -4)
 
+[node name="TextureRect" parent="Scene/Ceiling" index="1"]
+offset_right = 5000.0
+
 [node name="Floor" parent="Scene" instance=ExtResource("6_5sllh")]
-position = Vector2(-2, 1336)
+position = Vector2(18, 2782)
 
-[node name="Column" parent="Scene" instance=ExtResource("7_dhxjk")]
-position = Vector2(1248, 958)
+[node name="CollisionShape2D" parent="Scene/Floor" index="0"]
+position = Vector2(2518, 137.5)
 
-[node name="TextureRect" parent="Scene/Column" index="1"]
-offset_top = 64.0
-offset_bottom = 401.0
+[node name="TextureRect" parent="Scene/Floor" index="1"]
+offset_right = 5000.0
+offset_bottom = 280.0
 
 [node name="Wall" parent="Scene" instance=ExtResource("7_dhxjk")]
 position = Vector2(-1, 0)
 
-[node name="Wall2" parent="Scene" instance=ExtResource("7_dhxjk")]
-position = Vector2(2444, 3)
-
-[node name="TextureRect" parent="Scene/Wall2" index="1"]
-offset_bottom = 1068.0
+[node name="TextureRect" parent="Scene/Wall" index="1"]
+offset_top = 106.0
+offset_bottom = 2780.0
 
 [node name="Floating_platform2" parent="Scene" instance=ExtResource("8_7wbdo")]
 position = Vector2(157, 427)
@@ -63,52 +63,92 @@ offset_right = 1139.0
 [node name="RightEdge" parent="Scene/Floating_platform2/TextureRect" index="1"]
 position = Vector2(628, 39)
 
+[node name="Floating_platform3" parent="Scene" instance=ExtResource("8_7wbdo")]
+position = Vector2(-966, 1463)
+
+[node name="TextureRect" parent="Scene/Floating_platform3" index="1"]
+offset_left = 1094.0
+offset_right = 5603.0
+
+[node name="RightEdge" parent="Scene/Floating_platform3/TextureRect" index="1"]
+position = Vector2(628, 39)
+
 [node name="Floating_platform" parent="Scene" instance=ExtResource("8_7wbdo")]
-position = Vector2(308, 799)
+position = Vector2(-568, 853)
 
 [node name="TextureRect" parent="Scene/Floating_platform" index="1"]
-offset_left = 221.0
+offset_left = 1094.0
 offset_right = 2138.0
 
 [node name="RightEdge" parent="Scene/Floating_platform/TextureRect" index="1"]
 position = Vector2(628, 39)
+
+[node name="Floating_platform5" parent="Scene" instance=ExtResource("8_7wbdo")]
+position = Vector2(2715, 1004)
+
+[node name="TextureRect" parent="Scene/Floating_platform5" index="1"]
+offset_right = 2190.0
+
+[node name="RightEdge" parent="Scene/Floating_platform5/TextureRect" index="1"]
+position = Vector2(628, 39)
+
+[node name="Floating_platform4" parent="Scene" instance=ExtResource("8_7wbdo")]
+position = Vector2(2428, 597)
+
+[node name="TextureRect" parent="Scene/Floating_platform4" index="1"]
+offset_right = 2190.0
+
+[node name="RightEdge" parent="Scene/Floating_platform4/TextureRect" index="1"]
+position = Vector2(628, 39)
+
+[node name="Wall2" parent="Scene" instance=ExtResource("7_dhxjk")]
+position = Vector2(4886, 2)
+
+[node name="TextureRect" parent="Scene/Wall2" index="1"]
+offset_top = 105.0
+offset_bottom = 2780.0
+
+[node name="Column" parent="Scene" instance=ExtResource("7_dhxjk")]
+position = Vector2(1248, 958)
+
+[node name="TextureRect" parent="Scene/Column" index="1"]
+offset_left = 319.0
+offset_top = -855.0
+offset_right = 447.0
+offset_bottom = 192.0
+
+[node name="Column2" parent="Scene" instance=ExtResource("7_dhxjk")]
+position = Vector2(1960, 1383)
+
+[node name="TextureRect" parent="Scene/Column2" index="1"]
+offset_left = 317.0
+offset_top = -757.0
+offset_right = 445.0
+offset_bottom = 104.0
+
+[node name="Fireplace" type="Sprite2D" parent="Scene"]
+position = Vector2(2495, 2462)
+scale = Vector2(1.5, 1.2)
+texture = ExtResource("13_cackm")
 
 [node name="EntranceDoor" type="Sprite2D" parent="."]
 position = Vector2(320, 288)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("9_1lkbm")
 
-[node name="Door1" type="Sprite2D" parent="."]
-position = Vector2(1039, 1175)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("10_tomng")
+[node name="Players" parent="." instance=ExtResource("11_efnop")]
+position = Vector2(583, -714)
 
-[node name="Door2" type="Sprite2D" parent="."]
-position = Vector2(1597, 1180)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("10_tomng")
-
-[node name="BlockingDoor" parent="." instance=ExtResource("11_gha6i")]
-position = Vector2(1289, 659)
-
-[node name="Sprite2D" parent="BlockingDoor" index="0"]
-scale = Vector2(0.5, 0.6)
-
-[node name="SootSprite" parent="." instance=ExtResource("12_e54qn")]
-position = Vector2(467, 557)
-
-[node name="Luna" parent="." instance=ExtResource("13_e3kdv")]
-position = Vector2(369, 339)
-
-[node name="AnimatedSprite2D" parent="Luna" index="1"]
-script = ExtResource("14_l76q0")
-
-[node name="Stella" parent="." instance=ExtResource("15_2oota")]
-position = Vector2(258, 360)
-
-[editable path="Scene/Column"]
-[editable path="Scene/Wall2"]
+[editable path="Scene/Background"]
+[editable path="Scene/Ceiling"]
+[editable path="Scene/Floor"]
+[editable path="Scene/Wall"]
 [editable path="Scene/Floating_platform2"]
+[editable path="Scene/Floating_platform3"]
 [editable path="Scene/Floating_platform"]
-[editable path="BlockingDoor"]
-[editable path="Luna"]
+[editable path="Scene/Floating_platform5"]
+[editable path="Scene/Floating_platform4"]
+[editable path="Scene/Wall2"]
+[editable path="Scene/Column"]
+[editable path="Scene/Column2"]
+[editable path="Players"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c7cvc0vmc2yjo"]
 
-[ext_resource type="Script" path="res://platformer/scene_parts/Wall.gd" id="1_rfhw4"]
+[ext_resource type="Script" path="res://platformer/scene_parts/StaticBody.gd" id="1_rfhw4"]
 [ext_resource type="Texture2D" uid="uid://bnechvmq1mujj" path="res://assets/Non-Tiles/Column-SHORT1.png" id="2_5kkk6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3bh2"]

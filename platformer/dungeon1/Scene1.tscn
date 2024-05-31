@@ -1,6 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://da24r2cukk36w"]
+[gd_scene load_steps=44 format=3 uid="uid://ds7v731w16353"]
 
-[ext_resource type="Script" path="res://platformer/dungeon1/Scene1.gd" id="1_vc7c1"]
+[ext_resource type="Script" path="res://platformer/dungeon1/Scene1.gd" id="1_fphtj"]
+[ext_resource type="Script" path="res://platformer/dungeon1/Section1.gd" id="1_fyyv6"]
 [ext_resource type="PackedScene" uid="uid://cq7bdxhnnktl1" path="res://platformer/dungeon1/CameraLimitSetter.tscn" id="2_l5c1n"]
 [ext_resource type="PackedScene" uid="uid://bv3nwqw7dlit1" path="res://platformer/scene_parts/Background.tscn" id="2_yukka"]
 [ext_resource type="PackedScene" uid="uid://cb2dvojxoxhol" path="res://platformer/scene_parts/Ceiling.tscn" id="3_j63qa"]
@@ -21,7 +22,18 @@
 [ext_resource type="PackedScene" uid="uid://cj8kkgmso5b0f" path="res://platformer/enemies/ghost/Ghost.tscn" id="19_0dfln"]
 [ext_resource type="Script" path="res://platformer/dungeon1/EnemyZone.gd" id="21_25qr4"]
 [ext_resource type="PackedScene" uid="uid://c8ug7ksaet368" path="res://platformer/enemies/bat/Bat.tscn" id="22_7vgnf"]
+[ext_resource type="Script" path="res://platformer/dungeon1/Section2.gd" id="23_4ad67"]
+[ext_resource type="PackedScene" uid="uid://dm5244vs8gaeu" path="res://platformer/scene_parts/Step.tscn" id="24_3ahsl"]
+[ext_resource type="PackedScene" uid="uid://b5482wafkhojc" path="res://platformer/enemies/skeleton/Skeleton.tscn" id="25_fc8aw"]
 [ext_resource type="PackedScene" uid="uid://eeq7sucf4aq1" path="res://platformer/enemies/spider/Spider.tscn" id="26_7etp7"]
+[ext_resource type="Script" path="res://platformer/dungeon1/Section3.gd" id="26_bmw4h"]
+[ext_resource type="PackedScene" uid="uid://blbm0pd8mxphu" path="res://platformer/scene_parts/Spikes.tscn" id="27_tygyh"]
+[ext_resource type="Texture2D" uid="uid://km0f1grpu8cv" path="res://assets/Non-Tiles/Column1.png" id="28_hfjtr"]
+[ext_resource type="Texture2D" uid="uid://b7b3mwajh1qai" path="res://assets/tiles/Floor1.png" id="29_euto0"]
+[ext_resource type="Texture2D" uid="uid://n52csljdx38" path="res://assets/Non-Tiles/Column-SHORT1_1.png" id="30_s4iog"]
+[ext_resource type="Texture2D" uid="uid://qcmcrcxh03mx" path="res://assets/tiles/Sealing1.png" id="31_u2hi5"]
+[ext_resource type="PackedScene" uid="uid://dwmvg06mjeseb" path="res://platformer/players/Players.tscn" id="32_7ofkm"]
+[ext_resource type="Texture2D" uid="uid://dri6tjkm83wkm" path="res://assets/tiles/Bricks1.png" id="33_pb8cg"]
 
 [sub_resource type="Curve2D" id="Curve2D_ppkf3"]
 _data = {
@@ -32,163 +44,512 @@ point_count = 5
 [sub_resource type="CircleShape2D" id="CircleShape2D_spa2j"]
 radius = 319.006
 
-[node name="Scene1" type="Node2D"]
-script = ExtResource("1_vc7c1")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08ylh"]
 
-[node name="CameraLimitSetter" parent="." instance=ExtResource("2_l5c1n")]
+[sub_resource type="Curve2D" id="Curve2D_nqk1h"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 596, 771, 0, 0, 0, 0, 2014, 765)
+}
+point_count = 2
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_s717n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4hoy8"]
+size = Vector2(2115.5, 272)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gt4j7"]
+size = Vector2(120, 278.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2oyhc"]
+size = Vector2(119, 274)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6dm7"]
+size = Vector2(446.5, 277)
+
+[node name="Scene1" type="Node2D"]
+script = ExtResource("1_fphtj")
+
+[node name="Section1" type="Node2D" parent="."]
+script = ExtResource("1_fyyv6")
+metadata/_edit_group_ = true
+
+[node name="CameraLimitSetter" parent="Section1" instance=ExtResource("2_l5c1n")]
 position = Vector2(2336, 1192)
 
-[node name="Scene" type="Node2D" parent="."]
+[node name="Scene" type="Node2D" parent="Section1"]
 position = Vector2(0, 1)
 metadata/_edit_group_ = true
 
-[node name="background" parent="Scene" instance=ExtResource("2_yukka")]
+[node name="background" parent="Section1/Scene" instance=ExtResource("2_yukka")]
+metadata/_edit_group_ = true
 
-[node name="Ceiling" parent="Scene" instance=ExtResource("3_j63qa")]
+[node name="Ceiling" parent="Section1/Scene" instance=ExtResource("3_j63qa")]
 position = Vector2(-4, -1)
+metadata/_edit_group_ = true
 
-[node name="Floor" parent="Scene" instance=ExtResource("4_e2gas")]
+[node name="Floor" parent="Section1/Scene" instance=ExtResource("4_e2gas")]
+texture_repeat = 2
 position = Vector2(-4, 1341)
 
-[node name="Floating_platform" parent="Scene" instance=ExtResource("6_pbipe")]
+[node name="TextureRect" parent="Section1/Scene/Floor" index="1"]
+offset_right = 2675.0
+offset_bottom = 280.0
+
+[node name="Floating_platform" parent="Section1/Scene" instance=ExtResource("6_pbipe")]
 position = Vector2(723, 639)
 
-[node name="TextureRect" parent="Scene/Floating_platform" index="1"]
+[node name="TextureRect" parent="Section1/Scene/Floating_platform" index="1"]
 offset_left = -110.0
 
-[node name="Wall" parent="Scene" instance=ExtResource("7_7nu1t")]
+[node name="Wall" parent="Section1/Scene" instance=ExtResource("7_7nu1t")]
 position = Vector2(1175, 699)
+metadata/_edit_group_ = true
 
-[node name="TextureRect" parent="Scene/Wall" index="1"]
+[node name="TextureRect" parent="Section1/Scene/Wall" index="1"]
 offset_top = 17.0
 offset_bottom = 663.0
 
-[node name="CandleStick" parent="Scene" instance=ExtResource("8_wf0db")]
+[node name="CandleStick" parent="Section1/Scene" instance=ExtResource("8_wf0db")]
 position = Vector2(894, 913)
 metadata/_edit_group_ = true
 
-[node name="CandleStick2" parent="Scene" instance=ExtResource("8_wf0db")]
+[node name="CandleStick2" parent="Section1/Scene" instance=ExtResource("8_wf0db")]
 position = Vector2(1562, 926)
 metadata/_edit_group_ = true
 
-[node name="Lantern" parent="Scene" instance=ExtResource("9_p6imu")]
+[node name="Lantern" parent="Section1/Scene" instance=ExtResource("9_p6imu")]
 position = Vector2(1317, 186)
 metadata/_edit_group_ = true
 
-[node name="LeftWall" parent="Scene" instance=ExtResource("7_7nu1t")]
+[node name="LeftWall" parent="Section1/Scene" instance=ExtResource("7_7nu1t")]
 position = Vector2(-18, 125)
 metadata/_edit_group_ = true
 
-[node name="TextureRect" parent="Scene/LeftWall" index="1"]
+[node name="TextureRect" parent="Section1/Scene/LeftWall" index="1"]
 offset_left = 14.0
 offset_top = -52.0
 offset_right = 142.0
 offset_bottom = 958.0
 flip_h = true
 
-[node name="RightWall" parent="Scene" instance=ExtResource("7_7nu1t")]
+[node name="RightWall" parent="Section1/Scene" instance=ExtResource("7_7nu1t")]
 position = Vector2(2440, 73)
 metadata/_edit_group_ = true
 
-[node name="TextureRect" parent="Scene/RightWall" index="1"]
+[node name="TextureRect" parent="Section1/Scene/RightWall" index="1"]
 offset_left = 9.0
 offset_top = -4.0
 offset_right = 137.0
-offset_bottom = 1011.0
+offset_bottom = 860.0
 flip_h = true
 
-[node name="SimplePlatform" parent="Scene" instance=ExtResource("11_0mrne")]
+[node name="SimplePlatform" parent="Section1/Scene" instance=ExtResource("11_0mrne")]
 position = Vector2(671, 1123)
 
-[node name="SimplePlatform2" parent="Scene" instance=ExtResource("11_0mrne")]
+[node name="SimplePlatform2" parent="Section1/Scene" instance=ExtResource("11_0mrne")]
 position = Vector2(273, 885)
 
-[node name="SimplePlatform3" parent="Scene" instance=ExtResource("11_0mrne")]
+[node name="SimplePlatform3" parent="Section1/Scene" instance=ExtResource("11_0mrne")]
 position = Vector2(2210, 998)
 
-[node name="Chair1left" type="Sprite2D" parent="Scene"]
+[node name="Chair1left" type="Sprite2D" parent="Section1/Scene"]
 position = Vector2(1341.5, 1291.5)
 texture = ExtResource("10_1ynle")
 
-[node name="Chair1right" type="Sprite2D" parent="Scene"]
+[node name="Chair1right" type="Sprite2D" parent="Section1/Scene"]
 position = Vector2(1534.5, 1285.5)
 texture = ExtResource("11_w3726")
 
-[node name="Table" type="Sprite2D" parent="Scene"]
+[node name="Table" type="Sprite2D" parent="Section1/Scene"]
 position = Vector2(1437.5, 1298.5)
 texture = ExtResource("12_wx1iv")
 
-[node name="ShelfWithBooks" type="Sprite2D" parent="Scene"]
+[node name="ShelfWithBooks" type="Sprite2D" parent="Section1/Scene"]
 position = Vector2(1055, 1189)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("13_xe2s6")
 
-[node name="Web2" type="Sprite2D" parent="Scene"]
+[node name="Web2" type="Sprite2D" parent="Section1/Scene"]
 position = Vector2(2396, 200)
 scale = Vector2(2, 2)
 texture = ExtResource("15_1sxmg")
 flip_h = true
 
-[node name="Web3" type="Sprite2D" parent="Scene"]
+[node name="Web3" type="Sprite2D" parent="Section1/Scene"]
 position = Vector2(1112, 1239)
 texture = ExtResource("16_rysba")
 
-[node name="Web4" type="Sprite2D" parent="Scene"]
+[node name="Web4" type="Sprite2D" parent="Section1/Scene"]
 position = Vector2(1103, 763)
 texture = ExtResource("15_1sxmg")
 flip_h = true
 
-[node name="Web5" type="Sprite2D" parent="Scene"]
+[node name="Web5" type="Sprite2D" parent="Section1/Scene"]
 position = Vector2(680, 761)
 rotation = 1.5708
 texture = ExtResource("17_th50s")
 
-[node name="Web6" type="Sprite2D" parent="Scene"]
+[node name="Web6" type="Sprite2D" parent="Section1/Scene"]
 position = Vector2(2181, 188)
 rotation = 1.5708
 scale = Vector2(1.91993, 2.0906)
 texture = ExtResource("17_th50s")
 
-[node name="Path2D" type="Path2D" parent="."]
+[node name="Path2D" type="Path2D" parent="Section1"]
 position = Vector2(23, 91.9659)
 scale = Vector2(1, 0.880707)
 curve = SubResource("Curve2D_ppkf3")
 script = ExtResource("18_5le8m")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+[node name="PathFollow2D" type="PathFollow2D" parent="Section1/Path2D"]
 position = Vector2(755, 510)
 rotation = -0.000945179
 rotates = false
 
-[node name="Ghost" parent="Path2D/PathFollow2D" instance=ExtResource("19_0dfln")]
+[node name="Ghost" parent="Section1/Path2D/PathFollow2D" instance=ExtResource("19_0dfln")]
 
-[node name="EnemyZone" type="Area2D" parent="." node_paths=PackedStringArray("enemy")]
+[node name="EnemyZone" type="Area2D" parent="Section1" node_paths=PackedStringArray("enemy")]
 position = Vector2(0, 1)
 collision_mask = 3
 script = ExtResource("21_25qr4")
 enemy = NodePath("Bat")
 
-[node name="Bat" parent="EnemyZone" instance=ExtResource("22_7vgnf")]
+[node name="Bat" parent="Section1/EnemyZone" instance=ExtResource("22_7vgnf")]
 position = Vector2(391, 433)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyZone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Section1/EnemyZone"]
 position = Vector2(416, 420)
 shape = SubResource("CircleShape2D_spa2j")
 
-[node name="SpiderWithWebLarge" parent="." instance=ExtResource("26_7etp7")]
+[node name="SpiderWithWebLarge" parent="Section1" instance=ExtResource("26_7etp7")]
 position = Vector2(2183, 601)
 scale = Vector2(1.5, 1.5)
 range_of_movement = 180
 
-[node name="SpiderWithWeb" parent="." instance=ExtResource("26_7etp7")]
+[node name="SpiderWithWeb" parent="Section1" instance=ExtResource("26_7etp7")]
 position = Vector2(678, 954)
 range_of_movement = 100
 
-[connection signal="direction_changed" from="Path2D" to="Path2D/PathFollow2D/Ghost" method="flip_sprite"]
-[connection signal="body_entered" from="EnemyZone" to="EnemyZone" method="_on_body_entered"]
-[connection signal="body_exited" from="EnemyZone" to="EnemyZone" method="_on_body_exited"]
+[node name="Section2" type="Node2D" parent="."]
+position = Vector2(2556, 900)
+script = ExtResource("23_4ad67")
+metadata/_edit_group_ = true
 
-[editable path="Scene/Floating_platform"]
-[editable path="Scene/Wall"]
-[editable path="Scene/LeftWall"]
-[editable path="Scene/RightWall"]
+[node name="CameraLimitSetter" parent="Section2" instance=ExtResource("2_l5c1n")]
+position = Vector2(2299, 617)
+metadata/_edit_group_ = true
+
+[node name="Scene" type="Node2D" parent="Section2"]
+position = Vector2(1, 0)
+metadata/_edit_group_ = true
+
+[node name="background" parent="Section2/Scene" instance=ExtResource("2_yukka")]
+position = Vector2(-3, -10)
+metadata/_edit_group_ = true
+
+[node name="Floating_platform1" parent="Section2/Scene" instance=ExtResource("6_pbipe")]
+position = Vector2(284, 509)
+
+[node name="TextureRect" parent="Section2/Scene/Floating_platform1" index="1"]
+offset_left = -273.0
+offset_top = -69.0
+offset_right = 1675.0
+offset_bottom = 11.0
+
+[node name="Floating_platform2" parent="Section2/Scene" instance=ExtResource("6_pbipe")]
+position = Vector2(1526, 883)
+
+[node name="CollisionShape2D" parent="Section2/Scene/Floating_platform2" index="0"]
+position = Vector2(536.375, 36)
+shape = SubResource("RectangleShape2D_08ylh")
+
+[node name="TextureRect" parent="Section2/Scene/Floating_platform2" index="1"]
+offset_left = -1033.0
+offset_right = 958.0
+
+[node name="Floating_platform" parent="Section2/Scene" instance=ExtResource("6_pbipe")]
+position = Vector2(108, 1384)
+
+[node name="TextureRect" parent="Section2/Scene/Floating_platform" index="1"]
+offset_left = -27.0
+offset_top = 8.0
+offset_right = 2104.0
+offset_bottom = 88.0
+
+[node name="Ceiling" parent="Section2/Scene" instance=ExtResource("3_j63qa")]
+position = Vector2(-100, -70)
+metadata/_edit_group_ = true
+
+[node name="RightWall" parent="Section2/Scene" instance=ExtResource("7_7nu1t")]
+position = Vector2(2438, 20)
+metadata/_edit_group_ = true
+
+[node name="LeftWall" parent="Section2/Scene" instance=ExtResource("7_7nu1t")]
+position = Vector2(8, 551)
+metadata/_edit_group_ = true
+
+[node name="TextureRect" parent="Section2/Scene/LeftWall" index="1"]
+offset_left = -12.0
+offset_top = -85.0
+offset_right = 116.0
+offset_bottom = 876.0
+
+[node name="Step2" parent="Section2/Scene" instance=ExtResource("24_3ahsl")]
+position = Vector2(2328, 678)
+metadata/_edit_group_ = true
+
+[node name="Step" parent="Section2/Scene" instance=ExtResource("24_3ahsl")]
+position = Vector2(200, 1159)
+metadata/_edit_group_ = true
+
+[node name="Path2D" type="Path2D" parent="Section2"]
+position = Vector2(-24, 1)
+curve = SubResource("Curve2D_nqk1h")
+script = ExtResource("18_5le8m")
+base_speed = 200.0
+direction = 1
+metadata/_edit_group_ = true
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Section2/Path2D"]
+position = Vector2(596, 771)
+rotation = -0.00423129
+
+[node name="Skeleton" parent="Section2/Path2D/PathFollow2D" instance=ExtResource("25_fc8aw")]
+position = Vector2(97.1557, -36.5893)
+
+[node name="Section3" type="Node2D" parent="."]
+position = Vector2(2560, 2344)
+script = ExtResource("26_bmw4h")
+metadata/_edit_group_ = true
+
+[node name="CameraLimitSetter" parent="Section3" instance=ExtResource("2_l5c1n")]
+position = Vector2(2268, 162)
+metadata/_edit_group_ = true
+
+[node name="Scene" type="Node2D" parent="Section3"]
+metadata/_edit_group_ = true
+
+[node name="background" parent="Section3/Scene" instance=ExtResource("2_yukka")]
+position = Vector2(15, -27)
+metadata/_edit_group_ = true
+
+[node name="Floor" parent="Section3/Scene" instance=ExtResource("4_e2gas")]
+position = Vector2(-12, 1334)
+
+[node name="LeftWall" parent="Section3/Scene" instance=ExtResource("7_7nu1t")]
+position = Vector2(-5, 2)
+metadata/_edit_group_ = true
+
+[node name="TextureRect" parent="Section3/Scene/LeftWall" index="1"]
+offset_top = -1.0
+offset_bottom = 1381.0
+
+[node name="SimplePlatform" parent="Section3/Scene" instance=ExtResource("11_0mrne")]
+position = Vector2(191, 734)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_group_ = true
+
+[node name="SimplePlatform2" parent="Section3/Scene" instance=ExtResource("11_0mrne")]
+position = Vector2(191, 1112)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_group_ = true
+
+[node name="SimplePlatform3" parent="Section3/Scene" instance=ExtResource("11_0mrne")]
+position = Vector2(2365, 226)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_group_ = true
+
+[node name="SpikeCeiling" type="StaticBody2D" parent="Section3/Scene"]
+position = Vector2(127, 468)
+metadata/_edit_group_ = true
+
+[node name="Spikes" parent="Section3/Scene/SpikeCeiling" instance=ExtResource("27_tygyh")]
+position = Vector2(480, 244)
+
+[node name="SpikeTexture" parent="Section3/Scene/SpikeCeiling/Spikes" index="0"]
+offset_right = 700.0
+
+[node name="CollisionShape2D" parent="Section3/Scene/SpikeCeiling/Spikes" index="1"]
+position = Vector2(356, 26)
+
+[node name="Spikes2" parent="Section3/Scene/SpikeCeiling" instance=ExtResource("27_tygyh")]
+position = Vector2(1517, 238)
+
+[node name="SpikeTexture" parent="Section3/Scene/SpikeCeiling/Spikes2" index="0"]
+offset_left = -201.0
+offset_top = 7.0
+offset_right = 494.0
+offset_bottom = 47.0
+
+[node name="CollisionShape2D" parent="Section3/Scene/SpikeCeiling/Spikes2" index="1"]
+position = Vector2(144, 31)
+
+[node name="Scene" type="Node2D" parent="Section3/Scene/SpikeCeiling"]
+
+[node name="Floor2" type="Sprite2D" parent="Section3/Scene/SpikeCeiling/Scene"]
+position = Vector2(2143, 143)
+texture = ExtResource("28_hfjtr")
+
+[node name="Floor1" type="Sprite2D" parent="Section3/Scene/SpikeCeiling/Scene"]
+position = Vector2(2332, 144)
+texture = ExtResource("29_euto0")
+
+[node name="Column-short12" type="Sprite2D" parent="Section3/Scene/SpikeCeiling/Scene"]
+position = Vector2(1248, 144)
+texture = ExtResource("30_s4iog")
+
+[node name="Column-short15" type="Sprite2D" parent="Section3/Scene/SpikeCeiling/Scene"]
+position = Vector2(415, 423)
+texture = ExtResource("30_s4iog")
+flip_h = true
+flip_v = true
+
+[node name="Column-short14" type="Sprite2D" parent="Section3/Scene/SpikeCeiling/Scene"]
+position = Vector2(416, 144)
+texture = ExtResource("30_s4iog")
+
+[node name="Ceiling1" type="Sprite2D" parent="Section3/Scene/SpikeCeiling/Scene"]
+position = Vector2(2342, 423)
+texture = ExtResource("31_u2hi5")
+
+[node name="Ceiling2" type="Sprite2D" parent="Section3/Scene/SpikeCeiling/Scene"]
+position = Vector2(2087, 421)
+texture = ExtResource("31_u2hi5")
+
+[node name="Ceiling3" type="Sprite2D" parent="Section3/Scene/SpikeCeiling/Scene"]
+position = Vector2(1831, 421)
+texture = ExtResource("31_u2hi5")
+
+[node name="Ceiling4" type="Sprite2D" parent="Section3/Scene/SpikeCeiling/Scene"]
+position = Vector2(1576, 420)
+texture = ExtResource("31_u2hi5")
+
+[node name="Ceiling5" type="Sprite2D" parent="Section3/Scene/SpikeCeiling/Scene"]
+position = Vector2(1320, 420)
+texture = ExtResource("31_u2hi5")
+
+[node name="Ceiling6" type="Sprite2D" parent="Section3/Scene/SpikeCeiling/Scene"]
+position = Vector2(1068, 420)
+texture = ExtResource("31_u2hi5")
+
+[node name="Ceiling7" type="Sprite2D" parent="Section3/Scene/SpikeCeiling/Scene"]
+position = Vector2(816, 421)
+texture = ExtResource("31_u2hi5")
+
+[node name="Ceiling8" type="Sprite2D" parent="Section3/Scene/SpikeCeiling/Scene"]
+material = SubResource("CanvasItemMaterial_s717n")
+position = Vector2(560, 422)
+texture = ExtResource("31_u2hi5")
+
+[node name="Ceiling9" type="Sprite2D" parent="Section3/Scene/SpikeCeiling/Scene"]
+position = Vector2(489, 421)
+texture = ExtResource("31_u2hi5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Section3/Scene/SpikeCeiling"]
+visible = false
+position = Vector2(1410.25, 420)
+shape = SubResource("RectangleShape2D_4hoy8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Section3/Scene/SpikeCeiling"]
+visible = false
+position = Vector2(415, 143.75)
+shape = SubResource("RectangleShape2D_gt4j7")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Section3/Scene/SpikeCeiling"]
+visible = false
+position = Vector2(1247.5, 149)
+shape = SubResource("RectangleShape2D_2oyhc")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Section3/Scene/SpikeCeiling"]
+visible = false
+position = Vector2(2244, 140)
+shape = SubResource("RectangleShape2D_g6dm7")
+
+[node name="RightWall" parent="Section3/Scene" instance=ExtResource("7_7nu1t")]
+position = Vector2(2439, 2)
+
+[node name="TextureRect" parent="Section3/Scene/RightWall" index="1"]
+offset_bottom = 483.0
+
+[node name="RightWall2" parent="Section3/Scene" instance=ExtResource("7_7nu1t")]
+position = Vector2(2439, 967)
+
+[node name="TextureRect" parent="Section3/Scene/RightWall2" index="1"]
+offset_top = 44.0
+offset_bottom = 430.0
+
+[node name="Players" parent="." instance=ExtResource("32_7ofkm")]
+position = Vector2(-3, 10)
+
+[node name="Camera2D" parent="Players" index="0"]
+position = Vector2(1270, 719)
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+rotation_smoothing_enabled = true
+
+[node name="Luna" parent="Players" index="1"]
+position = Vector2(167, 1232)
+metadata/_edit_group_ = true
+
+[node name="Stella" parent="Players" index="2"]
+position = Vector2(262, 1270)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -4.0
+offset_top = 1424.0
+offset_right = 2675.0
+offset_bottom = 3784.0
+texture = ExtResource("33_pb8cg")
+stretch_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 2453.0
+offset_top = -146.0
+offset_right = 5969.0
+offset_bottom = 938.0
+texture = ExtResource("33_pb8cg")
+stretch_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_left = 5001.0
+offset_top = 935.0
+offset_right = 5969.0
+offset_bottom = 3773.0
+texture = ExtResource("33_pb8cg")
+stretch_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+offset_left = 1998.0
+offset_top = 3699.0
+offset_right = 5971.0
+offset_bottom = 6488.0
+texture = ExtResource("33_pb8cg")
+stretch_mode = 1
+
+[connection signal="player_in_scene" from="Section1" to="Players" method="player_entered_scene"]
+[connection signal="direction_changed" from="Section1/Path2D" to="Section1/Path2D/PathFollow2D/Ghost" method="flip_sprite" flags=18]
+[connection signal="body_entered" from="Section1/EnemyZone" to="Section1/EnemyZone" method="_on_body_entered" flags=18]
+[connection signal="body_exited" from="Section1/EnemyZone" to="Section1/EnemyZone" method="_on_body_exited" flags=18]
+[connection signal="player_in_scene" from="Section2" to="Players" method="player_entered_scene"]
+[connection signal="direction_changed" from="Section2/Path2D" to="Section2/Path2D/PathFollow2D/Skeleton" method="_on_path_2d_direction_changed" flags=18]
+[connection signal="change_direction" from="Section2/Path2D/PathFollow2D/Skeleton" to="Section2/Path2D" method="reverse_direction" flags=18]
+[connection signal="dash" from="Section2/Path2D/PathFollow2D/Skeleton" to="Section2/Path2D" method="_on_dash" flags=18]
+[connection signal="stop_dash" from="Section2/Path2D/PathFollow2D/Skeleton" to="Section2/Path2D" method="_on_stop_dash" flags=18]
+[connection signal="player_in_scene" from="Section3" to="Players" method="player_entered_scene"]
+
+[editable path="Section1/Scene/Floor"]
+[editable path="Section1/Scene/Floating_platform"]
+[editable path="Section1/Scene/Wall"]
+[editable path="Section1/Scene/LeftWall"]
+[editable path="Section1/Scene/RightWall"]
+[editable path="Section2/Scene/Floating_platform1"]
+[editable path="Section2/Scene/Floating_platform2"]
+[editable path="Section2/Scene/Floating_platform"]
+[editable path="Section2/Scene/LeftWall"]
+[editable path="Section3/Scene/LeftWall"]
+[editable path="Section3/Scene/SpikeCeiling/Spikes"]
+[editable path="Section3/Scene/SpikeCeiling/Spikes2"]
+[editable path="Section3/Scene/RightWall"]
+[editable path="Section3/Scene/RightWall2"]
+[editable path="Players"]

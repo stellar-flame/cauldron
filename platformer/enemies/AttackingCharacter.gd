@@ -1,7 +1,7 @@
 class_name AttackingCharacter
 extends CharacterBody2D
 
-var player
+var players : Array
 var retreat 
 var attack_radius = 300
 var speed = 200
@@ -9,7 +9,8 @@ var damageable : Damageable = Damageable.new()
 
 @onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
 
-func attack():
+func attack(damage):
+	var player = get_nearest_player()
 	var direction_to_player = (player.global_position - self.global_position).normalized()
 	if (retreat):
 		velocity = -direction_to_player * speed
@@ -19,15 +20,15 @@ func attack():
 	flip_sprite(direction_to_player)
 		
 	if (move_and_slide()):
-		attack_player()
+		damage_player(damage, player)
 		
 	if (self.global_position.distance_to(player.global_position) > attack_radius):
 		retreat = false
 		
-func attack_player():
+func damage_player(damage, player):
 	var collision = get_last_slide_collision();
 	if (collision and collision.get_collider().is_in_group("player")):
-		#player.take_damage(2)
+		#player.take_damage(damage)
 		retreat = true
 		
 func flip_sprite(direction_to_player):
@@ -36,3 +37,12 @@ func flip_sprite(direction_to_player):
 	else:
 		sprite.flip_h = false
 					
+func get_nearest_player():
+	if !players.is_empty():
+		var result = players[0]
+		for p in players:
+			var dist = self.global_position.distance_to(result.global_position)
+			if self.global_position.distance_to(p.global_position) < dist:
+				result = p 
+		return result	
+	return null
